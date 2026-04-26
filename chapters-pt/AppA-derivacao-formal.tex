@@ -1,0 +1,476 @@
+\chapter{\texorpdfstring{Derivação Formal Completa di
+\(T_s^{(2),\text{sys}}\)}{Derivação Formal Completa di T\_s\^{}\{(2),\textbackslash text\{sys\}\}}}\label{derivazione-formale-completa-di-t_s2textsys}
+
+\begin{quote}
+\textbf{Scopo dell'apêndice.} Esplicitare ogni passaggio matematico
+dalla legge micro-comunicativa \(\Pi_j(t+1)\) della Topografia (\S{}5.7)
+fino alla forma sistemica \(T_s^{(2),\text{sys}}\) del Cap.~4,
+dichiarando \emph{tutte} le hipótese operative e identificando i punti in
+cui la derivazione ammette alternative. L'apêndice è progettata per
+essere autonomamente verificaçãobile da un lettore con background in fisica
+statistica (Kuramoto), teoria dei giochi ripetuti (Teorema Folk) e
+Bayesian inference.
+\end{quote}
+
+
+
+\section{Setup Formale Esteso}\label{setup-formale-esteso}
+
+\Hypoth{} \textbf{Definizione (Sistema sociale formalizzato).} Un
+\emph{sistema sociale} \(\mathcal{X}\) è una tripla
+\((\mathcal{N}, \{\Pi_j\}, \mathcal{K})\) onde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathcal{N} = \{1, 2, \ldots, N\}\) è l'insieme degli
+  \emph{accoppiamenti elementari} --- ciascun \(j\) rappresenta un
+  acoplamento emittente-ricevente nel senso della Topografia (\S{}5.1);
+\item
+  \(\Pi_j : \mathbb{R}_{\geq 0} \to \mathbb{R}\) è la legge di payoff
+  istantaneo dell'acoplamento \(j\), della forma topografica
+  \(\Pi_j(t) = M_{e,j}(t) \cdot Q_{0,j}(t) \cdot (1 - \delta_{R,j} z_{R,j})\);
+\item
+  \(\mathcal{K} : \mathcal{N} \times \mathcal{N} \to \mathbb{R}_{\geq 0}\)
+  è la matrice di acoplamento di Kuramoto, riducibile per hipótese di
+  campo médio a \(\mathcal{K}_{jk} \equiv K/N\) (\(K \geq 0\) scalare).
+\end{itemize}
+
+\Proved{} \textbf{Conseguenza notazionale.} Ciascun
+\(j \in \mathcal{N}\) ha: - una \textbf{fase}
+\(\theta_j(t) \in [0, 2\pi)\) --- posizione nel ciclo di
+legittimazione/decoerência; - una \textbf{frequência natural}
+\(\omega_j\) con distribuzione \(g(\omega)\) unimodale simmetrica
+intorno a \(\omega_0 = 0\) (riconducibile a questo caso per cambio di
+sistema di referência); - un \textbf{payoff} \(\Pi_j(t)\) come sopra.
+
+
+
+\section{Dinamica di Kuramoto e il Parametro
+d'Ordine}\label{dinamica-di-kuramoto-e-il-parâmetro-dordine}
+
+\Proved{} \textbf{Equazione di Kuramoto (1984).} L'evoluzione delle fasi
+è governata da:
+
+\[
+\frac{d\theta_j}{dt} = \omega_j + \frac{K}{N} \sum_{k=1}^{N} \sin(\theta_k - \theta_j), \qquad j = 1, \ldots, N
+\]
+
+Definiamo il \textbf{parâmetro de ordem complesso}:
+
+\[
+\Phi(t) e^{i\psi(t)} := \frac{1}{N} \sum_{j=1}^{N} e^{i\theta_j(t)}, \quad \Phi \in [0, 1], \quad \psi \in [0, 2\pi)
+\]
+
+\Proved{} \textbf{Riduzione di campo médio.} L'equação di Kuramoto si
+riscrive equivalentemente:
+
+\[
+\frac{d\theta_j}{dt} = \omega_j + K \Phi(t) \sin(\psi(t) - \theta_j)
+\]
+
+(passaggio standard, vedi Strogatz 2000 per la derivazione).
+
+\Proved{} \textbf{Soglia critica \(K_c\).} Per \(g(\omega)\) unimodale
+simmetrica, esiste
+
+\[
+K_c = \frac{2}{\pi g(0)}
+\]
+
+tal que: - \(K < K_c \Rightarrow \Phi \to 0\) asintoticamente (regime
+di decoerência completa); -
+\(K > K_c \Rightarrow \Phi \to \Phi_\infty(K) > 0\) asintoticamente
+(regime di sincronização parziale); - \(\Phi_\infty(K) \to 1\) per
+\(K \to \infty\) (sincronização piena).
+
+\Hypoth{} \textbf{Ipotesi A1 (Kuramoto applicabile).} La distribuzione
+\(g(\omega)\) delle frequenze naturali degli accoppiamenti
+emittente-ricevente in un sistema sociale è unimodale simmetrica.
+\emph{Verifica empirica}: per cicli mediatici, elettorali, di mercato,
+la distribuzione è approssimativamente lognormale; per simmetria
+approssimata accettabile per \(N\) grande (limite centrale).
+
+
+
+\section{\texorpdfstring{Operatore di Trasposizione
+\(\langle \cdot \rangle_\Phi\)}{Operatore di Trasposizione \textbackslash langle \textbackslash cdot \textbackslash rangle\_\textbackslash Phi}}\label{operatore-di-trasposizione-langle-cdot-rangle_phi}
+
+\Hypoth{} \textbf{Definizione (operatore di trasposizione).} Per una
+grandeza local \(X_j\) definita su \(\mathcal{N}\), la \emph{quantità
+sistemica derivata} è:
+
+\[
+\langle X \rangle_\Phi := \Phi \cdot \frac{1}{N} \sum_{j=1}^{N} X_j = \Phi \cdot \langle X \rangle
+\]
+
+onde \(\langle X \rangle := N^{-1} \sum_j X_j\) è la media aritmetica
+local.
+
+\Proved{} \textbf{Proprietà dell'operatore.}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Proprietà
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verifica
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Linearità:
+\(\langle aX + bY \rangle_\Phi = a\langle X\rangle_\Phi + b\langle Y\rangle_\Phi\)
+& Diretta da linearità di \(\sum\) \\
+\(\langle\text{cost}\rangle_\Phi = \Phi \cdot \text{cost}\) & Diretta \\
+\(\langle X \rangle_\Phi \to \langle X \rangle\) per \(\Phi \to 1\) &
+Diretta \\
+\(\langle X \rangle_\Phi \to 0\) per \(\Phi \to 0\) & Diretta \\
+\(\partial \langle X \rangle_\Phi / \partial \Phi = \langle X \rangle\)
+& Diretta \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Interpretazione.} \(\langle X \rangle_\Phi\) è la
+quantità \(X\) \emph{effettivamente esprimibile dal sistema};
+\(\langle X \rangle\) è la quantità \(X\) \emph{potenzialmente
+disponibile}. La differenza
+\(\langle X \rangle - \langle X \rangle_\Phi = (1-\Phi)\langle X \rangle\)
+misura quanto \(X\) è \emph{perduto per decoerência}.
+
+
+
+\section{\texorpdfstring{Trasposizione di \(A\) e
+\(\Omega\)}{Trasposizione di A e \textbackslash Omega}}\label{trasposizione-di-a-e-omega}
+
+\Hypoth{} \textbf{Postulato A2 (trasposizione di \(A\) per linearità di
+Taylor).} L'antifragilidade sistemica \(A_{\text{sys}}\) è la più semplice
+forma consistente con le condizioni al contorno
+\(A_{\text{sys}}(\Phi=1) = \langle A\rangle\) e
+\(A_{\text{sys}}(\Phi=0) = 0\):
+
+\[
+A_{\text{sys}}(\Phi) = \Phi \cdot \langle A \rangle = \langle A \rangle_\Phi
+\]
+
+\Hypoth{} \textbf{Postulato A3 (trasposizione di \(\Omega\) per
+amplificazione inversa).} L'involução sistemica
+\(\Omega_{\text{sys}}\) è la più semplice forma consistente con
+\(\Omega_{\text{sys}}(\Phi=1) = \langle\Omega\rangle\) e
+\(\Omega_{\text{sys}}(\Phi \to 0) \to \infty\):
+
+\[
+\Omega_{\text{sys}}(\Phi) = \frac{\langle \Omega \rangle}{\Phi}
+\]
+
+\Proved{} \textbf{Asimmetria formale.} \(A_{\text{sys}}\) è
+\emph{omogenea di grado +1 in \(\Phi\)}; \(\Omega_{\text{sys}}\) è
+\emph{omogenea di grado --1 in \(\Phi\)}. Questa asimmetria di grado è la
+firma matematica della dissimmetria termodinamica fra valore (necessita
+trasporto) e spreco (si crea ovunque non sia inibito).
+
+\Conj{} \textbf{Alternative non banali da testare empiricamente.}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Forma
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verifica condizioni al contorno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Razionale alternativo
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(A_{\text{sys}} = (1 - e^{-\alpha\Phi})\langle A\rangle\) & \Proved{}
+se \(\alpha\) tal que \(1-e^{-\alpha} = 1\) (isto é,
+\(\alpha \to \infty\), recupera lineare) & saturação per \(\Phi\)
+alto \\
+\(A_{\text{sys}} = \Phi^\beta \langle A\rangle\) & \Proved{} per
+qualunque \(\beta > 0\) & \(\beta < 1\): retornos decrescentes;
+\(\beta > 1\): soglia di attivazione \\
+\(\Omega_{\text{sys}} = \langle\Omega\rangle / \Phi^\gamma\) & \Proved{}
+per qualunque \(\gamma > 0\) & \(\gamma > 1\): amplificazione esplosiva
+della decoerência \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Posizione DEQ$^2$. } La forma lineare
+\(A_{\text{sys}} = \Phi\langle A\rangle\) e razionale
+\(\Omega_{\text{sys}} = \langle\Omega\rangle/\Phi\) sono la \emph{primeiro
+approssimazione consistente}; la loro validità sarà testata sul dataset
+50+ paesi del paper EN.
+
+
+
+\section{\texorpdfstring{Costruzione di
+\(T_s^{(2),\text{sys}}\)}{Costruzione di T\_s\^{}\{(2),\textbackslash text\{sys\}\}}}\label{costruzione-di-t_s2textsys}
+
+\Proved{} \textbf{Punto di partenza (Cap.~3.4).} La forma local
+dell'equação DEQ$^2$ è:
+
+\[
+T_s^{(2),\text{loc}} = \frac{s_{iii} \cdot z \cdot \delta \cdot (1+A)}{\sigma \cdot \varepsilon_{\text{dis}} \cdot (1+\Omega)}
+\]
+
+onde \(A, \Omega\) sono i valori locali del singolo acoplamento o
+sotto-attore.
+
+\Hypoth{} \textbf{Passaggio alla scala sistemica.} Trattiamo
+\(s_{iii}, z, \delta, \sigma, \varepsilon_{\text{dis}}\) come
+\emph{quantità sistemiche aggregate} (non sottoposte a trasposizione
+\(\langle \cdot \rangle_\Phi\) uma vez que sono parâmetros di campo esogeno o
+quasi-esogeno alla scala temporale di interesse). Le sole quantità che
+richiedono trasposizione sono \(A\) e \(\Omega\):
+
+\[
+A \to A_{\text{sys}} = \Phi \langle A\rangle, \qquad \Omega \to \Omega_{\text{sys}} = \langle\Omega\rangle/\Phi
+\]
+
+\Proved{} \textbf{Sostituzione diretta.}
+
+\[
+\boxed{T_s^{(2),\text{sys}} = \frac{s_{iii} \cdot z \cdot \delta \cdot (1 + \Phi \langle A\rangle)}{\sigma \cdot \varepsilon_{\text{dis}} \cdot \left(1 + \dfrac{\langle\Omega\rangle}{\Phi}\right)}}
+\]
+
+\Proved{} \textbf{Riscrittura in forma fisicamente trasparente.}
+Moltiplichiamo numeratore e denominatore per \(\Phi\):
+
+\[
+T_s^{(2),\text{sys}} = \frac{\Phi \cdot s_{iii} \cdot z \cdot \delta \cdot (1 + \Phi \langle A\rangle)}{\Phi \cdot \sigma \cdot \varepsilon_{\text{dis}} + \sigma \cdot \varepsilon_{\text{dis}} \cdot \langle\Omega\rangle}
+\]
+
+Da questa forma è immediato leggere:
+
+\begin{itemize}
+\tightlist
+\item
+  numeratore \(\propto \Phi\): la stabilità sistemica scala
+  \emph{linearmente} con la coerenza, plus correzione antifrágil
+  \(\Phi^2 \langle A\rangle\);
+\item
+  denominatore: la decoerência ha due componenti additive --- una
+  \emph{proporzionale a \(\Phi\)} (volatilità modulata dalla coerenza) e
+  una \emph{indipendente da \(\Phi\)}
+  (\(\sigma \varepsilon_{\text{dis}} \langle\Omega\rangle\),
+  l'involução estrutural).
+\end{itemize}
+
+
+
+\section{Verifiche di Consistenza nei
+Limiti}\label{verifiche-di-consistenza-nei-limiti}
+
+\Proved{} \textbf{Tabela di verificação completa.}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Limite
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(T_s^{(2),\text{sys}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi \to 1\) &
+\(\dfrac{s_{iii}z\delta(1+\langle A\rangle)}{\sigma\varepsilon_{\text{dis}}(1+\langle\Omega\rangle)}\)
+& Recupero della forma local Cap.~3.4 con \(A=\langle A\rangle\),
+\(\Omega=\langle\Omega\rangle\) \Proved{} \\
+\(\Phi \to 0\) &
+\(\dfrac{s_{iii}z\delta \cdot 1}{\sigma\varepsilon_{\text{dis}} \cdot \infty} \to 0\)
+& Decoerenza completa \(\Rightarrow\) colapso sistemico \Proved{} \\
+\(\langle A\rangle \to \infty\) &
+\(\propto \Phi^2 \cdot \langle A\rangle / [\sigma\varepsilon_{\text{dis}}(\Phi+\langle\Omega\rangle)] \to \infty\)
+& Antifragilidade infinita \(\Rightarrow\) stabilità infinita (caso
+teorico) \Proved{} \\
+\(\langle\Omega\rangle \to \infty\) & \(\to 0\) & Involuzione totale
+\(\Rightarrow\) colapso \Proved{} \\
+\(\sigma \to 0\) & \(\to \infty\) & Volatilità nulla \(\Rightarrow\)
+stabilità infinita (caso teorico) \Proved{} \\
+\(\sigma \to \infty\) & \(\to 0\) a meno che
+\(\langle A\rangle \to \infty\) commensurabile & Volatilità infinita
+\(\Rightarrow\) colapso \Proved{} \\
+\(\varepsilon_{\text{dis}} \to 0\) & \(\to \infty\) & Disimpegno nullo
+\(\Rightarrow\) stabilità infinita \Proved{} \\
+\(\delta \to 0\) & \(\to 0\) & Miopia totale \(\Rightarrow\) colapso
+\Proved{} \\
+\(K \to K_c^-\) & \(\Phi \to 0 \Rightarrow T_s^{(2),\text{sys}} \to 0\)
+& Sotto soglia di acoplamento \(\Rightarrow\) colapso sistemico
+inevitabile \Proved{} \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Risultato.} Tutti i limiti hanno interpretazione
+coerente con la fenomenologia attesa. Nessun limite produce
+comportamento patologico (oscillazioni, salti, cambi di segno).
+
+
+
+\section{\texorpdfstring{Forma della Superficie Critica
+\(\mathcal{S}\)}{Forma della Superficie Critica \textbackslash mathcal\{S\}}}\label{forma-della-superficie-critica-mathcals}
+
+\Hypoth{} \textbf{Definizione operativa.} La \emph{limiar crítico di
+coerenza} \(\Phi^*\) è il valore di \(\Phi\) pelo qual
+\(T_s^{(2),\text{sys}} = 1\):
+
+\[
+s_{iii} z \delta (1 + \Phi^* \langle A\rangle) = \sigma \varepsilon_{\text{dis}} \left(1 + \frac{\langle\Omega\rangle}{\Phi^*}\right)
+\]
+
+\Proved{} \textbf{Risoluzione.} Riscrivendo:
+
+\[
+s_{iii} z \delta + s_{iii} z \delta \Phi^* \langle A\rangle = \sigma \varepsilon_{\text{dis}} + \sigma \varepsilon_{\text{dis}} \langle\Omega\rangle / \Phi^*
+\]
+
+Moltiplicando per \(\Phi^*\):
+
+\[
+s_{iii} z \delta \Phi^* + s_{iii} z \delta \langle A\rangle (\Phi^*)^2 = \sigma\varepsilon_{\text{dis}}\Phi^* + \sigma\varepsilon_{\text{dis}}\langle\Omega\rangle
+\]
+
+Riordinando:
+
+\[
+s_{iii} z \delta \langle A\rangle (\Phi^*)^2 + (s_{iii}z\delta - \sigma\varepsilon_{\text{dis}}) \Phi^* - \sigma\varepsilon_{\text{dis}}\langle\Omega\rangle = 0
+\]
+
+\Proved{} \textbf{Soluzione (formula quadratica).} Posto
+\(a := s_{iii}z\delta\langle A\rangle\),
+\(b := s_{iii}z\delta - \sigma\varepsilon_{\text{dis}}\),
+\(c := -\sigma\varepsilon_{\text{dis}}\langle\Omega\rangle\):
+
+\[
+\boxed{\Phi^* = \frac{-b + \sqrt{b^2 - 4ac}}{2a}}
+\]
+
+(scelta della radice positiva porque \(\Phi^* \in [0,1]\)).
+
+\Hypoth{} \textbf{Discussione.} La forma quadratica raffinata è più
+precisa della formulazione lineare del Cap.~4.5.1. Quest'ultima era
+ottenuta per linearizzazione attorno a \(\Phi^* \approx 1\) ---
+appropriata per sistemi prossimi alla coerenza piena, ma sotto-stimata
+per sistemi in regime di forte decoerência (USA in Cap.~7).
+
+\Proved{} \textbf{Limite consistente.} Per
+\(\langle\Omega\rangle \to 0\) (\(c \to 0\)), \(\Phi^* \to 0\) se
+\(b > 0\) --- recupero della primeiro formulazione lineare per sistemi
+senza involução.
+
+
+
+\section{Stabilità Lineare dell'Equilibrio
+Sistemico}\label{stabilituxe0-lineare-dellequilibrio-sistemico}
+
+\Hypoth{} \textbf{Tesi.} Il punto
+\(\boldsymbol{p}^*(t) := (\Phi^*, A^*, \Omega^*, \varepsilon_{\text{dis}}^*)\)
+corrispondente a \(T_s^{(2),\text{sys}} = 1\) è di \textbf{equilibrio
+instabile} com relação a perturbazioni in \(\Phi\).
+
+\Proved{} \textbf{Prova (analisi local).} Calcoliamo
+\(\partial T_s^{(2),\text{sys}} / \partial \Phi\) a
+\(\boldsymbol{p}^*\):
+
+\[
+\frac{\partial T_s^{(2),\text{sys}}}{\partial \Phi} = \frac{s_{iii}z\delta\langle A\rangle}{\sigma\varepsilon_{\text{dis}}(1+\langle\Omega\rangle/\Phi)} + \frac{s_{iii}z\delta(1+\Phi\langle A\rangle) \cdot \langle\Omega\rangle/\Phi^2}{\sigma\varepsilon_{\text{dis}}(1+\langle\Omega\rangle/\Phi)^2}
+\]
+
+Entrambi i termini sono positivi a \(\boldsymbol{p}^*\). Dunque
+\(T_s^{(2),\text{sys}}\) è \emph{crescente} in \(\Phi\) in un intorno di
+\(\Phi^*\).
+
+\Hypoth{} \textbf{Conseguenza dinamica.} Perturbazioni
+\(\Phi^* + \epsilon\) con \(\epsilon < 0\) portano
+\(T_s^{(2),\text{sys}} < 1\) --- il sistema si auto-rinforza nella
+decoerência por meio de R3 (\(\Phi\)-\(\varepsilon_{\text{dis}}\) negativo,
+Cap.~5.1) e R2 (\(\Phi\)-\(\Omega\) negativo). Perturbazioni
+\(\Phi^* + \epsilon\) con \(\epsilon > 0\) portano
+\(T_s^{(2),\text{sys}} > 1\) --- il sistema si auto-rinforza nella
+coerenza per gli stessi meccanismi.
+
+\Proved{} \textbf{Risultato estrutural.} \(\boldsymbol{p}^*\) è un
+\emph{separatore di destini}: piccole perturbazioni in \(\Phi\)
+producono, através de le sei relazioni R1-R6, traiettorie che divergono
+in \(\mathbb{V}^{(4)}\). Questo è la base formale del concetto di
+\emph{transição de fase} del Cap.~3.5.3 e della \emph{bifurcação}
+del Cap.~9.5.
+
+
+
+\section{Note sulle Ipotesi
+Implicite}\label{note-sulle-hipótese-implicite}
+
+\Conj{} \textbf{Ipotesi A4 (separazione di scala temporale).} I
+parâmetros esogeni \((s_{iii}, z, \delta, \sigma)\) variano su scale
+temporali molto più lunghe (decennali per \(s_{iii}, z, \delta\); ciclo
+geopolitico per \(\sigma\)) com relação alle variáveis di
+\(\mathbb{V}^{(4)}\) (\(\Phi\) stagionale, \(A\) post-stress, \(\Omega\)
+trimestrale, \(\varepsilon_{\text{dis}}\) semestrale). Questa
+separazione di scala giustifica trattare i parâmetros come quasi-costanti
+per finestre di observação di 5-10 anni.
+
+\Conj{} \textbf{Ipotesi A5 (additività delle modulazioni).} Le forme
+\((1+A)\) al numeratore e \((1+\Omega)\) al denominatore della
+\(T_s^{(2),\text{loc}}\) sono additive --- alternative moltiplicative o
+esponenziali producono comportamenti qualitativamente analoghi nei
+limiti, ma differenze quantitative significative nel regime intermedio.
+La scelta additiva è giustificata da minimalità (Occam) e da consistenza
+con le forme di Bandura per il disimpegno morale.
+
+\Conj{} \textbf{Ipotesi A6 (omogeneità della popolazione
+\(\mathcal{N}\)).} Il campo médio Kuramoto assume omogeneità degli
+accoppiamenti. Sistemi con forte clustering (sub-popolazioni con
+coerenza interna alta ma fra-cluster bassa, es. polarizzazione USA)
+richiedono il modello generalizzato di Kuramoto multi-cluster (Strogatz
+2003). Estensione possibile, rinviata al paper EN.
+
+\Proved{} \textbf{Conseguenza metodologica.} Le tre hipótese A4-A6 sono
+\emph{esplicitate}; ciascuna ammette estensione nota in letteratura; la
+loro violazione produce \emph{correzioni} alla forma della
+\(T_s^{(2),\text{sys}}\) ma non ne invalida la struttura asintotica.
+
+
+
+\section{Sintesi dell'Apêndice}\label{sintesi-dellapêndice}
+
+\Proved{} \textbf{Risultato centrale.} La derivazione formale completa
+di \(T_s^{(2),\text{sys}}\) dal campo dei payoff topografici
+\(\{\Pi_j(t)\}\) richiede sei hipótese esplicite (A1-A6, di cui due come
+postulati di trasposizione A2-A3), produce una forma chiusa con sei
+verifiche di consistenza nei limiti e ammette una superficie critica
+\(\mathcal{S}\) con forma quadratica esplicita per
+\(\Phi^*(A, \Omega, \varepsilon_{\text{dis}}; s_{iii}, z, \delta, \sigma)\).
+L'equilibrio \(\boldsymbol{p}^* \in \mathcal{S}\) è instabile com relação a
+\(\Phi\), giustificando formalmente la nozione di \emph{bifurcação
+strategica} del Cap.~9 e dei \emph{quattro mondi possibili} del Cap.~10.
+
+\Hypoth{} \textbf{Posizione epistemica.} L'apparato è \emph{minimale}
+(sei hipótese), \emph{consistente} (sei limiti verificaçãoti), \emph{aperto}
+(alternative non lineari elencate per test empirico) e
+\emph{tracciabile} (ogni passaggio è linkato al capítulo corrispondente
+del libro).
+
+
+
+\emph{Apêndice tecnica. Pre-requisiti: fisica statistica (Strogatz
+2000, Kuramoto 1984), teoria dei giochi ripetuti (Teorema Folk,
+Fudenberg-Tirole 1991), Bayesian inference (Gelman et al., }Bayesian
+Data Analysis\emph{, 3a ed.).}

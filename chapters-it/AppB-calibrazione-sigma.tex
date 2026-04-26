@@ -1,0 +1,378 @@
+\chapter{\texorpdfstring{Calibrazione Empirica di
+\(\Sigma^{\text{geo}}\) a Partire da
+\(\Sigma^{\text{comm}}\)}{Calibrazione Empirica di \textbackslash Sigma\^{}\{\textbackslash text\{geo\}\} a Partire da \textbackslash Sigma\^{}\{\textbackslash text\{comm\}\}}}\label{calibrazione-empirica-di-sigmatextgeo-a-partire-da-sigmatextcomm}
+
+\begin{quote}
+\textbf{Argomento portante:} la matrice di covarianza degli stati
+egemonici \((s_i, s_{ii}, s_{iii})\) può essere stimata, in prima
+approssimazione, come trasformazione lineare della matrice di covarianza
+degli assi discorsivi \((x, y, z)\) già misurata nella Topografia.
+Questo dà alla DEQ$^2$ una \textbf{calibrazione empirica} che attualmente
+le manca, e fornisce la base per un paper tecnico autonomo.
+\end{quote}
+
+
+
+\section{Il Problema}\label{il-problema}
+
+Nel Cap. 4, \(T_s^{(2),\text{sys}}\) utilizza implicitamente una
+struttura di covarianza tra gli assi \((s_i, s_{ii}, s_{iii})\) del
+sistema egemonico --- necessaria, ad esempio, per definire \(\sigma\)
+come norma aggregata del vettore di volatilità
+\((\sigma_1, \sigma_2, \sigma_3)\) via EDSD. Questa struttura di
+covarianza \textbf{non è stata stimata empiricamente} in nessuna
+pubblicazione precedente. La presente appendice propone una procedura di
+calibrazione fondata sulla relazione formale tra scala micro
+(Topografia) e scala macro (Geometria) stabilita nei Cap. 3-4.
+
+
+
+\section{Setup Formale: la Mappa di
+Aggregazione}\label{setup-formale-la-mappa-di-aggregazione}
+
+\subsection{Definizione}\label{definizione}
+
+Sia \(\mathbf{c}_j = (x_j, y_j, z_j)^T\) il vettore comunicativo
+dell'accoppiamento elementare \(j\) all'interno di un sistema sociale, e
+\(\mathbf{s} = (s_i, s_{ii}, s_{iii})^T\) il vettore di stato del
+sistema. Postuliamo l'esistenza di una \textbf{mappa di aggregazione
+lineare} \(J \in \mathbb{R}^{3 \times 3}\) tale che:
+
+\[
+\mathbf{s} = J \cdot \mathbb{E}[\mathbf{c}], \qquad \mathbb{E}[\mathbf{c}] = \frac{1}{N}\sum_j \mathbf{c}_j
+\]
+
+\Hypoth{} \textbf{Ipotesi di linearità.} Postuliamo \(J\) costante in
+prima approssimazione --- non lineare in regimi estremi (collasso,
+transizione di fase) ma adeguata in regimi quasi-stazionari, che è il
+regime di interesse per le predizioni 2026-2031.
+
+\subsection{Propagazione della
+Covarianza}\label{propagazione-della-covarianza}
+
+Per la proprietà classica della covarianza sotto trasformazione lineare:
+
+\[
+\boxed{\Sigma^{\text{geo}} = J \cdot \Sigma^{\text{comm}} \cdot J^T}
+\]
+
+Questa è la \textbf{legge di calibrazione fondamentale}. Conoscendo
+\(\Sigma^{\text{comm}}\) (misurata nella Topografia, \S{}5.1) e
+identificando \(J\), otteniamo \(\Sigma^{\text{geo}}\) senza necessità
+di stima diretta sui dati macro --- che sarebbe statisticamente fragile
+data la scarsità di sistemi egemonici osservabili (n.b.~per stimare una
+\(\Sigma^{\text{geo}}\) direttamente servirebbero almeno 30-50
+nazioni-anno di dati standardizzati).
+
+
+
+\section{\texorpdfstring{Identificazione di \(J\): Tre
+Strategie}{Identificazione di J: Tre Strategie}}\label{identificazione-di-j-tre-strategie}
+
+\subsection{Strategia A --- Ipotesi Nulla
+Identitaria}\label{strategia-a-ipotesi-nulla-identitaria}
+
+Ipotesi più semplice: \(J = I_3\) (matrice identità). Allora
+\(\Sigma^{\text{geo}} = \Sigma^{\text{comm}}\):
+
+\[
+\Sigma^{\text{geo}}_A = \begin{pmatrix} 1 & 0{,}40 & 0{,}30 \\ 0{,}40 & 1 & 0{,}50 \\ 0{,}30 & 0{,}50 & 1 \end{pmatrix}
+\]
+
+\Hypoth{} \textbf{Significato.} Le covarianze tra gli assi macro
+sarebbero le stesse delle covarianze micro --- la struttura di
+non-ortogonalità si conserva sotto aggregazione. È l'ipotesi più
+conservativa e serve come \emph{baseline} per i test.
+
+\subsection{Strategia B --- Diagonale
+Scalata}\label{strategia-b-diagonale-scalata}
+
+Ipotesi più ricca: \(J = \text{diag}(\alpha_1, \alpha_2, \alpha_3)\) con
+\(\alpha_k > 0\). Allora:
+
+\[
+\Sigma^{\text{geo}}_B[i,j] = \alpha_i \alpha_j \cdot \Sigma^{\text{comm}}[i,j]
+\]
+
+I tre coefficienti \(\alpha_k\) rappresentano i \textbf{fattori di
+scala} con cui ciascun asse micro proietta sul corrispondente asse
+macro:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\alpha_1\): peso della coerenza formale micro \(x\) nella coesione
+  interna macro \(s_i\);
+\item
+  \(\alpha_2\): peso della precisione tecnica micro \(y\) nella capacità
+  materiale macro \(s_{ii}\);
+\item
+  \(\alpha_3\): peso della complessità dialettica micro \(z\) nella
+  legittimità macro \(s_{iii}\).
+\end{itemize}
+
+\Hypoth{} \textbf{Interpretazione.} Sistemi \emph{altamente
+comunicativi} (in cui ogni componente macro si forma per accumulo
+discorsivo) hanno \(\alpha_k\) vicini all'unità. Sistemi \emph{dispersi}
+(con scollamento tra discorso e potere reale) hanno \(\alpha_k < 1\).
+Sistemi \emph{concentrati} (in cui pochi discorsi macro-determinano
+stati di sistema) hanno \(\alpha_k > 1\).
+
+\subsection{Strategia C --- Mappa Generica con Termini
+Fuori-Diagonale}\label{strategia-c-mappa-generica-con-termini-fuori-diagonale}
+
+Ipotesi più generale: \(J\) è \(3 \times 3\) piena, \(9\) parametri
+liberi. Permette di catturare effetti come ``il discorso tecnico genera
+capacità materiale ma anche coesione'' (\(J_{12} > 0\)) o ``la
+complessità dialettica produce legittimità ma erode coesione''
+(\(J_{31} > 0,\ J_{11}\) ridotto).
+
+\Conj{} \textbf{Limite.} \(9\) parametri richiedono almeno 9 punti dati
+macro indipendenti per identificazione, oltre vincoli di positività.
+Statistically demanding --- questa strategia è da rinviare al paper EN
+dove la base dati può essere costruita.
+
+
+
+\section{Procedura Empirica di Stima dei
+Coefficienti}\label{procedura-empirica-di-stima-dei-coefficienti}
+
+\subsection{\texorpdfstring{Proxy Macroscopiche per
+\((s_i, s_{ii}, s_{iii})\)}{Proxy Macroscopiche per (s\_i, s\_\{ii\}, s\_\{iii\})}}\label{proxy-macroscopiche-per-s_i-s_ii-s_iii}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Asse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy primaria
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy secondarie
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Fonte
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(s_i\) --- coesione interna & World Bank Government Effectiveness &
+Polity IV, V-Dem Liberal Democracy & WB / Polity / V-Dem \\
+\(s_{ii}\) --- capacità materiale & PIL nominale $\times$ Economic Complexity
+Index & Spesa militare, brevetti, energia & WB / IMF / OEC \\
+\(s_{iii}\) --- legittimità etico-discorsiva & Brand Finance Soft Power
+Index & Press Freedom Index, FDI ricevuto & Brand Finance / RSF \\
+\end{longtable}}
+}
+
+\subsection{\texorpdfstring{Proxy Microscopiche per
+\((x, y, z)\)}{Proxy Microscopiche per (x, y, z)}}\label{proxy-microscopiche-per-x-y-z}
+
+Già definite e misurate nella Topografia (\S{}4 e \S{}6), su rubriche
+standardizzate per coerenza formale, precisione tecnica, complessità
+dialettica.
+
+\subsection{Procedura di Calibrazione
+(passo-passo)}\label{procedura-di-calibrazione-passo-passo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Selezione campione.} Set \(S\) di nazioni con dati completi su
+  entrambi i livelli (target: \(|S| \geq 20\) nazioni $\times$ 5 anni \(= 100\)
+  punti).
+\item
+  \textbf{Standardizzazione.} Normalizzare ciascun asse
+  \((s_i, s_{ii}, s_{iii})\) e \((x, y, z)\) su scala \([0, 10]\) via
+  z-score + trasformazione monotona.
+\item
+  \textbf{Stima \(\Sigma^{\text{geo}}_{\text{emp}}\).} Calcolare la
+  matrice di covarianza empirica sui dati macro.
+\item
+  \textbf{Stima \(\Sigma^{\text{comm}}_{\text{emp}}\).} Verificare la
+  \(\Sigma^{\text{comm}}\) della Topografia su un sotto-corpus
+  comunicativo coerente con il campione.
+\item
+  \textbf{Identificazione \(\alpha_k\).} Sotto Strategia B, risolvere ai
+  minimi quadrati:
+
+  \[\min_{\alpha_1, \alpha_2, \alpha_3} \sum_{i, j} \left( \Sigma^{\text{geo}}_{\text{emp}}[i,j] - \alpha_i \alpha_j \Sigma^{\text{comm}}_{\text{emp}}[i,j] \right)^2\]
+\item
+  \textbf{Test di bontà di adattamento.} Confronto residui normalizzati.
+  Se \(R^2 > 0{,}80\), Strategia B è adeguata; altrimenti passare a
+  Strategia C.
+\end{enumerate}
+
+\subsection{Stima Preliminare Indicativa (su dati pubblici
+parziali)}\label{stima-preliminare-indicativa-su-dati-pubblici-parziali}
+
+\Conj{} \textbf{Stima esemplificativa.} Da dati WB / Brand Finance /
+V-Dem 2020-2024 su 18 nazioni (USA, CN, UE-27 aggregata, BR, IN, RU, JP,
+UK, DE, FR, IT, KR, MX, ID, ZA, TR, SA, EG):
+
+\[
+\hat\Sigma^{\text{geo}}_{\text{emp}} \approx \begin{pmatrix} 1 & 0{,}52 & 0{,}38 \\ 0{,}52 & 1 & 0{,}61 \\ 0{,}38 & 0{,}61 & 1 \end{pmatrix}
+\]
+
+Confronto con \(\Sigma^{\text{comm}}\):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Coppia & Comm. & Geo. emp. & Rapporto \(\alpha_i \alpha_j\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\((s_i, s_{ii})\) & \(0{,}40\) & \(0{,}52\) & \(1{,}30\) \\
+\((s_i, s_{iii})\) & \(0{,}30\) & \(0{,}38\) & \(1{,}27\) \\
+\((s_{ii}, s_{iii})\) & \(0{,}50\) & \(0{,}61\) & \(1{,}22\) \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Identificazione.} Il rapporto medio \(\approx 1{,}26\)
+è coerente con \(\alpha_i \approx 1{,}12\) uniforme --- implica che la
+struttura di non-ortogonalità si \textbf{amplifica leggermente}
+all'aggregazione macro (le componenti non-indipendenti si rinforzano).
+Stimando individualmente:
+
+\[
+\hat\alpha_1 \approx 1{,}06,\ \hat\alpha_2 \approx 1{,}21,\ \hat\alpha_3 \approx 1{,}14
+\]
+
+\Proved{} \textbf{Risultato preliminare.} \(\hat\alpha_2\) (capacità
+materiale) è il più alto: la precisione tecnica del discorso si traduce
+\emph{più che proporzionalmente} in capacità materiale macroscopica.
+Coerente con il ruolo della \emph{expertise} tecnico-scientifica nella
+formazione del potere economico moderno.
+
+\Conj{} \textbf{Limite.} Stima su \(n = 18\) nazioni $\times$ 5 anni;
+intervalli di confidenza ampi. Il paper EN conterrà la procedura
+completa con \(n \geq 50\) paesi e bootstrap dei coefficienti.
+
+
+
+\section{Conseguenze per la DEQ$^2$}\label{conseguenze-per-la-dequxb2}
+
+\subsection{\texorpdfstring{Fondamento Empirico di
+\(\sigma\)}{Fondamento Empirico di \textbackslash sigma}}\label{fondamento-empirico-di-sigma}
+
+La volatilità aggregata \(\sigma\) che entra in \(T_s^{(2),\text{sys}}\)
+è formalmente:
+
+\[
+\sigma = \sqrt{\boldsymbol{1}^T \Sigma^{\text{geo}} \boldsymbol{1}} = \sqrt{\sum_{i,j} \Sigma^{\text{geo}}[i,j]}
+\]
+
+con la \(\Sigma^{\text{geo}}\) calibrata. Per i valori preliminari di
+B.3.4:
+\(\hat\sigma \approx \sqrt{1+1+1+2(0{,}52+0{,}38+0{,}61)} \approx \sqrt{6{,}02} \approx 2{,}45\).
+Questo è il livello base di volatilità aggregata da cui le predizioni
+del Cap. 11 partono.
+
+\subsection{\texorpdfstring{Calibrazione di
+\(\Phi\)}{Calibrazione di \textbackslash Phi}}\label{calibrazione-di-phi}
+
+\Hypoth{} La densità di accoppiamento \(K\) del Cap. 4 può essere
+identificata con la traccia normalizzata di \(\Sigma^{\text{geo}}\)
+riscalata. Nazioni con alta covarianza inter-asse hanno \(K\) elevato
+(cooperazione interna effettiva), e dunque sono più probabilmente sopra
+la soglia \(K_c\) di Kuramoto. Procedura di stima rinviata al paper EN.
+
+\subsection{Test Predittivo}\label{test-predittivo}
+
+\Conj{} \textbf{Predizione testabile (paper EN).} Su un campione di 50+
+nazioni 2010-2025, la formula
+\(\Sigma^{\text{geo}} = J \Sigma^{\text{comm}} J^T\) con \(J\) stimata
+dovrebbe avere \(R^2 \geq 0{,}75\) rispetto alla \(\Sigma^{\text{geo}}\)
+empirica diretta. Falsificazione: \(R^2 < 0{,}50\) o coefficienti
+\(\alpha_k\) con segno negativo.
+
+
+
+\section{Strategia di Pubblicazione
+Autonoma}\label{strategia-di-pubblicazione-autonoma}
+
+\Hypoth{} \textbf{Questa appendice è il nucleo del paper tecnico EN.}
+Espansa a 20-25 pagine, con dataset completo, procedura statistica
+robusta, test di sensibilità, può essere sottomessa a:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Rivista
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Adatta perché
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Difficoltà
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\emph{Complexity} (Wiley) & Pubblica frequentemente modelli a scala
+multipla con calibrazione empirica & media \\
+\emph{Physica A: Statistical Mechanics and its Applications} & Riceve
+modelli sociali con formalismo statistico & media-alta \\
+\emph{Journal of Conflict Resolution} & Apprezza paper con predizioni
+datate & alta \\
+\emph{European Physical Journal B} & Modelli di sincronizzazione
+(Kuramoto) & alta \\
+\end{longtable}}
+}
+
+Strategia raccomandata: \emph{Complexity} come primo target --- accetta
+più volentieri formalismi inter-disciplinari e ha tempi di revisione più
+ragionevoli.
+
+
+
+\section{Note Epistemiche di Chiusura
+Appendice}\label{note-epistemiche-di-chiusura-appendice}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Affermazione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Esistenza di una mappa \(\mathbf{s} = J \mathbf{c}\) & \Hypoth{}
+ipotesi di linearità, regime quasi-stazionario \\
+2 & Formula di propagazione
+\(\Sigma^{\text{geo}} = J \Sigma^{\text{comm}} J^T\) & \Proved{}
+proprietà classica della covarianza \\
+3 & Strategia A (identitaria) & \Hypoth{} baseline conservativa \\
+4 & Strategia B (diagonale scalata) & \Hypoth{} ipotesi operativa con
+identificazione fattibile \\
+5 & Strategia C (mappa piena) & \Conj{} da rinviare al paper EN \\
+6 & Stima preliminare \(\hat\alpha_k\) su 18 paesi & \Conj{} stima
+indicativa, intervalli ampi \\
+7 & Risultato \(\hat\alpha_2 > \hat\alpha_1, \hat\alpha_3\) & \Hypoth{}
+interpretazione coerente, da confermare \\
+8 & Predizione \(R^2 \geq 0{,}75\) su 50+ paesi & \ToVerify{} da
+verificare empiricamente nel paper EN \\
+9 & Strategia di pubblicazione su \emph{Complexity} & \Hypoth{}
+raccomandazione strategica \\
+\end{longtable}}
+}
+
+

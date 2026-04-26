@@ -1,0 +1,477 @@
+\chapter{\texorpdfstring{La Forma Sistemica: Derivazione di
+\(T_s^{(2),\text{sys}}\)}{La Forma Sistemica: Derivazione di T\_s\^{}\{(2),\textbackslash text\{sys\}\}}}\label{la-forma-sistemica-derivazione-di-t_s2textsys}
+
+\begin{quote}
+\textbf{Argomento portante:} la stabilità di un sistema non è la media
+delle stabilità dei suoi attori --- è quella media \emph{modulata dalla
+coerenza di fase}, che amplifica l'antifragilità collettiva e divide
+l'involuzione collettiva. La differenza tra \(T_s^{(2)}\) locale e
+\(T_s^{(2),\text{sys}}\) sistemico misura quanto un sistema
+\emph{spreca} per decoerenza interna.
+\end{quote}
+
+
+
+\section{Stato del Problema}\label{stato-del-problema}
+
+Il Cap. 3 ha derivato \(T_s^{(2)}\) come quantità \emph{locale} di un
+attore con componenti perfettamente allineate (\(\Phi = 1\)). Il \S{}3.1bis
+ha introdotto il parametro d'ordine di Kuramoto
+\(\Phi(t) = \left|\frac{1}{N}\sum_j e^{i\theta_j(t)}\right|\) e
+l'operatore di trasposizione
+\(\langle X \rangle_\Phi := \Phi \cdot \frac{1}{N}\sum_j X_j\).
+
+Resta aperta la domanda: \textbf{come \(A\) e \(\Omega\) si trasformano
+nel passaggio dalla scala locale alla scala sistemica?} La tesi di
+questo capitolo è che la trasformazione è \emph{asimmetrica}: \(\Phi\)
+si comporta come un \textbf{moltiplicatore} per l'antifragilità (la
+coerenza estende il guadagno da stress all'intero sistema) e come un
+\textbf{divisore} per l'involuzione (la decoerenza moltiplica gli
+sprechi). Da qui la forma:
+
+\[
+A_{\text{sys}} = \Phi \cdot \langle A \rangle, \qquad \Omega_{\text{sys}} = \frac{\langle \Omega \rangle}{\Phi}
+\]
+
+Il resto del capitolo deriva, motiva, verifica e interpreta questa
+asimmetria.
+
+
+
+\section{Setup Formale: il Campo dei Payoff
+Locali}\label{setup-formale-il-campo-dei-payoff-locali}
+
+Il sistema sociale è una popolazione di \(N\) accoppiamenti elementari
+(cittadino-discorso, attore-egemone, élite-massa, impresa-mercato).
+Ciascuno ha:
+
+\begin{itemize}
+\tightlist
+\item
+  una \textbf{fase} \(\theta_j(t) \in [0, 2\pi)\) --- posizione nel
+  ciclo di legittimazione/decoerenza dell'accoppiamento;
+\item
+  una \textbf{frequenza naturale} \(\omega_j\) --- ritmo intrinseco
+  dell'accoppiamento (cicli elettorali, di mercato, mediatici);
+\item
+  un \textbf{payoff istantaneo}
+  \(\Pi_j(t) = M_{e,j} \cdot Q_{0,j} \cdot (1 - \delta_{R,j} z_{R,j})\)
+  ereditato dalla legge micro della Topografia (\S{}3.1.2);
+\item
+  un'\textbf{antifragilità locale}
+  \(A_j = \partial^2 \Pi_j / \partial \sigma^2\);
+\item
+  un \textbf{coefficiente di involuzione locale}
+  \(\Omega_j = \Delta E_{\text{diss},j}/\Delta E_{\text{utili},j} - 1\).
+\end{itemize}
+
+\Hypoth{} \textbf{Ipotesi di campo medio.} Trattiamo le fasi come
+accoppiate via la dinamica di Kuramoto (1984):
+
+\[
+\frac{d\theta_j}{dt} = \omega_j + \frac{K}{N}\sum_{k=1}^{N} \sin(\theta_k - \theta_j)
+\]
+
+dove \(K \geq 0\) è la \emph{forza di accoppiamento sistemica} (densità
+mediatica, integrazione istituzionale, infrastruttura comunicativa).
+L'equazione si riduce, in termini del parametro d'ordine \(\Phi\), a:
+
+\[
+\frac{d\theta_j}{dt} = \omega_j + K\Phi \sin(\psi - \theta_j)
+\]
+
+Esiste una soglia critica \(K_c = 2/(\pi g(0))\), dove \(g(\omega)\) è
+la distribuzione delle frequenze naturali, sotto cui \(\Phi = 0\)
+(decoerenza completa) e sopra cui \(\Phi > 0\) (sincronizzazione
+parziale).
+
+\Proved{} \textbf{Conseguenza formale:} \(\Phi\) non è un parametro
+libero --- è determinato dalla densità infrastrutturale del sistema.
+Sistemi con bassa \(K\) (frammentazione) hanno \(\Phi \to 0\) anche se
+ciascun attore è perfettamente coerente con se stesso.
+
+
+
+\section{Trasposizione di A: l'Antifragilità
+Sistemica}\label{trasposizione-di-a-lantifragilituxe0-sistemica}
+
+\subsection{Argomento Strutturale}\label{argomento-strutturale}
+
+Un attore antifragile (\(A_j > 0\)) trae beneficio individuale dalla
+volatilità. Ma \emph{quel beneficio si trasferisce al sistema} solo se
+il sistema è abbastanza coerente da \textbf{redistribuire} il guadagno:
+condividere l'innovazione, propagare la lezione, integrare l'opzionalità
+acquisita.
+
+In un sistema decoerente, ogni attore antifragile cattura la propria
+rendita; il sistema nel suo complesso non cresce da quel guadagno. In un
+sistema coerente, lo stesso \(\langle A \rangle\) produce un guadagno
+aggregato moltiplicato dalla capacità di trasferimento \(\Phi\).
+
+\subsection{Forma Funzionale}\label{forma-funzionale}
+
+\Hypoth{} \textbf{Postulato di trasposizione (forma più semplice non
+banale):}
+
+\[
+A_{\text{sys}}(\Phi) = \Phi \cdot \langle A \rangle, \qquad \langle A \rangle = \frac{1}{N}\sum_j A_j
+\]
+
+Questa forma è la \textbf{prima espansione di Taylor} di
+\(A_{\text{sys}}\) attorno al regime di piena coerenza, soggetta alle
+due condizioni al contorno:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A_{\text{sys}}(\Phi = 1) = \langle A \rangle\) (la coerenza piena
+  recupera la media);
+\item
+  \(A_{\text{sys}}(\Phi = 0) = 0\) (la decoerenza piena annulla il
+  trasferimento).
+\end{itemize}
+
+\Proved{} \textbf{Verifica empirica preliminare.} Confronto USA /
+Brasile: gli USA hanno \(\langle A \rangle\) alto (Silicon Valley,
+mercato dei capitali dinamico, ecosistema startup), ma \(\Phi \to\)
+basso (polarizzazione, frammentazione del discorso, bassa coerenza
+istituzionale). Il Brasile ha \(\langle A \rangle\) medio (jeitinho,
+plasticità improvvisativa) ma \(\Phi\) alto (sincretismo culturale,
+coerenza simbolica). La predizione DEQ$^2$ è
+\(A_{\text{sys}}^{\text{USA}} \approx A_{\text{sys}}^{\text{BRA}}\) ---
+coerente con il declino relativo dell'efficienza sistemica USA degli
+anni 2020.
+
+\Conj{} \textbf{Limite della forma lineare.} È plausibile che per
+\(\Phi \to 1\) esistano effetti di saturazione (rendimenti decrescenti)
+che richiederebbero una forma
+\(A_{\text{sys}} = (1 - e^{-\alpha\Phi})\langle A \rangle\). La forma
+lineare è la più semplice consistente; alternative non lineari sono
+rinviate a verifica empirica nel paper EN.
+
+
+
+\section{Trasposizione di $\Omega$: l'Involuzione
+Sistemica}\label{trasposizione-di-ux3c9-linvoluzione-sistemica}
+
+\subsection{Argomento Strutturale}\label{argomento-strutturale-1}
+
+L'asimmetria con l'antifragilità è essenziale. Mentre \(A\) produce
+\emph{valore} che richiede coerenza per propagarsi, \(\Omega\) produce
+\emph{spreco} che la decoerenza \textbf{amplifica strutturalmente}.
+
+In un sistema coerente, gli sprechi si compensano: la dissipazione di un
+attore può alimentare l'utilità di un altro (l'energia residua del
+settore A diventa input del settore B). In un sistema decoerente, ogni
+attore dissipa indipendentemente, e gli sprechi si \textbf{sommano senza
+compensazione} --- anzi si moltiplicano per duplicazione, competizione
+improduttiva, perdita di standardizzazione.
+
+\subsection{Forma Funzionale}\label{forma-funzionale-1}
+
+\Hypoth{} \textbf{Postulato di trasposizione:}
+
+\[
+\Omega_{\text{sys}}(\Phi) = \frac{\langle \Omega \rangle}{\Phi}, \qquad \langle \Omega \rangle = \frac{1}{N}\sum_j \Omega_j
+\]
+
+Condizioni al contorno verificate:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\Omega_{\text{sys}}(\Phi = 1) = \langle \Omega \rangle\) (la
+  coerenza piena recupera la media);
+\item
+  \(\Omega_{\text{sys}}(\Phi \to 0) \to \infty\) (la decoerenza piena fa
+  esplodere la dissipazione collettiva).
+\end{itemize}
+
+\Proved{} \textbf{Verifica empirica preliminare.} La Cina ha
+\(\langle \Omega \rangle\) molto alto (Neijuan endemico nei settori 996,
+sovracapacità industriale, \emph{involution} documentata da Xiang Biao)
+ma \(\Phi\) alto (coerenza di comando del PCC).
+\(\Omega_{\text{sys}}^{\text{CINA}} = \langle\Omega\rangle/\Phi \approx \langle\Omega\rangle\)
+--- alto ma contenuto. L'India ha \(\langle \Omega \rangle\) medio ma
+\(\Phi\) basso (frammentazione comunitaria, federalismo competitivo); la
+sua \(\Omega_{\text{sys}}\) effettiva è proporzionalmente peggiore di
+quanto suggerisca la metrica locale. Coerente con la difficoltà indiana
+a tradurre la propria base produttiva in coerenza geopolitica.
+
+\Conj{} \textbf{Asimmetria notazionale: perché $\Phi$ moltiplica A ma divide
+$\Omega$?} È l'\textbf{asimmetria fondamentale tra valore e spreco}. Il valore
+richiede \emph{trasporto} per moltiplicarsi (e \(\Phi\) è il
+coefficiente di trasporto). Lo spreco non richiede trasporto --- si
+moltiplica per duplicazione spontanea ogni volta che il trasporto è
+assente. Questa asimmetria è la firma matematica della \textbf{seconda
+legge della termodinamica applicata ai sistemi sociali}: l'ordine si
+trasmette, il disordine si crea ovunque non sia inibito.
+
+
+
+\section{\texorpdfstring{Derivazione di
+\(T_s^{(2),\text{sys}}\)}{Derivazione di T\_s\^{}\{(2),\textbackslash text\{sys\}\}}}\label{derivazione-di-t_s2textsys}
+
+\subsection{Costruzione}\label{costruzione}
+
+Partiamo dalla forma locale del Cap. 3:
+
+\[
+T_s^{(2)} = \frac{s_{iii} \cdot z \cdot \delta \cdot (1 + A)}{\sigma \cdot \varepsilon_{\text{dis}} \cdot (1 + \Omega)}
+\]
+
+Per ottenere la forma sistemica, sostituiamo \(A \to A_{\text{sys}}\) e
+\(\Omega \to \Omega_{\text{sys}}\) secondo i postulati di trasposizione,
+mantenendo le altre variabili come quantità sistemiche aggregate
+(legittimità collettiva \(s_{iii}\), complessità dialettica media \(z\),
+orizzonte \(\delta\), volatilità ambientale \(\sigma\), coefficiente di
+disimpegno \(\varepsilon_{\text{dis}}\)):
+
+\[
+\boxed{T_s^{(2),\text{sys}} = \frac{s_{iii} \cdot z \cdot \delta \cdot \left(1 + \Phi \langle A \rangle\right)}{\sigma \cdot \varepsilon_{\text{dis}} \cdot \left(1 + \dfrac{\langle \Omega \rangle}{\Phi}\right)}}
+\]
+
+\Proved{} \textbf{Coincide con la forma anticipata nell'Introduzione del
+libro} (sezione \emph{Apparato formale chiave}). La derivazione qui
+presentata è la giustificazione formale di quella formula.
+
+\subsection{Verifiche di Consistenza nei
+Limiti}\label{verifiche-di-consistenza-nei-limiti}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Limite
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Forma di \(T_s^{(2),\text{sys}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi \to 1\) &
+\(\dfrac{s_{iii} z \delta (1+\langle A\rangle)}{\sigma \varepsilon_{\text{dis}} (1+\langle\Omega\rangle)}\)
+& Recupero di \(T_s^{(2)}\) con \(A = \langle A\rangle\),
+\(\Omega = \langle\Omega\rangle\) \Proved{} \\
+\(\Phi \to 0\) &
+\(\dfrac{s_{iii} z \delta}{\sigma \varepsilon_{\text{dis}}} \cdot \dfrac{1}{\infty} \to 0\)
+& Decoerenza piena = collasso sistemico \Proved{} \\
+\(\langle A\rangle \to \infty\), \(\Phi\) finito &
+\(T_s^{(2),\text{sys}} \to \infty\) & Antifragilità infinita salva il
+sistema \Proved{} \\
+\(\langle\Omega\rangle \to \infty\), \(\Phi\) finito &
+\(T_s^{(2),\text{sys}} \to 0\) & Involuzione totale fa collassare il
+sistema \Proved{} \\
+\(K < K_c\) & \(\Phi = 0 \Rightarrow T_s^{(2),\text{sys}} = 0\) & Sotto
+la soglia di accoppiamento di Kuramoto, qualsiasi sistema collassa
+\Proved{} \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Risultato strutturale.} Tutti i limiti hanno
+interpretazione coerente. Nessun limite produce comportamento
+patologico.
+
+
+
+\section{Il Punto Critico di $\Phi$}\label{il-punto-critico-di-ux3c6}
+
+\subsection{La $\Phi$ Critica}\label{la-ux3c6-critica}
+
+\Hypoth{} \textbf{Definizione operativa.} Dato un sistema con
+\((s_{iii}, z, \delta, \sigma, \varepsilon_{\text{dis}}, \langle A\rangle, \langle\Omega\rangle)\)
+fissati, la \textbf{soglia critica di coerenza} \(\Phi^*\) è il valore
+per cui \(T_s^{(2),\text{sys}}(\Phi^*) = 1\). Imponendo l'uguaglianza in
+\(T_s^{(2),\text{sys}}\) e moltiplicando per \(\Phi^*\) entrambi i lati
+si ottiene la forma \emph{quadratica esatta}:
+
+\[
+s_{iii} z \delta \langle A\rangle \cdot (\Phi^*)^2 + (s_{iii} z \delta - \sigma \varepsilon_{\text{dis}}) \cdot \Phi^* - \sigma \varepsilon_{\text{dis}} \langle\Omega\rangle = 0
+\]
+
+\Hypoth{} \textbf{Approssimazione lineare di servizio (per
+\(\Phi^* \approx 1\)).} Trascurando il termine quadratico in \(\Phi^*\)
+--- accettabile in regime di alta coerenza, vicino a 1 --- si ottiene la
+forma \emph{linearizzata}:
+
+\[
+\Phi^*_{\text{lin}} \approx \frac{\sigma \varepsilon_{\text{dis}} \langle\Omega\rangle - s_{iii} z \delta}{s_{iii} z \delta \langle A\rangle - \sigma \varepsilon_{\text{dis}}}
+\]
+
+\Proved{} \textbf{Forma esatta.} La risoluzione completa della
+quadratica via formula classica è derivata esplicitamente
+nell'\textbf{Appendice A \S{}A.7} ed è da preferire per sistemi in regime
+di forte decoerenza (\(\Phi\) lontano da 1) --- caso paradigmatico, USA
+del Cap. 7.
+
+\Hypoth{} \textbf{Interpretazione.} Sistemi con \(\Phi(t) < \Phi^*\)
+sono in \textbf{regime di transizione di fase imminente} (nel senso del
+Cap. 3, \S{}3.5.3). Il monitoraggio empirico di \(\Phi\) diventa il primo
+indicatore precoce di crisi sistemica.
+
+\subsection{Le Quattro Posizioni
+Strutturali}\label{le-quattro-posizioni-strutturali}
+
+In funzione di \(\Phi\) e dei parametri locali, distinguiamo quattro
+posizioni strutturali --- che mappano direttamente i quattro attori del
+libro:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Posizione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Phi\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\langle A\rangle\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\langle\Omega\rangle\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Attore paradigmatico
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Solitone metastabile} & n.a. (\(N=1\)) & molto alto & basso &
+Musk \\
+\textbf{Egemone decoerente} & basso & alto & medio & USA \\
+\textbf{Rigido sincronizzato} & alto & basso & alto & Cina \\
+\textbf{Bilanciere quantistico} & alto & medio & basso & Brasile \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Risultato non banale.} Il \textbf{Bilanciere
+quantistico} non è il sistema con i parametri locali migliori --- è
+quello in cui \emph{la combinazione} di \(\Phi\) alto,
+\(\langle A\rangle\) medio e \(\langle\Omega\rangle\) basso massimizza
+\(T_s^{(2),\text{sys}}\). È una posizione strutturale, non una proprietà
+essenziale: qualsiasi sistema può occupare la posizione del Bilanciere
+se costruisce la giusta combinazione. Questo è il cuore del programma
+politico del libro.
+
+
+
+\section{Implicazioni Interpretative}\label{implicazioni-interpretative}
+
+\subsection{Perché la Cina non vince}\label{perchuxe9-la-cina-non-vince}
+
+Nonostante \(\Phi\) alto e capacità materiale enorme, la Cina ha
+\(\langle\Omega\rangle\) molto alto (Neijuan strutturale). Anche con la
+divisione \(\langle\Omega\rangle/\Phi\) favorevole, l'involuzione resta
+tossica. Inoltre, l'\(\langle A\rangle\) basso (innovazione vincolata
+dalla pianificazione) limita la convessità sistemica. Predizione DEQ$^2$:
+\(T_s^{(2),\text{sys}}\) cinese sopra 1 ma con margine in erosione.
+
+\subsection{Perché gli USA non si
+stabilizzano}\label{perchuxe9-gli-usa-non-si-stabilizzano}
+
+L'\(\langle A\rangle\) resta alto ma \(\Phi\) è in declino persistente
+(polarizzazione, frammentazione mediatica, secessionismo culturale). Il
+prodotto \(\Phi\langle A\rangle\) si comprime; la divisione
+\(\langle\Omega\rangle/\Phi\) si amplifica. Predizione DEQ$^2$:
+\(T_s^{(2),\text{sys}}\) USA in avvicinamento alla soglia \(\Phi^*\) tra
+2027 e 2029.
+
+\subsection{Perché Musk è solitone}\label{perchuxe9-musk-uxe8-solitone}
+
+In quanto attore singolo, Musk non ha un \(\Phi\) definito (\(N=1\)). Il
+suo \(A\) individuale è eccezionale, ma non si può aggregare. La sua
+\emph{strategia di sopravvivenza} consiste nel restare uno (no
+successione, no istituzionalizzazione) --- dunque il suo \(T_s^{(2)}\) è
+un caso limite del formalismo, non un caso sistemico.
+
+\subsection{Perché il Brasile è candidato a
+$\Phi$-engine}\label{perchuxe9-il-brasile-uxe8-candidato-a-ux3c6-engine}
+
+L'Estado Logístico (Cervo) descrive un attore che \emph{esporta
+coerenza}: il Brasile non vince per capacità materiale ma per la sua
+capacità di \textbf{proiettare \(\Phi\)} in regioni decoerenti
+(Mercosul, BRICS, dialogo nord-sud, mediazione climatica).
+L'\(\langle A\rangle\) medio è sufficiente, \(\langle\Omega\rangle\)
+contenuto è cruciale. La predizione testabile (Cap. 11): se il Brasile
+mantiene \(\Phi > 0{,}7\) tra il 2026 e il 2031,
+\(T_s^{(2),\text{sys}}\) brasiliano sale sopra il livello dei tre
+concorrenti.
+
+
+
+\section{Sintesi del Capitolo}\label{sintesi-del-capitolo}
+
+\Proved{} \textbf{In una frase:} la stabilità sistemica è la stabilità
+locale modulata da una \textbf{coerenza di fase asimmetrica} ---
+moltiplicativa per il valore (antifragilità), divisoria per lo spreco
+(involuzione) --- che traduce l'asimmetria termodinamica fondamentale
+tra ordine e disordine in legge geopolitica.
+
+\[
+T_s^{(2),\text{sys}} = \frac{s_{iii} z \delta \cdot (1 + \overbrace{\Phi\langle A\rangle}^{\text{valore amplificato dalla coerenza}})}{\sigma \varepsilon_{\text{dis}} \cdot (1 + \underbrace{\langle\Omega\rangle/\Phi}_{\text{spreco amplificato dalla decoerenza}})}
+\]
+
+La forma chiude la catena
+\(\Pi(t+1) \to \langle\Pi\rangle_\Phi \to T_s^{(2)} \to T_s^{(2),\text{sys}}\)
+aperta nel \S{}3.1bis. Da qui in poi, il libro è applicato: il Cap. 5
+organizza le quattro variabili strutturali
+\((\Phi, A, \Omega, \varepsilon_{\text{dis}})\) in quadro coerente per
+le applicazioni della Parte III.
+
+
+
+\section{Note Epistemiche di Chiusura
+Capitolo}\label{note-epistemiche-di-chiusura-capitolo}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Affermazione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & L'ipotesi di campo medio di Kuramoto applicata al sistema sociale &
+\Hypoth{} ipotesi operativa di scala \\
+2 & La determinazione di \(\Phi\) dalla soglia \(K_c\) & \Proved{}
+risultato classico (Kuramoto 1984) \\
+3 & La forma \(A_{\text{sys}} = \Phi \langle A\rangle\) & \Hypoth{}
+prima espansione consistente (alternative non lineari da testare) \\
+4 & La forma \(\Omega_{\text{sys}} = \langle\Omega\rangle/\Phi\) &
+\Hypoth{} prima espansione consistente (alternative non lineari da
+testare) \\
+5 & L'asimmetria \(\Phi\)-moltiplica-\(A\)
+vs.~\(\Phi\)-divide-\(\Omega\) & \Hypoth{} firma termodinamica del
+sistema sociale \\
+6 & I limiti \(\Phi \to 0, 1\) producono comportamento atteso &
+\Proved{} verificato analiticamente \\
+7 & La soglia \(\Phi^*\) come indicatore precoce & \Hypoth{} ipotesi
+operativa testabile \\
+8 & La mappatura quattro-attori $\to$ quattro-posizioni & \Hypoth{} quadro
+interpretativo, formalizzato in Parte III \\
+9 & La predizione su \(T_s^{(2),\text{sys}}\) USA in avvicinamento a
+\(\Phi^*\) tra 2027-2029 & \Conj{} congettura datata, falsificabile \\
+10 & La predizione su Brasile-$\Phi$-engine condizionata a \(\Phi > 0{,}7\) &
+\Conj{} congettura datata, falsificabile \\
+\end{longtable}}
+}
+
+

@@ -1,0 +1,658 @@
+\chapter{Scenari Quantizzati e Dashboard
+SPC-DEQ}\label{scenari-quantizzati-e-dashboard-spc-deq}
+
+\begin{quote}
+\textbf{Argumento central:} la DEQ$^2$ è una teoria \emph{operativa}
+porque ammette una traduzione diretta in \textbf{Statistical Process
+Control adattato ai sistemi sociali}. La Dashboard SPC-DEQ è la
+proiezione monitorabile di \(\boldsymbol{p}(t) \in \mathbb{V}^{(4)}\) in
+\emph{sei pannelli bivariati} (uno per ciascuna relazione R1-R6) più un
+\emph{painel agregado} della distanza scalare
+\(d(\boldsymbol{p}(t), \mathcal{S})\). Le soglie operative non sono
+regole arbitrarie ma derivano dalla geometria della superficie critica
+\(\mathcal{S}\) e dalla varianza naturale degli indicatori. I tre attori
+principali (USA, China, Brasil) sono mappati in scenari quantizzati
+2026-2031, con uno scenario aggregato e due contro-fattuali brasiliani
+che dipendono dall'esito elettorale del 4 ottobre 2026.
+\end{quote}
+
+
+
+\section{Perché SPC}\label{perchuxe9-spc}
+
+\Hypoth{} \textbf{Tradizione tecnica.} Lo \emph{Statistical Process
+Control} (Walter Shewhart, 1924; Edward Deming, 1950s; Six Sigma 1980s)
+è la disciplina che monitora processi industriali por meio de \emph{carte di
+controllo} con limiti \(UCL\) (upper) e \(LCL\) (lower) calibrati sulla
+varianza naturale del processo. Le \emph{regole di Western Electric}
+(1956) identificano pattern di derive sistematiche primeiro che il processo
+esca dai limiti.
+
+\Hypoth{} \textbf{Adattamento alla DEQ$^2$.} Il sistema sociale è
+formalmente analogo a un processo industriale con due differenze:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Differenza SPC industriale $\to$ SPC-DEQ$^2$
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Adattamento richiesto
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Variabili continue univariate $\to$ variáveis strutturali
+\(\mathbb{V}^{(4)}\) multivariate & Sei pannelli bivariati (R1-R6) +
+painel agregado \(d(\boldsymbol{p}, \mathcal{S})\) \\
+Limiti \(UCL/LCL\) simmetrici $\to$ superficie critica \(\mathcal{S}\)
+asimmetrica & \(\mathcal{S}\) ricavata analiticamente dal Cap.~5.3, non
+dalla varianza \\
+Causa speciale = fora de controle $\to$ transição de fase =
+\(T_s^{(2),\text{sys}} < 1\) persistente & Soglia di persistenza
+\(\Delta t > \Delta t^*\) (Cap.~3.5.3) \\
+Capability index \(C_p = (USL-LSL)/6\sigma\) $\to$ indice DEQ$^2$
+\(C_{\text{DEQ}}^2 := d(\boldsymbol{p}, \mathcal{S}) / \sigma_d\) &
+Quantità scalare confrontabile fra sistemi \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Conseguenza operativa.} La Dashboard SPC-DEQ è
+\emph{azione politica formalizzata}: ogni leva del Cap.~5.5 (gradi di
+libertà operativi) corrisponde a un intervento mirato su uno o più
+pannelli. Non è strumento di previsione passiva --- è \emph{interfaccia
+di pilotaggio} del punto \(\boldsymbol{p}(t)\) in
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\).
+
+
+
+\section{I Sei Pannelli Bivariati}\label{i-sei-pannelli-bivariati}
+
+\Hypoth{} \textbf{Costruzione.} Per ciascuna relazione \(R_i\) del Cap.
+5.1, costruiamo un \emph{pannello bidimensionale} sulle due coordinate
+accoppiate, in cui:
+
+\begin{itemize}
+\tightlist
+\item
+  l'asse \(x\) è la primeiro variável della coppia;
+\item
+  l'asse \(y\) è la seconda;
+\item
+  una \emph{iso-curva} \(\mathcal{S}_i\) rappresenta la seção di
+  \(\mathcal{S}\) a \((s_{iii}, z, \delta, \sigma)\) esogeni fissi e
+  altre due variáveis al loro valore mediano sistemico;
+\item
+  il punto attuale \(\boldsymbol{p}(t)\) è proiettato e tracciato come
+  \emph{trail temporale} (ultimi 12-24 mesi);
+\item
+  una \emph{zona di near-miss} (banda colorata tra \(\mathcal{S}_i\) e
+  \(0{,}9 \cdot \mathcal{S}_i\) in distanza euclidea normalizzata)
+  segnala l'avvicinamento alla criticità.
+\end{itemize}
+
+\Proved{} \textbf{I sei pannelli con interpretazione operativa.}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Pannello
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Coppia
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Iso-curva
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Direzione di sicurezza
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Allarme tipico
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{P1} & \(\Phi\)-\(A\) &
+\(A = (\Phi^{-1} - 1)/\langle A\rangle_{\text{ref}}\) & NE (alto
+\(\Phi\), alto \(A\)) & \(\boldsymbol{p}\) scende verso SW (decoerência
+fragilizzante) \\
+\textbf{P2} & \(\Phi\)-\(\Omega\) & \(\Phi = \Omega/\Omega_c\) con
+\(\Omega_c\) critica & NW (alto \(\Phi\), basso \(\Omega\)) &
+\(\boldsymbol{p}\) migra verso SE (decoerência con dissipazione) \\
+\textbf{P3} & \(\Phi\)-\(\varepsilon_{\text{dis}}\) &
+\(\Phi = 1 - \varepsilon_{\text{dis}}/\varepsilon_c\) & NW (alto
+\(\Phi\), basso \(\varepsilon\)) & \(\boldsymbol{p}\) verso SE
+(decoerência con disimpegno) \\
+\textbf{P4} & \(A\)-\(\Omega\) & \(A = -\Omega \cdot k_4\) (\(k_4 > 0\))
+& NW (alto \(A\), basso \(\Omega\)) & \(\boldsymbol{p}\) verso SE
+(fragilidade con dissipazione --- pattern \emph{chinês}) \\
+\textbf{P5} & \(A\)-\(\varepsilon_{\text{dis}}\) &
+\(A = (1 - \varepsilon)/k_5\) & NW (alto \(A\), basso \(\varepsilon\)) &
+\(\boldsymbol{p}\) verso SE (fragilidade con disimpegno --- pattern
+\emph{USA}) \\
+\textbf{P6} & \(\Omega\)-\(\varepsilon_{\text{dis}}\) &
+\(\varepsilon_{\text{dis}} = k_6 \cdot \Omega\) & SW (basso \(\Omega\),
+basso \(\varepsilon\)) & \(\boldsymbol{p}\) verso NE (dissipazione che
+alimenta disimpegno --- pattern \emph{involutivo}) \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Pannello aggregato \(P_0\).} La distanza scalare
+\(d(\boldsymbol{p}(t), \mathcal{S})\) è tracciata su un'unica carta di
+controllo con:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{zona verde}: \(d > 0{,}30\) (margine di sicurezza ampio);
+\item
+  \emph{zona gialla}: \(0 < d \leq 0{,}30\) (vigilanza);
+\item
+  \emph{zona rossa}: \(-0{,}20 < d \leq 0\) (sotto soglia ma
+  reversibile);
+\item
+  \emph{zona nera}: \(d \leq -0{,}20\) (transição de fase consolidata,
+  \(\Delta t > \Delta t^*\) richiesto).
+\end{itemize}
+
+
+
+\section{Soglie Operative e Segnali di Allarme
+Precoce}\label{soglie-operative-e-segnali-di-allarme-precoce}
+
+\Hypoth{} \textbf{Adattamento delle regole di Western Electric a
+\(\mathbb{V}^{(4)}\).} La logica WE classica si traduce in cinque
+pattern DEQ$^2$:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Pattern WE-DEQ$^2$
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Definizione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{WE-1} & Un punto in zona rossa o nera & Allarme immediato ---
+entrata in \(\mathcal{R}_-\) \\
+\textbf{WE-2} & Due di tre punti consecutivi in zona gialla o peggio &
+Deriva confermata --- intervenire entro un trimestre \\
+\textbf{WE-3} & Quattro di cinque punti consecutivi in zona gialla &
+Trend estrutural --- riallineare leve operative del Cap.~5.5 \\
+\textbf{WE-4} & Otto punti consecutivi in derivata \(\dot d < 0\) &
+Erosione lenta --- diagnosi delle relazioni R1-R6 più stressate \\
+\textbf{WE-5} & Inversione di derivata seconda \(\ddot d < 0\) con
+\(d > 0\) & Pre-allarme --- sistema ancora sicuro ma sta accelerando il
+declino \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Test sui dati 2024-2026 dei tre attori} (verificação
+retrospettiva qualitativa):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Attore
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Pattern attivati 2024-2026
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Coerenza con Cap.~7-9
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+USA & WE-1 (zona rossa, V-Dem \(0{,}57\)), WE-3 (Pew trust in declino 4
+anni), WE-4 (erosione lenta su tutti i pannelli) & \Proved{} Cap.~7 \\
+China & WE-4 su P2 (deflazione PPI 10 trim.), WE-2 su P4 (involution +
+property) & \Proved{} Cap.~8 \\
+Brasil & WE-5 su painel agregado (approval calante, ma \(d > 0\)) &
+\Proved{} Cap.~9.5 \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Conseguenza metodologica.} I tre attori esibiscono
+pattern WE-DEQ$^2$ \emph{qualitativamente diversi} --- il che valida la
+pertinenza diagnostica del cruscotto. La diagnosi non sostituisce
+l'interpretazione estrutural dei Cap.~7-9 ma la \emph{quantifica} in
+segnali operativi standard.
+
+
+
+\section{Scenari Quantizzati per Attore:
+2026-2031}\label{scenari-quantizzati-per-attore-2026-2031}
+
+\Hypoth{} \textbf{Discretizzazione per scenari.} Anziché simulare il
+sistema dinamico continuo del Cap.~5.4, adottiamo \emph{scenari
+quantizzati}: tre traiettorie per attore (best/median/worst case)
+parâmetroszzate dal valore di una variável critica esogena (per gli USA:
+\(\zeta_{\text{Sol}}(t)\); per la China: \(K^{\text{imposto}}\); per il
+Brasil: esito elettorale 4/10/2026). Le tre traiettorie partono dal
+punto stimato \(\boldsymbol{p}(2026)\) del Cap.~5.2 e si sviluppano in
+sei tappe annuali.
+
+\subsection{USA --- Scenari 2026-2031}\label{usa-scenari-2026-2031}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Anno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{median} (probabilità \(\approx 0{,}50\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{worst} (\(\approx 0{,}30\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{best} (\(\approx 0{,}20\))
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2026 & \(d \approx -0{,}10\) (zona rossa) & \(d \approx -0{,}10\) &
+\(d \approx -0{,}10\) \\
+2027 & \(d \approx -0{,}15\) ; midterm split, \(\Omega \uparrow\) &
+\(d \approx -0{,}25\) ; escalation costituzionale &
+\(d \approx -0{,}05\) ; SCOTUS riequilibra \\
+2028 & \(d \approx -0{,}18\) ; presidenziali, \(\Phi\) scende
+ulteriormente & \(d \approx -0{,}35\) ; transição de fase consolidata
+& \(d \approx 0\) ; nuovo equilibrio post-elettorale \\
+2029 & \(d \approx -0{,}20\) ; stato stazionario decoerente &
+\(d \approx -0{,}40\) ; instabilità acuta & \(d \approx +0{,}05\) ;
+recupero parziale \(s_{iii}\) \\
+2030 & \(d \approx -0{,}22\) & \(d \approx -0{,}45\) ; crisi monetaria
+possibile & \(d \approx +0{,}08\) \\
+2031 & \(d \approx -0{,}25\) ; \emph{potenza materiale senza fase} &
+\(d \approx -0{,}50\) ; rottura estrutural & \(d \approx +0{,}10\) ;
+consolidamento del recupero \\
+\end{longtable}}
+}
+
+\Conj{} \textbf{Predizione DEQ$^2$ mediana}:
+\(T_s^{(2),\text{sys},\text{USA}} < 1\) in tutti gli scenari per
+l'intero orizzonte 2026-2031. Recupero solo nello scenario best,
+condicional a SCOTUS attivo + nuova amministrazione \(\neq\) Trump 2.0.
+
+\subsection{China --- Scenari 2026-2031}\label{cina-scenari-2026-2031}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Anno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{median} (\(\approx 0{,}45\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{worst} (\(\approx 0{,}30\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{best} (\(\approx 0{,}25\))
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2026 & \(d^{\text{oss}} \approx +0{,}25\) ;
+\(d^{\text{spont}} \approx -0{,}05\) & come median & come median \\
+2027 & \(d^{\text{oss}}\) stabile ; \(d^{\text{spont}} \approx -0{,}10\)
+; deflazione \(> 12\) trim. & \(d^{\text{oss}}\) scende a \(+0{,}10\) ;
+tensione Taiwan acuta & \(d^{\text{oss}} \approx +0{,}28\) ;
+anti-involution efficace, riforma proprietà \\
+2028 & divergenza oss/spont si amplia & possibile evento \emph{bloqueo}
+Taiwan & recupero TFP modesto \\
+2029 & \(d^{\text{oss}}\) inizia a calare per \emph{fatica del K
+imposto} & crisi politica interna & \(d^{\text{oss}}\) stabile,
+\(d^{\text{spont}}\) recupera \\
+2030 & \(d^{\text{oss}} \approx +0{,}10\) ;
+\(d^{\text{spont}} \approx -0{,}20\) & rottura del cluster sincronizzato
+& \(d^{\text{oss}} \approx +0{,}30\) \\
+2031 & candidato a \emph{transizione catastrofica} nel triennio
+successivo & transizione catastrofica avvenuta & metà-soft landing \\
+\end{longtable}}
+}
+
+\Conj{} \textbf{Predizione DEQ$^2$ mediana}: divario crescente
+\(d^{\text{oss}} - d^{\text{spont}}\), con \emph{fatica del \(K\)
+imposto} visibile a partir del 2029. La transição de fase chinês ha
+probabilità \(\approx 0{,}40\)-\(0{,}55\) di attivarsi nel triennio
+2030-2032 --- \emph{fuori} dall'orizzonte centrale del libro ma dentro
+alla coda di rilevanza.
+
+\subsection{Brasil --- Scenari 2026-2031 con Biforcazione 4 ottobre
+2026}\label{brasile-scenari-2026-2031-con-bifurcação-4-ottobre-2026}
+
+\Hypoth{} \textbf{Schema doppio.} Per il Brasil gli scenari sono
+\emph{condizionali} all'esito elettorale. Dividiamo in due rami
+principali:
+
+\textbf{Ramo A/B --- Vittoria Lula o successore di sinistra}
+(probabilità aprile 2026 \(\approx 0{,}55\)-\(0{,}70\)):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Anno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{median}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Worst-A/B}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Best-A/B}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2027 & \(d \approx +0{,}12\) ; consolidamento istituzionale &
+\(d \approx +0{,}05\) ; fiscale teso & \(d \approx +0{,}20\) ; TFFF
+parte forte \\
+2028 & \(d \approx +0{,}15\) ; BRICS BMG operativo &
+\(d \approx +0{,}08\) & \(d \approx +0{,}25\) ; \emph{$\Phi$-engine}
+riconosciuto \\
+2029 & \(d \approx +0{,}18\) & \(d \approx +0{,}10\) &
+\(d \approx +0{,}28\) \\
+2030 & \(d \approx +0{,}20\) ; presidenziali fisiologiche &
+\(d \approx +0{,}05\) ; alternanza stretta & \(d \approx +0{,}30\) \\
+2031 & \(d \approx +0{,}22\) ; \emph{$\Phi$-engine} consolidato &
+\(d \approx +0{,}10\) ; condicional alla nuova amministrazione &
+\(d \approx +0{,}32\) ; leadership globale Sud \\
+\end{longtable}}
+}
+
+\textbf{Ramo C --- Vittoria Flávio Bolsonaro o destra radicale}
+(probabilità \(\approx 0{,}30\)-\(0{,}40\)):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Anno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scenario \emph{median-C}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Worst-C}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Best-C}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2027 & \(d \approx +0{,}05\) ; primi 100 giorni transizione &
+\(d \approx -0{,}05\) ; smantellamento STF tentato &
+\(d \approx +0{,}10\) ; vincoli istituzionali tengono \\
+2028 & \(d \approx -0{,}05\) ; uscita Group of Friends; V-Dem cala
+\(0{,}05\) & \(d \approx -0{,}15\) ; rottura BRICS &
+\(d \approx +0{,}08\) ; resiliência istituzionale \\
+2029 & \(d \approx -0{,}10\) ; \emph{solitonizzazione discorsiva} &
+\(d \approx -0{,}25\) ; pattern USA-like & \(d \approx +0{,}05\) \\
+2030 & \(d \approx -0{,}12\) & \(d \approx -0{,}30\) & \(d \approx 0\) ;
+pareggio precario \\
+2031 & \(d \approx -0{,}15\) ; \emph{$\Phi$-engine globale assente} &
+\(d \approx -0{,}35\) ; transição de fase regionale &
+\(d \approx -0{,}05\) ; mantenimento basale \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Tesi forte.} Il \textbf{divario fra Ramo A/B e Ramo C}
+nel 2031 è \(\Delta d \approx 0{,}30\)-\(0{,}40\) --- il più ampio fra
+qualunque variável considerata in tutto il libro. È la \textbf{misura
+quantitativa dell'importanza dell'elezione brasileira} del 4 ottobre
+2026 per l'intero sistema globale.
+
+
+
+\section{Lo Scenario Aggregato 2031: Quattro Mondi
+Possibili}\label{lo-scenario-aggregato-2031-quattro-mondi-possibili}
+
+\Hypoth{} \textbf{Costruzione.} Combinando gli scenari mediani per
+attore con i due rami brasiliani, obtemos quattro \emph{mondi
+possibili} al 2031, ciascuno caratterizzato da una distribuzione
+\(\{d_{\text{USA}}, d_{\text{Cina}}, d_{\text{Brasile}}\}\):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mondo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+USA
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+China
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Brasil
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Probabilità soggettiva
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Caratteristica estrutural
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{M1: Decoerenza globale con \(\Phi\)-engine attivo} & \(-0{,}25\)
+& \(+0{,}10/-0{,}20\) & \(+0{,}22\) (A/B) &
+\(\approx 0{,}35\)-\(0{,}40\) & Brasil come polo di compensazione del
+declino USA-China \\
+\textbf{M2: Decoerenza globale senza \(\Phi\)-engine} & \(-0{,}25\) &
+\(+0{,}10/-0{,}20\) & \(-0{,}15\) (C) & \(\approx 0{,}20\)-\(0{,}25\) &
+Multipolarità degenere --- frammentazione senza centro coerente \\
+\textbf{M3: Rottura chinês precoce + \(\Phi\)-engine attivo} &
+\(-0{,}25\) & \(-0{,}30\) (worst) & \(+0{,}22\) (A/B) &
+\(\approx 0{,}12\)-\(0{,}18\) & Riassetto sistemico veloce, Brasil
+referência \\
+\textbf{M4: Recupero USA + China soft landing + \(\Phi\)-engine attivo} &
+\(+0{,}10\) (best) & \(+0{,}30\) (best) & \(+0{,}22\) (A/B) &
+\(\approx 0{,}05\)-\(0{,}10\) & Stabilizzazione plurale --- scenario
+meno probabile ma operativamente più stabile \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Lettura.} I mondi M1 e M2 differiscono \emph{solo} per
+il ramo brasileiro. La loro probabilità combinata
+(\(\approx 0{,}55\)-\(0{,}65\)) misura la \emph{probabilità che il
+sistema globale 2031 sia in regime di decoerência generalizzata}; la
+presenza o assenza di un \(\Phi\)-engine ne determina la
+\emph{governabilità}. La Parte V del libro (Cap.~12-13) costruisce
+protocolli antifragili condizionati alla distinzione M1/M2.
+
+\Proved{} \textbf{Risultato sintetico.}
+\(P(\text{sistema globale 2031 in regime di decoerenza}) \approx 0{,}80\)-\(0{,}85\).
+\(P(\text{sistema globale 2031 con almeno un $\Phi$-engine}) \approx 0{,}55\)-\(0{,}70\).
+La differenza misura l'\textbf{ampiezza dello spazio di manovra residuo
+per il Sud globale e per le strategie del Cap.~12}.
+
+
+
+\section{\texorpdfstring{Indice \(C_{\text{DEQ}}^2\) e Confronto
+Cross-Attore}{Indice C\_\{\textbackslash text\{DEQ\}\}\^{}2 e Confronto Cross-Attore}}\label{indice-c_textdeq2-e-confronto-cross-attore}
+
+\Hypoth{} \textbf{Definizione operativa.}
+
+\[
+C_{\text{DEQ}}^2(\boldsymbol{p}, t) := \frac{d(\boldsymbol{p}(t), \mathcal{S})}{\sigma_d(t)}
+\]
+
+onde \(\sigma_d(t)\) è la deviazione standard naturale della distanza
+calcolata su una finestra mobile di 36 mesi precedenti \(t\).
+
+\Proved{} \textbf{Interpretazione.} \(C_{\text{DEQ}}^2 \geq 1\): il
+sistema è a oltre una deviazione standard dalla limiar crítico ---
+\emph{capability} sistemica accettabile. \(C_{\text{DEQ}}^2 \leq 0\): il
+sistema è dentro \(\mathcal{R}_-\). Il valore tipico desiderato per
+sistemi industriali è \(C_p \geq 1{,}33\); per sistemi sociali, anche
+per la maggiore stochasticity intrinseca, una soglia operativa
+ragionevole è \(C_{\text{DEQ}}^2 \geq 1{,}0\).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Attore
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_{\text{DEQ}}^2\) stimato 2026
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lettura
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+USA & \(\approx -0{,}5\) & sotto soglia, dentro \(\mathcal{R}_-\) \\
+China & \(\approx +1{,}1\) apparente / \(\approx +0{,}3\) effettivo &
+apparenza stabile, struttura fragile \\
+Brasil & \(\approx +1{,}3\) & unica configurazione
+\emph{industrial-grade} \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Conseguenza.} Il Brasil è l'unico attore della Parte
+III a soddisfare il criterio di \emph{capability industriale} applicato
+ai sistemi sociali --- coerente con la definição di \(\Phi\)-engine
+del Cap.~9.
+
+
+
+\section{Síntese do Capítulo}\label{sintesi-del-capítulo}
+
+\Proved{} \textbf{In una frase:} la Dashboard SPC-DEQ traduce
+\(\boldsymbol{p}(t) \in \mathbb{V}^{(4)}\) in sei pannelli bivariati
+monitorabili, un painel agregado \(d(\boldsymbol{p}, \mathcal{S})\),
+cinque regole di pattern detection adattate da Western Electric, e un
+indice scalare \(C_{\text{DEQ}}^2\) --- fornendo l'interfaccia operativa
+per le strategie del Cap.~12 e il quadro evidenziale per le predizioni
+del Cap.~11. I quattro mondi possibili al 2031 (M1-M4) consolidano
+l'analisi della Parte III in \emph{scenari probabilizzati} con
+probabilità soggettive esplicite.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Strumento
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Funzione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Capítulo che lo usa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sei pannelli bivariati P1-P6 & Diagnosi delle relazioni R1-R6 più
+stressate & Cap.~12 (interventi mirati) \\
+Pannello aggregato \(P_0 = d(\boldsymbol{p}, \mathcal{S})\) & Indicatore
+scalare di stabilità & Cap.~11 (predizioni) \\
+Cinque regole WE-DEQ$^2$ & Pattern detection precoce & Cap.~12 (allarme
+operativo) \\
+Indice \(C_{\text{DEQ}}^2\) & Confronto cross-attore & Cap.~11 (sintesi
+quantitativa) \\
+Scenari quantizzati per attore & Proiezioni 2026-2031 & Cap.~11
+(predizioni datate) \\
+Quattro mondi possibili 2031 & Scenari aggregati & Cap.~12-13 (strategie
+condizionali) \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Tesi conclusiva.} La DEQ$^2$ è ora \emph{operativa}. La
+Parte IV chiude la fase teorica del libro e apre la fase normativa: dato
+lo spazio degli scenari, \emph{quali strategie sono antifragili in
+ciascuno di essi?} Questo è l'oggetto della Parte V.
+
+
+
+\section{Notas Epistêmicas de Encerramento
+Capítulo}\label{note-epistemiche-di-chiusura-capítulo}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Afirmação
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Adattamento SPC industriale $\to$ DEQ$^2$ & \Hypoth{} traduzione
+estrutural rigorosa \\
+2 & Sei pannelli bivariati con iso-curve esplicite & \Hypoth{}
+costruzione operativa \\
+3 & Cinque regole WE-DEQ$^2$ & \Hypoth{} adattamento di Western Electric
+(1956) \\
+4 & Test retrospettivo 2024-2026 sui tre attori & \Proved{} pattern
+coerenti con Cap.~7-9 \\
+5 & Scenari quantizzati USA con \(d \to -0{,}25\) entro 2031 (median) &
+\Conj{} conjetura datata, derivata da Cap.~7 \\
+6 & Scenari China con divergenza \(d^{\text{oss}}/d^{\text{spont}}\)
+crescente & \Conj{} conjetura, derivata da Cap.~8 \\
+7 & Doppio ramo Brasil (A/B vs C) con
+\(\Delta d \approx 0{,}30\)-\(0{,}40\) al 2031 & \Conj{} quantificazione
+della bifurcação del Cap.~9.5 \\
+8 & Quattro mondi possibili al 2031 con probabilità soggettive & \Conj{}
+stime soggettive su evidenza Cap.~7-9 \\
+9 & \(P(\text{decoerenza globale 2031}) \approx 0{,}80\)-\(0{,}85\) &
+\Conj{} sintesi probabilistica \\
+10 & Indice \(C_{\text{DEQ}}^2\) + soglia operativa \(\geq 1{,}0\) &
+\Hypoth{} adattamento di \(C_p\) industriale \\
+11 & Solo Brasil soddisfa \(C_{\text{DEQ}}^2 \geq 1{,}0\) & \Hypoth{}
+conseguenza derivata coerente con Cap.~9 \\
+\end{longtable}}
+}
+
+

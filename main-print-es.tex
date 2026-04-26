@@ -1,0 +1,207 @@
+% La Balanza Cuántica — Impresión (6×9" KDP)
+\documentclass[12pt, twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{geometry}
+\geometry{paperwidth=15.24cm, paperheight=22.86cm,
+  inner=2.8cm, outer=1.8cm, top=2.2cm, bottom=2.5cm}
+\usepackage{setspace}\onehalfspacing
+\setlength{\headheight}{14.5pt}\addtolength{\topmargin}{-2.5pt}
+\usepackage[protrusion=true, expansion=false]{microtype}
+\usepackage{emptypage}
+\usepackage{graphicx}\graphicspath{{figures/}}
+\usepackage{booktabs, array, longtable, multirow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem, xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{algorithm, algpseudocode}
+\floatname{algorithm}{Algoritmo}
+
+% ─── Estilo de capítulo ──────────────────────────────────────────────────────
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{\chaptertitlename~\thechapter}{12pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+\titleformat{\part}[display]
+  {\centering\normalfont\huge\bfseries}{Parte~\thepart}{20pt}{\Huge}
+
+% ─── Encabezado/pie ──────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\textit{La Balanza Cu\'{a}ntica}}
+\fancyhead[RO]{\small\textit{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ─── Teoremas ────────────────────────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{proposition}[theorem]{Proposici\'{o}n}
+\theoremstyle{definition}
+\newtheorem{definition}{Definici\'{o}n}[chapter]
+\newtheorem{conjecture}[definition]{Conjetura}
+\newtheorem{hypothesis}[definition]{Hip\'{o}tesis}
+\theoremstyle{remark}
+\newtheorem{remark}{Observaci\'{o}n}[chapter]
+\newtheorem{openprob}{Problema abierto}[chapter]
+
+% ─── Macros epistémicas ──────────────────────────────────────────────────────
+\newcommand{\Proved}{\textnormal{\textbf{[DEMOSTRADO]}}}
+\newcommand{\Hypoth}{\textnormal{\textbf{[HIP\'{O}TESIS OPERATIVA]}}}
+\newcommand{\Conj}{\textnormal{\textbf{[CONJETURA]}}}
+\newcommand{\ToVerify}{\textnormal{\textbf{[A VERIFICAR]}}}
+
+% ─── Compatibilidad Pandoc ───────────────────────────────────────────────────
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+
+% ─── Macros matemáticas ──────────────────────────────────────────────────────
+\newcommand{\Ts}{T_s^{(2),\text{sys}}}
+\newcommand{\deq}{\mathrm{DEQ}^2}
+
+% ─── Metadatos PDF ───────────────────────────────────────────────────────────
+\hypersetup{
+  pdftitle={La Balanza Cu\'{a}ntica},
+  pdfauthor={Luis Fernando Marcelino},
+  pdflang={es},
+  pdfsubject={Geopol\'{i}tica, Sistemas Complejos, Transici\'{o}n Hegem\'{o}nica},
+  pdfkeywords={DEQ2, hegemon\'{i}a, Kuramoto, transici\'{o}n de fase, Brasil, EE.UU., China, geopol\'{i}tica formal}
+}
+
+% ─── Documento ───────────────────────────────────────────────────────────────
+\begin{document}
+
+%% ── Página de título ─────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering\vspace*{1.5cm}
+  {\Huge\bfseries La Balanza\par}
+  \vspace{0.2cm}
+  {\Huge\bfseries Cu\'{a}ntica\par}
+  \vspace{0.8cm}
+  \rule{0.8\linewidth}{0.5pt}
+  \vspace{0.6cm}
+
+  {\large Geometr\'{i}a de la Hegemon\'{i}a\\[0.3cm]
+   y Transici\'{o}n de Fase 2028--2031\par}
+  \vspace{2cm}
+  {\large Luis Fernando Marcelino\par}
+  \vspace{0.5cm}
+  {\normalsize Mil\'{a}n, 2026\par}
+  \vfill
+  {\small\textit{Colecci\'{o}n Nuevos Horizontes} --- Volumen~4\par}
+  \vspace{0.5cm}
+  \begin{small}\begin{quote}
+    \textit{Etiquetas epist\'{e}micas usadas en el texto:}\\[2pt]
+    \Proved{} formalmente verificado o confirmado en todos los casos examinados;\\
+    \Hypoth{} hip\'{o}tesis operativa declarada;\\
+    \Conj{} conjetura observacional;\\
+    \ToVerify{} afirmaci\'{o}n a verificar emp\'{i}ricamente.
+  \end{quote}\end{small}
+\end{titlepage}
+
+%% ── Página de derechos ───────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{small}
+\noindent \textcopyright{} 2026 Luis Fernando Marcelino\\[4pt]
+Todos los derechos reservados.\\[4pt]
+Primera edici\'{o}n digital e impresa, 2026.\\[4pt]
+\textit{La Balanza Cu\'{a}ntica} es el cuarto volumen de la colecci\'{o}n \textit{Nuevos Horizontes}.\\[4pt]
+Precedido por:\\
+1. \textit{La Constante Marcelino} (Marcelino \& Teixeira, 2026)\\
+2. \textit{La Geometr\'{i}a de la Hegemon\'{i}a} (Marcelino, 2026)\\
+3. \textit{MQNU --- Modelo Cu\'{a}ntico de la Naturaleza Humana} (Marcelino, 2026)\\[4pt]
+La microfundaci\'{o}n del modelo DEQ\textsuperscript{2} se desarrolla en:\\
+\textit{La Topograf\'{i}a del Discurso Emancipatorio} (Marcelino, 2026, 170pp).
+\end{small}
+\vspace*{\fill}
+\clearpage
+
+%% ── Índice ───────────────────────────────────────────────────────────────────
+\pagenumbering{roman}
+\tableofcontents
+\cleardoublepage
+
+%% ── Prefacio Técnico ─────────────────────────────────────────────────────────
+\chapter*{Prefacio T\'{e}cnico}
+\addcontentsline{toc}{chapter}{Prefacio T\'{e}cnico}
+\markboth{Prefacio T\'{e}cnico}{Prefacio T\'{e}cnico}
+
+\textbf{Posici\'{o}n en el proyecto intelectual.}
+Este volumen es el cuarto de la colecci\'{o}n \textit{Nuevos Horizontes} y presupone --- sin exigir --- la lectura previa de los tres vol\'{u}menes anteriores. Los nuevos lectores pueden proceder linealmente: los cap\'{i}tulos~1 y~2 sintetizan el aparato necesario de la \textit{Topograf\'{i}a} y la \textit{Geometr\'{i}a}; el cap\'{i}tulo~3 construye el puente entre las dos escalas. Los lectores familiarizados con los vol\'{u}menes anteriores encontrar\'{a}n una s\'{i}ntesis compacta en los dos primeros cap\'{i}tulos y la extensi\'{o}n original en los siguientes.
+
+\textbf{Una nota sobre la mec\'{a}nica cu\'{a}ntica como isomorfismo estructural.}
+El t\'{i}tulo contiene la palabra ``cu\'{a}ntico''. Esto requiere una aclaraci\'{o}n previa. El libro no afirma que la geopolítica \textit{sea} mec\'{a}nica cu\'{a}ntica, ni que los jefes de Estado se comporten como part\'{i}culas. La afirmaci\'{o}n es m\'{a}s precisa y m\'{a}s limitada: que la estructura matem\'{a}tica del modelo de Kuramoto --- transiciones de fase, par\'{a}metro de orden, umbral cr\'{i}tico, decoherencia --- constituye un \textit{isomorfismo estructural} con ciertos patrones de din\'{a}mica hegem\'{o}nica. Al igual que la termodin\'{a}mica estad\'{i}stica de Boltzmann no afirma que los gases sean ``verdaderamente'' probabil\'{i}sticos, sino que la herramienta probabil\'{i}stica describe correctamente las propiedades macrosc\'{o}picas, el DEQ\textsuperscript{2} utiliza el formalismo de Kuramoto como instrumento descriptivo-predictivo, no como afirmaci\'{o}n ontol\'{o}gica.
+
+La referencia epistemol\'{o}gica se desarrolla en \textit{MQNU --- Modelo Cu\'{a}ntico de la Naturaleza Humana} (Marcelino, 2026), particularmente en el cap\'{i}tulo~1 (isomorfismo estructural vs.\ reducci\'{o}n ontol\'{o}gica) y el cap\'{i}tulo~4 (l\'{i}mites de la analog\'{i}a).
+
+\textbf{Estructura y modo de lectura.}
+El libro se divide en cinco partes. Las partes~I--II construyen el aparato te\'{o}rico. La parte~III analiza a los cuatro actores estructurales del sistema global 2024--2031. La parte~IV presenta el Dashboard SPC-DEQ y las predicciones falsificables. La parte~V proporciona protocolos de acci\'{o}n para individuos, organizaciones y estados.
+
+Los ap\'{e}ndices~A--D contienen derivaciones formales completas, calibraci\'{o}n emp\'{i}rica, protocolos de medici\'{o}n y di\'{a}logo con tradiciones intelectuales relevantes. Est\'{a}n dise\'{n}ados para ser le\'{i}dos de forma independiente por lectores con formaci\'{o}n t\'{e}cnica.
+
+\textbf{Falsificabilidad.}
+Este libro hace predicciones num\'{e}ricas con fecha. El cap\'{i}tulo~11 enumera 16 predicciones falsificables con ventanas temporales expl\'{i}citas (2026--2031). El protocolo de pre-registro p\'{u}blico es accesible en el repositorio GitHub \texttt{bilanciere-quantistico/predizioni-deq2}. Si las predicciones fallaran sistem\'{a}ticamente, el modelo DEQ\textsuperscript{2} necesitar\'{i}a revisi\'{o}n.
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE I — Del Micro Comunicativo a la Macro Geopolítica
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[Del Micro Comunicativo a la Macro Geopol\'{i}tica]{Del Micro Comunicativo\\a la Macro Geopol\'{i}tica}
+
+\input{chapters-es/01-topografia}
+\input{chapters-es/02-geometria}
+\input{chapters-es/03-ecuacion-unificada}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE II — El Aparato Unificado DEQ²
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{El Aparato Unificado \texorpdfstring{$\deq$}{DEQ²}}
+
+\input{chapters-es/04-forma-sistemica}
+\input{chapters-es/05-cuatro-variables}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE III — Los Cuatro Actores
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{Los Cuatro Actores}
+
+\input{chapters-es/06-soliton-musk}
+\input{chapters-es/07-hegemon-decoherente}
+\input{chapters-es/08-rigido-sincronizado}
+\input{chapters-es/09-balanza-brasil}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE IV — La Transición de Fase 2028–2031
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[La Transici\'{o}n de Fase 2028--2031]{La Transici\'{o}n de Fase\\2028--2031}
+
+\input{chapters-es/10-dashboard-spc}
+\input{chapters-es/11-predicciones-fechadas}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE V — Protocolos Antifrágiles
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{Protocolos Antifr\'{a}giles}
+
+\input{chapters-es/12-estrategias-antifragiles}
+\input{chapters-es/13-conclusiones}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% APÉNDICES
+%% ═══════════════════════════════════════════════════════════════════════════
+\appendix
+
+\input{chapters-es/AppA-derivacion-formal}
+\input{chapters-es/AppB-calibracion-sigma}
+\input{chapters-es/AppC-protocolos-medicion}
+\input{chapters-es/AppD-dialogo-tradiciones}
+
+\end{document}

@@ -1,0 +1,207 @@
+% The Quantum Balance — Print (6×9" KDP)
+\documentclass[12pt, twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{geometry}
+\geometry{paperwidth=15.24cm, paperheight=22.86cm,
+  inner=2.8cm, outer=1.8cm, top=2.2cm, bottom=2.5cm}
+\usepackage{setspace}\onehalfspacing
+\setlength{\headheight}{14.5pt}\addtolength{\topmargin}{-2.5pt}
+\usepackage[protrusion=true, expansion=false]{microtype}
+\usepackage{emptypage}
+\usepackage{graphicx}\graphicspath{{figures/}}
+\usepackage{booktabs, array, longtable, multirow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem, xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{algorithm, algpseudocode}
+\floatname{algorithm}{Algorithm}
+
+% ─── Chapter style ───────────────────────────────────────────────────────────
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{\chaptertitlename~\thechapter}{12pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+\titleformat{\part}[display]
+  {\centering\normalfont\huge\bfseries}{Part~\thepart}{20pt}{\Huge}
+
+% ─── Header/footer ───────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\textit{The Quantum Balance}}
+\fancyhead[RO]{\small\textit{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ─── Theorems ────────────────────────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{hypothesis}[definition]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{openprob}{Open problem}[chapter]
+
+% ─── Epistemic macros ────────────────────────────────────────────────────────
+\newcommand{\Proved}{\textnormal{\textbf{[PROVED]}}}
+\newcommand{\Hypoth}{\textnormal{\textbf{[WORKING HYPOTHESIS]}}}
+\newcommand{\Conj}{\textnormal{\textbf{[CONJECTURE]}}}
+\newcommand{\ToVerify}{\textnormal{\textbf{[TO VERIFY]}}}
+
+% ─── Pandoc compatibility ────────────────────────────────────────────────────
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+
+% ─── Math macros ─────────────────────────────────────────────────────────────
+\newcommand{\Ts}{T_s^{(2),\text{sys}}}
+\newcommand{\deq}{\mathrm{DEQ}^2}
+
+% ─── PDF metadata ────────────────────────────────────────────────────────────
+\hypersetup{
+  pdftitle={The Quantum Balance},
+  pdfauthor={Luis Fernando Marcelino},
+  pdflang={en},
+  pdfsubject={Geopolitics, Complex Systems, Hegemonic Transition},
+  pdfkeywords={DEQ2, hegemony, Kuramoto, phase transition, Brazil, USA, China, formal geopolitics}
+}
+
+% ─── Document ────────────────────────────────────────────────────────────────
+\begin{document}
+
+%% ── Title page ────────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering\vspace*{1.5cm}
+  {\Huge\bfseries The Quantum\par}
+  \vspace{0.2cm}
+  {\Huge\bfseries Balance\par}
+  \vspace{0.8cm}
+  \rule{0.8\linewidth}{0.5pt}
+  \vspace{0.6cm}
+
+  {\large Geometry of Hegemony\\[0.3cm]
+   and Phase Transition 2028--2031\par}
+  \vspace{2cm}
+  {\large Luis Fernando Marcelino\par}
+  \vspace{0.5cm}
+  {\normalsize Milan, 2026\par}
+  \vfill
+  {\small\textit{New Horizons Series} --- Volume~4\par}
+  \vspace{0.5cm}
+  \begin{small}\begin{quote}
+    \textit{Epistemic labels used in the text:}\\[2pt]
+    \Proved{} formally verified or confirmed on all examined cases;\\
+    \Hypoth{} declared working hypothesis;\\
+    \Conj{} observational conjecture;\\
+    \ToVerify{} claim to be verified empirically.
+  \end{quote}\end{small}
+\end{titlepage}
+
+%% ── Copyright page ────────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{small}
+\noindent \textcopyright{} 2026 Luis Fernando Marcelino\\[4pt]
+All rights reserved.\\[4pt]
+First digital and print edition, 2026.\\[4pt]
+\textit{The Quantum Balance} is the fourth volume of the \textit{New Horizons} series.\\[4pt]
+Preceded by:\\
+1. \textit{The Marcelino Constant} (Marcelino \& Teixeira, 2026)\\
+2. \textit{The Geometry of Hegemony} (Marcelino, 2026)\\
+3. \textit{MQNU --- Quantum Model of Human Nature} (Marcelino, 2026)\\[4pt]
+The micro-foundation of the DEQ² model is developed in:\\
+\textit{The Topography of Emancipatory Discourse} (Marcelino, 2026, 170pp).
+\end{small}
+\vspace*{\fill}
+\clearpage
+
+%% ── Table of Contents ──────────────────────────────────────────────────────
+\pagenumbering{roman}
+\tableofcontents
+\cleardoublepage
+
+%% ── Technical Preface ─────────────────────────────────────────────────────
+\chapter*{Technical Preface}
+\addcontentsline{toc}{chapter}{Technical Preface}
+\markboth{Technical Preface}{Technical Preface}
+
+\textbf{Position in the intellectual project.}
+This volume is the fourth in the \textit{New Horizons} series and presupposes --- without requiring --- prior reading of the three previous volumes. New readers may proceed linearly: Chapters~1 and~2 synthesize the necessary apparatus from the \textit{Topography} and the \textit{Geometry}; Chapter~3 builds the bridge between the two scales. Readers familiar with the prior volumes will find a compact synthesis in the first two chapters and the original extension in the subsequent ones.
+
+\textbf{A note on quantum mechanics as structural isomorphism.}
+The title contains the word ``quantum.'' This requires prior clarification. The book does not claim that geopolitics \textit{is} quantum mechanics, nor that heads of state behave like particles. The claim is more precise and more limited: that the mathematical structure of the Kuramoto model --- phase transitions, order parameter, critical threshold, decoherence --- constitutes a \textit{structural isomorphism} with certain patterns of hegemonic dynamics. Just as Boltzmann's statistical thermodynamics does not claim that gases are ``truly'' probabilistic but that the probabilistic tool correctly describes macroscopic properties, the DEQ² uses the Kuramoto formalism as a descriptive-predictive instrument, not an ontological claim.
+
+The epistemological reference is developed in \textit{MQNU --- Quantum Model of Human Nature} (Marcelino, 2026), particularly in Chapter~1 (structural isomorphism vs. ontological reduction) and Chapter~4 (limits of the analogy).
+
+\textbf{Structure and how to read.}
+The book is divided into five parts. Parts~I--II construct the theoretical apparatus. Part~III analyzes the four structural actors of the global system 2024--2031. Part~IV presents the SPC-DEQ Dashboard and the falsifiable predictions. Part~V provides action protocols for individuals, organizations, and states.
+
+Appendices~A--D contain complete formal derivations, empirical calibration, measurement protocols, and dialogue with relevant intellectual traditions. They are designed to be read independently by readers with a technical background.
+
+\textbf{Falsifiability.}
+This book makes dated, numerical predictions. Chapter~11 lists 16 falsifiable predictions with explicit time windows (2026--2031). The public pre-registration protocol is accessible at the GitHub repository \texttt{bilanciere-quantistico/predizioni-deq2}. If the predictions were to fail systematically, the DEQ² model would need revision.
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PART I — From the Communicative Micro to the Macro Geopolitics
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[From the Communicative Micro to Macro Geopolitics]{From the Communicative Micro\\to Macro Geopolitics}
+
+\input{chapters-en/01-topography}
+\input{chapters-en/02-geometry}
+\input{chapters-en/03-unified-equation}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PART II — The Unified DEQ² Apparatus
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{The Unified \texorpdfstring{$\deq$}{DEQ²} Apparatus}
+
+\input{chapters-en/04-systemic-form}
+\input{chapters-en/05-four-variables}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PART III — The Four Actors
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{The Four Actors}
+
+\input{chapters-en/06-soliton-musk}
+\input{chapters-en/07-decoherent-hegemon}
+\input{chapters-en/08-rigid-synchronized}
+\input{chapters-en/09-quantum-balance-brazil}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PART IV — The Phase Transition 2028--2031
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[The Phase Transition 2028--2031]{The Phase Transition\\2028--2031}
+
+\input{chapters-en/10-spc-dashboard}
+\input{chapters-en/11-dated-predictions}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PART V — Antifragile Protocols
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{Antifragile Protocols}
+
+\input{chapters-en/12-antifragile-strategies}
+\input{chapters-en/13-conclusions}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% APPENDICES
+%% ═══════════════════════════════════════════════════════════════════════════
+\appendix
+
+\input{chapters-en/AppA-formal-derivation}
+\input{chapters-en/AppB-sigma-calibration}
+\input{chapters-en/AppC-measurement-protocols}
+\input{chapters-en/AppD-dialogue-traditions}
+
+\end{document}

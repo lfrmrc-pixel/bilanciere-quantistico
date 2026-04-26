@@ -1,0 +1,16 @@
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.pdf
+*.epub
+*.pyc
+__pycache__/
+.DS_Store
+calibration_results.json
+paper-en/calibration_results.json

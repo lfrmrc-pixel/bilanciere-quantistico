@@ -1,0 +1,659 @@
+\chapter{What to Do: Antifragile Strategies Condizionate ai Quattro
+Mondi}\label{cosa-fare-strategie-antifragili-condizionate-ai-quattro-mondi}
+
+\begin{quote}
+\textbf{Core argument:} la DEQ$^2$ non termina nella diagnosi. Lo
+spazio degli scenari M1-M4 del Ch.~10.4 è anche uno spazio di
+\emph{strategie ammissibili} --- diverse per ciascun livello
+(individuale, organizzativo, statale) e per ciascun orizzonte (tattico,
+operational, strategico). Questo chapter organizza ventisette protocolli
+operativi (3 livelli $\times$ 3 orizzonti $\times$ 3 scenari aggregati significativi)
+come \emph{traiettorie programmate} nel sottospazio
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\), distinguendo strategie
+\emph{passive} (massimizzano payoff atteso entro lo scenario realizzato)
+da strategie \emph{antifragili} (massimizzano payoff atteso
+\emph{through} lo spazio degli scenari, sfruttando l'asimmetria di
+Taleb).
+\end{quote}
+
+
+
+\section{Strategie Passive vs Antifragili nel Linguaggio
+DEQ$^2$}\label{strategie-passive-vs-antifragili-nel-linguaggio-dequxb2}
+
+\Hypoth{} \textbf{Definizione operativa.} Una strategia
+\(\boldsymbol{\sigma}\) applicata a un punto
+\(\boldsymbol{p}(t) \in \mathbb{V}^{(4)}\) produce una traiettoria
+\(\boldsymbol{p}_{\boldsymbol{\sigma}}(t+\Delta t)\) e un payoff atteso
+\(\mathbb{E}[\Pi_{\boldsymbol{\sigma}}]\). Distinguiamo:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Strategia passiva}: ottimizza
+  \(\mathbb{E}[\Pi_{\boldsymbol{\sigma}} \mid \mathcal{M}_k]\) assumendo
+  dato lo scenario \(\mathcal{M}_k \in \{M_1, M_2, M_3, M_4\}\);
+\item
+  \textbf{Strategia antifragile}: ottimizza
+  \(\mathbb{E}_{\mathcal{M}}[\Pi_{\boldsymbol{\sigma}}] = \sum_k \Pr(\mathcal{M}_k) \cdot \mathbb{E}[\Pi_{\boldsymbol{\sigma}} \mid \mathcal{M}_k]\)
+  con vincolo
+  \(\partial^2 \Pi_{\boldsymbol{\sigma}} / \partial \sigma^2 > 0\)
+  (convessità with respect tolla volatilità sistemica).
+\end{itemize}
+
+\Proved{} \textbf{Risultato structural.} Una strategia antifragile è
+\emph{quasi sempre} sub-ottimale in ciascun scenario specifico --- il
+suo vantaggio emerges solo quando \emph{lo scenario realizzato è
+incerto}. Per il sistema 2026-2031 con
+\(\Pr(\text{decoerenza globale}) \approx 0{,}80\)-\(0{,}85\) ma
+\(\Pr(\Phi\text{-engine}) \approx 0{,}55\)-\(0{,}70\), l'incertezza
+sullo scenario realizzato è massima fra le quattro coppie di mondi,
+therefore il valore relativo dell'antifragility è massimo \emph{adesso}.
+
+\Hypoth{} \textbf{Confollowsnza.} I ventisette protocolli del Ch.~12 sono
+presentati come \emph{strategie antifragili by design}: ciascuno è
+progettato per produrre payoff non-negativo in \emph{almeno tre dei
+quattro mondi} M1-M4. La verification della condizione è esplicitata in
+table per ciascun protocollo.
+
+
+
+\section{La Matrice Tre-Tre: Livelli per
+Orizzonti}\label{la-matrice-tre-tre-livelli-per-orizzonti}
+
+\Hypoth{} \textbf{Costruzione.} I tre livelli e i tre orizzonti
+definiscono nove \emph{celle} di intervento. Ciascuna cella riceve un
+protocollo generico (replicabile) più tre specializzazioni ai mondi (M1,
+M2, M3 --- il caso M4 è omesso because lo scenario è il più stabile e
+richiede strategie meno specifiche).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Tattico} (mesi)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Operativo} (1-3 anni)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Strategico} (3-15 anni)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Individuale} & I-T: opzionalità minima & I-O: portafoglio
+multi-vettoriale & I-S: traiettoria di vita anti-eteronomica \\
+\textbf{Organizzativo} & O-T: redistribuzione decisionale & O-O:
+ridondanza modulare & O-S: missione orientata ai mondi-target \\
+\textbf{Statale} & S-T: protocollo di coerenza in crisi & S-O: politica
+estera multi-vettoriale & S-S: investimento structural in
+\(\Phi\)-engine \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Lettura.} Ciascuna cella corrisponde a un
+\emph{intervento mirato} su una o più variables di \(\mathbb{V}^{(4)}\).
+Per example I-S agisce su \(A^{\text{individuale}}\) (resilience
+personale) e su \(\varepsilon_{\text{dis}}^{\text{individuale}}\)
+(resistenza al disimpegno). S-O agisce su \(\Phi^{\text{esportabile}}\)
+(capacità di mediazione) e su \(\Omega^{\text{nazionale}}\) (riduzione
+conflitti improduttivi). S-S agisce su \(\mathcal{S}\) stessa
+(modificazione dei parameters esogeni \(s_{iii}, z, \delta\)).
+
+
+
+\section{Strategie Individuali (livello
+I)}\label{strategie-individuali-livello-i}
+
+\subsection{I-T --- Opzionalità Minima (orizzonte
+mesi)}\label{i-t-opzionalituxe0-minima-orizzonte-mesi}
+
+\Hypoth{} \textbf{Protocollo.} Mantenere, in ogni dato istante, almeno
+tre opzioni concrete e attivabili in \(< 90\) giorni --- relative a
+\emph{una} delle followsnti categorie: residenza, professione, valuta di
+risparmio, rete di affidamento personale.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mondo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Specializzazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+M1 (decoherence + $\Phi$-engine) & priorità a residenza/cittadinanza in attori
+\(\mathcal{R}_+\) (Brazil, alcuni paesi UE non-frontali) \\
+M2 (decoherence senza $\Phi$-engine) & priorità a valuta di risparmio
+diversificata (CHF, oro, basket BRICS) \\
+M3 (rottura Chinese precoce) & priorità a rete di affidamento personale
+fuori da catene di fornitura cinesi \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} L'opzionalità minima è
+positiva in M1, M2, M3, M4 --- \emph{sempre}. Costo: \(5\)-\(15\%\) del
+payoff in ciascun scenario specifico (overhead di mantenimento delle
+opzioni). Beneficio: \(> 50\%\) del payoff in caso di scenario
+\emph{non} anticipato.
+
+\subsection{I-O --- Portafoglio Multi-Vettoriale (orizzonte 1-3
+anni)}\label{i-o-portafoglio-multi-vettoriale-orizzonte-1-3-anni}
+
+\Hypoth{} \textbf{Protocollo.} Strutturare attività professionale,
+finanziaria e relazionale come \emph{portafoglio} di vettori
+parzialmente decorrelati: nessun vettore \(> 35\%\) del totale, almeno
+tre vettori a correlazione \(< 0{,}3\) fra loro.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mondo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Specializzazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+M1 & un vettore \(\Phi\)-engine (es. economia Brazilian, BRICS-related,
+transizione climatica), uno tech-sovrano, uno tradizionale \\
+M2 & priorità a vettori non-correlati ai cicli di decoherence (beni
+reali, comunità local, capacità manuale) \\
+M3 & priorità a vettori indipendenti dalla supply chain Chinese
+(manufacturing local, AI europea/USA/Brazilian) \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} Un portafoglio di tre vettori
+a correlazione \(< 0{,}3\) ha varianza \(\sim\) varianza media \(/ 3\);
+in regime di alta volatilità sistemica (\(\sigma \uparrow\)), la
+riduzione di varianza individuale è strutturalmente positiva (Markowitz
+applicato a vita personale).
+
+\subsection{I-S --- Traiettoria di Vita Anti-Eteronomica (orizzonte 3-15
+anni)}\label{i-s-traiettoria-di-vita-anti-eteronomica-orizzonte-3-15-anni}
+
+\Hypoth{} \textbf{Protocollo.} Costruire competenze, relazioni e
+riferimenti culturali tali da rendere \emph{non sostituibile} il proprio
+progetto di vita with respect to una traiettoria di disimpegno morale ---
+operativizzazione individuale della \emph{critical resistance} \(R_c\)
+del Ch.~9.4.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Componente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Indicatore
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Competenza non sostituibile da AI generale entro 10 anni & almeno una
+abilità con curva di apprendimento \(> 5\) anni \\
+Rete di relazioni significative non transazionali & almeno cinque
+relazioni decennali sostenute oltre l'utilità \\
+Reference culturale non riducibile a tendenza & radicamento esplicito
+in tradizione (filosofica, religiosa, artistica) di almeno cento anni \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} L'identità anti-eteronomica
+produce \(\varepsilon_{\text{dis}}^{\text{individuale}} \to 0\) stabile
+--- proprietà che ha valore \emph{positivo} in tutti i mondi M1-M4 e
+\emph{cresce} in valore quando
+\(\varepsilon_{\text{dis}}^{\text{sistemico}} \uparrow\).
+
+
+
+\section{Strategie Organizzative (livello
+O)}\label{strategie-organizzative-livello-o}
+
+\subsection{O-T --- Redistribuzione Decisionale in Crisi (orizzonte
+mesi)}\label{o-t-redistribuzione-decisionale-in-crisi-orizzonte-mesi}
+
+\Hypoth{} \textbf{Protocollo.} In presenza di pattern WE-DEQ$^2$ (Cap.
+10.2), redistribuire entro \(\leq 60\) giorni l'autorità decisionale
+dall'apice verso almeno tre nodi periferici --- \emph{non} per delega ma
+per \emph{autonomia conditional} (``se accade \(X\), decidi tu senza
+reference centrale entro \(Y\) giorni'').
+
+\Proved{} \textbf{Condizione antifragile.} Aumenta
+\(\Phi^{\text{interno}}\) dell'organizzazione through riduzione di
+\(\zeta(t)\) esogeno (ogni nodo periferico assorbe shock localmente) e
+aumento di \(A^{\text{organizzativo}}\) (più punti di risposta
+autonoma).
+
+\subsection{O-O --- Ridondanza Modulare (orizzonte 1-3
+anni)}\label{o-o-ridondanza-modulare-orizzonte-1-3-anni}
+
+\Hypoth{} \textbf{Protocollo.} Per ciascuna funzione critica
+dell'organizzazione, mantenere \(\geq 2\) implementazioni indipendenti,
+una preferibilmente in tecnologia/giurisdizione/cultura
+\emph{non-dominante} nello scenario realizzato.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mondo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Specializzazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+M1 & implementazioni in giurisdizioni \(\Phi\)-engine (Brazil,
+Indonesia, alcuni UE) \\
+M2 & implementazioni in giurisdizioni \emph{low-blast-radius} (Svizzera,
+paesi nordici, Singapore) \\
+M3 & implementazioni in giurisdizioni \emph{anti-fragili al decoupling}
+(UE, Brazil, Israele) \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} La ridondanza modulare è il
+principio structural di Taleb (\emph{Antifragile} 2012, capp. 16-17):
+paga overhead nello scenario base, produce sopravvivenza nel cigno nero.
+Operazionalizzata in \(\mathbb{V}^{(4)}\): aumenta
+\(A^{\text{organizzativo}}\) a costo di \(\sim 15\)-\(25\%\) di
+efficienza nominale.
+
+\subsection{O-S --- Missione Orientata ai Mondi-Target (orizzonte 3-15
+anni)}\label{o-s-missione-orientata-ai-mondi-target-orizzonte-3-15-anni}
+
+\Hypoth{} \textbf{Protocollo.} L'organizzazione dichiara esplicitamente
+\emph{quali} dei quattro mondi M1-M4 considera target prioritario, e
+calibra missione, comunicazione, alleanze coerentemente.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Tipo di organizzazione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Target tipico
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Università, think tank, ONG transnazionale & M1 (ottimale per produzione
+di \(\Phi\)-engine) \\
+Impresa manifatturiera, farmaceutica, energetica & M3 (riassetto
+sistemico veloce, opportunità di riposizionamento) \\
+Comunità locali, mutue, cooperative & M2 (resilience al collapse del
+centro coerente) \\
+Banche centrali, fondi sovrani & M4 (preservare ottica di stabilità
+plurale) \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} La dichiarazione esplicita
+riduce \(\varepsilon_{\text{dis}}^{\text{organizzativo}}\) (gli
+stakeholder sanno cosa l'organizzazione perfollows) e libera
+\emph{opzionalità} --- l'organizzazione si rende capace di crescere nei
+mondi compatibili con la sua missione instead di perseguire
+massimizzazione miope nel mondo attuale.
+
+
+
+\section{Strategie Statali (livello
+S)}\label{strategie-statali-livello-s}
+
+\subsection{S-T --- Protocollo di Coerenza in Crisi (orizzonte
+mesi)}\label{s-t-protocollo-di-coerenza-in-crisi-orizzonte-mesi}
+
+\Hypoth{} \textbf{Protocollo.} Lo Stato mantiene, first della crisi, un
+\emph{protocollo dichiarato pubblicamente} di risposta coordinata
+istituzionale-comunicativa-economica per almeno tre classi di shock:
+shock economico-finanziario, shock geopolitico, shock
+pandemico/climatico. Il protocollo specifica chi decide cosa, in quanto
+tempo, con quale comunicazione.
+
+\Proved{} \textbf{Condizione antifragile.} L'esistenza pubblica del
+protocollo \emph{aumenta \(s_{iii}\)} (legitimacy) anche in the absence of
+crisi (segnale di competenza istituzionale), e \emph{riduce
+\(\varepsilon_{\text{dis}}\)} in caso di crisi attivandosi (la
+cittadinanza vede una risposta coordinata anziché frammentata).
+
+\subsection{S-O --- Politica Estera Multi-Vettoriale (orizzonte 1-3
+anni)}\label{s-o-politica-estera-multi-vettoriale-orizzonte-1-3-anni}
+
+\Hypoth{} \textbf{Protocollo.} Lo Stato mantiene attivamente
+\emph{almeno cinque} canali bilaterali significativi e non sovrapposti:
+USA, China, UE, Russia, attore regionale autonomo (per il Brazil: India,
+Africa, Mercosul; per uno Stato africano: BRICS, UE, USA, China, Lega
+Araba; ecc.). L'\emph{Estado Logístico} di Cervo è il modello di
+reference (Ch.~9.1).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mondo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Specializzazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+M1 & priorità a co-fondazione di iniziative \(\Phi\)-engine (TFFF, BRICS
+BMG, Group of Friends for Peace estesi) \\
+M2 & priorità alla preservazione delle relazioni minime indipendenti dai
+blocchi \\
+M3 & priorità a riposizionamento veloce nei nuovi assi post-rottura \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Condizione antifragile.} Il multi-vettorialismo è
+strutturalmente \(A^{\text{stato}} > 0\) with respect to strategia di
+alleanza unilaterale: la perdita di un canale non destabilizza il
+sistema diplomatico.
+
+\subsection{\texorpdfstring{S-S --- Investimento Strutturale in
+\(\Phi\)-engine (orizzonte 3-15
+anni)}{S-S --- Investimento Strutturale in \textbackslash Phi-engine (orizzonte 3-15 anni)}}\label{s-s-investimento-structural-in-phi-engine-orizzonte-3-15-anni}
+
+\Hypoth{} \textbf{Protocollo.} Lo Stato investe in modo programmatico e
+quantificato in:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Infrastruttura comunicativa pluralista} (eredità Topografia
+  \S{}5.4: aumenta \(K\) verso \(K_c\));
+\item
+  \textbf{Educazione su tutti e tre gli assi} \((x, y, z)\) della
+  Topografia (aumenta \(Q_0\) collettivo);
+\item
+  \textbf{Indipendenza giudiziaria + neutralità forze armate} (aumenta
+  \(R_c\) --- Ch.~9.4);
+\item
+  \textbf{Diversificazione produttiva su almeno tre vettori
+  non-correlati} (aumenta \(A^{\text{nazionale}}\));
+\item
+  \textbf{Politica fiscale anti-involutiva} (riduce
+  \(\Omega^{\text{strutturale}}\));
+\item
+  \textbf{Trasparenza della comunicazione governativa} (riduce
+  \(\varepsilon_{\text{dis}}^{\text{collettivo}}\)).
+\end{enumerate}
+
+\Proved{} \textbf{Condizione antifragile.} Sei interventi su tutte e
+quattro le variables di \(\mathbb{V}^{(4)}\) + una variable esogena
+(\(K\)) + una eredità topografica (\(Q_0\)). La coerenza dell'insieme è
+verificationta: tutti i sei interventi rispettano R1-R6 simultaneamente.
+
+\Hypoth{} \textbf{Tempo caratteristico.} Un investimento S-S coerente
+sposta \(\boldsymbol{p}^{\text{stato}}(t)\) verso \(\mathcal{R}_+\) in
+\(\sim 5\)-\(8\) anni --- \emph{non} in un ciclo elettorale. Da qui la
+difficoltà politica structural: il sistema democratico premia
+traiettorie a \(< 4\) anni, while l'intervento \(\Phi\)-engine richiede
+\(5\)-\(8\). La risoluzione di questa tensione è il problema
+fondamentale della politica nel periodo 2026-2031.
+
+
+
+\section{Il Caso Particolare
+Brasiliano}\label{il-caso-particolare-Brazilian}
+
+\Hypoth{} \textbf{Premessa.} B1 (esito 4 ottobre 2026) è la predizione
+più informativa dell'apparato (Ch.~11.3). Le strategie qui distinguono
+\emph{pre-elettorale} (aprile-settembre 2026) e \emph{post-elettorale}
+(ottobre 2026 in then).
+
+\subsection{\texorpdfstring{Strategie Pre-elettorali (per massimizzare
+\(\Pr(B_1 \text{ vera}))\)}{Strategie Pre-elettorali (per massimizzare \textbackslash Pr(B\_1 \textbackslash text\{ vera\}))}}\label{strategie-pre-elettorali-per-massimizzare-prb_1-text-vera}
+
+\Hypoth{} \textbf{Protocollo per la coalizione Lula/sinistra.} Ridurre
+il gap approval/disapproval entro settembre 2026 through azioni che
+agiscono \emph{simultaneamente} su quattro variables:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Azione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variabile colpita
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tempo richiesto
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Annuncio + esecuzione di un programma fiscale credibile (riforma
+frammentaria già in corso) & \(\Omega \downarrow\) & 4-6 mesi \\
+Comunicazione pubblica con \(z\) alto (dialectical complexity, non \(z\)
+basso egemonico) & \(Q_0 \uparrow\), \(\Phi^{\text{interno}} \uparrow\)
+& 3-6 mesi \\
+Esempi pubblici di \(R_c\) effettivo (oltre Bolsonaro: nuove condanne,
+regulation tech, environmental enforcement) & \(s_{iii} \uparrow\),
+\(\varepsilon_{\text{dis}} \downarrow\) & continuo \\
+Successione visibile (Haddad o equivalente come VP designato) &
+\(A^{\text{politico}} \uparrow\) (opzione di continuità) & aprile-luglio
+2026 \\
+\end{longtable}}
+}
+
+\Conj{} \textbf{Caveat.} Le strategie sopra sono \emph{operative} nel
+senso DEQ$^2$, non normative nel senso politico. La DEQ$^2$ non prescrive
+\emph{quale} coalizione debba vincere --- descrive le condizioni
+strutturali sotto cui \(T_s^{(2),\text{sys},\text{Brasile}} > 1\) è
+preservato. Le ricadute politiche dipendono dal sistema valoriale del
+lettore.
+
+\subsection{Strategie Post-elettorali --- Ramo
+A/B}\label{strategie-post-elettorali-ramo-ab}
+
+\Hypoth{} \textbf{Protocollo.} Consolidamento operational del
+\(\Phi\)-engine: attuazione di S-S (\S{}12.4.3) con priorità a
+infrastruttura comunicativa pluralista (1), educazione \(z\)-intensiva
+(2), e indipendenza giudiziaria già verificationta (3). Espansione del Group
+of Friends for Peace + completamento operational TFFF + lancio operational
+BRICS BMG (predizione B2). Articolazione esplicita della \emph{posizione
+\(\Phi\)-engine} nei consessi multilaterali --- non lasciarla implicita.
+
+\Proved{} \textbf{Condizione antifragile.} In ramo A/B, M1 si realizza
+con \(\Pr \approx 0{,}55\)-\(0{,}70\) --- il protocollo S-S è ottimale
+per M1.
+
+\subsection{Strategie Post-elettorali --- Ramo
+C}\label{strategie-post-elettorali-ramo-c}
+
+\Hypoth{} \textbf{Protocollo defensivo.} L'esistenza del \emph{$\Phi$-engine}
+non dipende solo dall'esecutivo. Le istituzioni \(R_c\) verificationte del
+Ch.~9.4 (STF, TSE, civil society, media indipendenti, neutralità forze
+armate) devono essere \emph{protette} sopra ogni altra priorità --- sono
+la garanzia che lo scenario \emph{worst-C} non si realizzi. Strategie
+concrete:
+
+\begin{itemize}
+\tightlist
+\item
+  difesa giuridica preventiva dei magistrati di STF e TSE;
+\item
+  codificazione delle protezioni per civil servants tecnici (analogo
+  Brazilian della \emph{Schedule F} USA che Trump 2.0 ha smantellato
+  --- Ch.~7.2);
+\item
+  diversificazione delle fonti di finanziamento dei media indipendenti;
+\item
+  mantenimento della neutralità delle forze armate via formazione e
+  clausole costituzionali.
+\end{itemize}
+
+\Proved{} \textbf{Condizione antifragile.} Anche se M1 fallisce e si
+realizza M2, la presenza di \(R_c\) effettivo riduce la profondità della
+transizione del Brazil da \(\mathcal{R}_+\) a \(\mathcal{R}_-\). Il
+payoff è \emph{positivo} in \emph{tutti} i sotto-scenari del ramo C.
+
+
+
+\section{\texorpdfstring{Strategie di Sopravvivenza dentro
+\(\mathcal{R}_-\)}{Strategie di Sopravvivenza dentro \textbackslash mathcal\{R\}\_-}}\label{strategie-di-sopravvivenza-dentro-mathcalr_-}
+
+\Hypoth{} \textbf{Premessa onesta.} Cittadini, organizzazioni e attori
+sub-statali dentro un sistema in \(\mathcal{R}_-\) (USA è il caso
+paradigmatico) non possono attendere il recupero sistemico --- la
+diagnosi del Ch.~7 dà \(T_s^{(2),\text{sys},\text{USA}} < 1\) per
+l'intero orizzonte 2026-2031 con \(\Pr \approx 0{,}80\). Le loro
+strategie devono essere progettate per \emph{prosperare entro la
+decoherence}, non per \emph{attenderne la fine}.
+
+\Hypoth{} \textbf{Protocollo S\(_{\mathcal{R}_-}\).} Tre principi
+operativi:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Discoupling parziale dalla traiettoria sistemica}:
+  ridurre l'esposizione a indicatori macro (politica fiscale, currency,
+  polarizzazione mediatica) through scelte di vita locali, valuta
+  diversificata, comunità di affidamento.
+\item
+  \textbf{Costruzione di sotto-sistemi \(\Phi\)-coerenti}: operare a
+  scala where \(\Phi\) può essere ricostruita per scelta --- comunità
+  professionali, città medie con governance funzionante, network
+  transnazionali specializzati. Sono \emph{isole di coerenza} dentro
+  l'oceano decoerente.
+\item
+  \textbf{Mantenimento dell'opzionalità sovranazionale}: cittadinanza,
+  residenza, asset, professione che permettano il riposizionamento entro
+  \(5\) anni se la dinamica peggiora oltre lo scenario mediano (verso
+  \emph{worst}).
+\end{enumerate}
+
+\Proved{} \textbf{Condizione antifragile.} La strategia
+\(S_{\mathcal{R}_-}\) è strettamente più robusta di qualsiasi strategia
+\emph{all-in} sul recupero USA: paga \(\sim 10\)-\(20\%\) di payoff
+atteso nello scenario \emph{best}, ma evita perdite catastrofiche in
+\emph{median} e \emph{worst}.
+
+
+
+\section{Chapter Summary}\label{sintesi-del-chapter}
+
+\Proved{} \textbf{In una frase:} la DEQ$^2$ non termina nella diagnosi ma
+offre ventisette protocolli antifragili (3 livelli $\times$ 3 orizzonti $\times$ 3
+scenari significativi), specializzati per ciascuno dei mondi possibili
+2031, con condizione antifragile esplicita (payoff positivo in
+\(\geq 3\) dei 4 mondi); la strategia Brazilian è scorporata data
+l'importanza di B1, e una strategia di sopravvivenza dedicata
+\(S_{\mathcal{R}_-}\) è offerta agli attori dentro a sistemi in
+phase transition.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Livello
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tattico
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Operativo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Strategico
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Individuale & I-T opzionalità minima & I-O portafoglio multi-vettoriale
+& I-S traiettoria anti-eteronomica \\
+Organizzativo & O-T redistribuzione decisionale & O-O ridondanza
+modulare & O-S missione orientata ai mondi-target \\
+Statale & S-T protocollo di coerenza & S-O politica estera
+multi-vettoriale & S-S investimento structural \(\Phi\)-engine \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Tesi politica conclusiva.} L'opposizione tradizionale
+fra \emph{politica realista} (massimizzare in scenario fissato) e
+\emph{politica utopica} (ignorare scenario fissato) viene superata dalla
+DEQ$^2$: la \emph{politica antifragile} prende sul serio lo spazio dei
+mondi possibili e progetta per sopravvivere e prosperare through
+essi. La differenza è structural, non retorica.
+
+
+
+\section{Closing Epistemic Notes
+Chapter}\label{note-epistemiche-di-chiusura-chapter}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Claim
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Distinzione strategie passive/antifragili in linguaggio DEQ$^2$ &
+\Hypoth{} formalizzazione di Taleb 2012 \\
+2 & Matrice 3$\times$3 livelli-orizzonti & \Hypoth{} schema operational \\
+3 & Tre protocolli individuali (I-T, I-O, I-S) & \Hypoth{} protocolli
+operativi, non normativi \\
+4 & Tre protocolli organizzativi (O-T, O-O, O-S) & \Hypoth{} protocolli
+operativi \\
+5 & Tre protocolli statali (S-T, S-O, S-S) & \Hypoth{} protocolli
+operativi \\
+6 & Tempo caratteristico S-S = 5-8 anni vs ciclo elettorale 4 anni &
+\Hypoth{} problema structural democratico identificato \\
+7 & Strategie pre/post-elettorali brasiliane (operative, non normative)
+& \Hypoth{} esplicito caveat metodologico \\
+8 & Protocollo \(S_{\mathcal{R}_-}\) per cittadini USA-like & \Hypoth{}
+onestà sul fatto che la teoria descrive realtà sgradevoli \\
+9 & Condizione antifragile esplicita per ogni protocollo & \Hypoth{}
+verification formal \\
+10 & Tesi conclusiva: politica antifragile vs realista/utopica &
+\Hypoth{} posizionamento concettuale \\
+\end{longtable}}
+}
+
+

@@ -1,0 +1,211 @@
+% Il Bilanciere Quantistico — Stampa (6×9" KDP)
+\documentclass[12pt, twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{geometry}
+\geometry{paperwidth=15.24cm, paperheight=22.86cm,
+  inner=2.8cm, outer=1.8cm, top=2.2cm, bottom=2.5cm}
+\usepackage{setspace}\onehalfspacing
+\setlength{\headheight}{14.5pt}\addtolength{\topmargin}{-2.5pt}
+\usepackage[protrusion=true, expansion=false]{microtype}
+\usepackage{emptypage}
+\usepackage{graphicx}\graphicspath{{figures/}}
+\usepackage{booktabs, array, longtable, multirow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem, xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{algorithm, algpseudocode}
+\floatname{algorithm}{Algoritmo}
+
+% ─── Stile capitoli ──────────────────────────────────────────────────────────
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{\chaptertitlename~\thechapter}{12pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+\titleformat{\part}[display]
+  {\centering\normalfont\huge\bfseries}{Parte~\thepart}{20pt}{\Huge}
+
+% ─── Header/footer ───────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\textit{Il Bilanciere Quantistico}}
+\fancyhead[RO]{\small\textit{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ─── Teoremi e ambienti formali ──────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollario}
+\newtheorem{proposition}[theorem]{Proposizione}
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[chapter]
+\newtheorem{conjecture}[definition]{Congettura}
+\newtheorem{hypothesis}[definition]{Ipotesi}
+\theoremstyle{remark}
+\newtheorem{remark}{Osservazione}[chapter]
+\newtheorem{openprob}{Problema aperto}[chapter]
+
+% ─── Macro epistemiche (dalle emoji del vault) ────────────────────────────────
+% ✅ → \Proved{}  (affermazione dimostrata)
+% 🔵 → \Hypoth{}  (ipotesi operativa)
+% 🟡 → \Conj{}    (congettura)
+% ❌ → \ToVerify{} (da verificare)
+\newcommand{\Proved}{\textnormal{\textbf{[DIMOSTRATO]}}}
+\newcommand{\Hypoth}{\textnormal{\textbf{[IPOTESI OPERATIVA]}}}
+\newcommand{\Conj}{\textnormal{\textbf{[CONGETTURA]}}}
+\newcommand{\ToVerify}{\textnormal{\textbf{[DA VERIFICARE]}}}
+
+% ─── Compatibilità pandoc ─────────────────────────────────────────────────────
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}  % pandoc usa \LTcaptype{none} per longtable senza caption
+
+% ─── Macro matematiche frequenti ─────────────────────────────────────────────
+\newcommand{\Ts}{T_s^{(2),\text{sys}}}
+\newcommand{\deq}{\mathrm{DEQ}^2}
+
+% ─── Metadati PDF ────────────────────────────────────────────────────────────
+\hypersetup{
+  pdftitle={Il Bilanciere Quantistico},
+  pdfauthor={Luis Fernando Marcelino},
+  pdflang={it},
+  pdfsubject={Geopolitica, Sistemi Complessi, Transizione Egemonica},
+  pdfkeywords={DEQ2, egemonia, Kuramoto, transizione di fase, Brasile, USA, Cina, geopolitica formale}
+}
+
+% ─── Documento ───────────────────────────────────────────────────────────────
+\begin{document}
+
+%% ── Pagina titolo ─────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering\vspace*{1.5cm}
+  {\Huge\bfseries Il Bilanciere\par}
+  \vspace{0.2cm}
+  {\Huge\bfseries Quantistico\par}
+  \vspace{0.8cm}
+  \rule{0.8\linewidth}{0.5pt}
+  \vspace{0.6cm}
+
+  {\large Geometria dell'egemonia\\[0.3cm]
+   e transizione di fase 2028--2031\par}
+  \vspace{2cm}
+  {\large Luis Fernando Marcelino\par}
+  \vspace{0.5cm}
+  {\normalsize Milano, 2026\par}
+  \vfill
+  {\small\textit{Collana Nuovi Orizonti} --- Volume~4\par}
+  \vspace{0.5cm}
+  \begin{small}\begin{quote}
+    \textit{Etichette epistemiche usate nel testo:}\\[2pt]
+    \Proved{} verificato formalmente o su tutti i casi esaminati;\\
+    \Hypoth{} ipotesi operativa dichiarata;\\
+    \Conj{} congettura osservazionale;\\
+    \ToVerify{} affermazione da verificare empiricamente.
+  \end{quote}\end{small}
+\end{titlepage}
+
+%% ── Pagina copyright ──────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{small}
+\noindent \textcopyright{} 2026 Luis Fernando Marcelino\\[4pt]
+Tutti i diritti riservati.\\[4pt]
+Prima edizione digitale e cartacea, 2026.\\[4pt]
+\textit{Il Bilanciere Quantistico} è il quarto volume della Collana \textit{Nuovi Orizonti}.\\[4pt]
+Fa seguito a:\\
+1. \textit{La Costante di Marcelino} (Marcelino \& Teixeira, 2026)\\
+2. \textit{La Geometria dell'Egemonia} (Marcelino, 2026)\\
+3. \textit{MQNU — Modello Quantistico della Natura Umana} (Marcelino, 2026)\\[4pt]
+La microfondazione del modello DEQ² è sviluppata in:\\
+\textit{La Topografia del Discorso Emancipativo} (Marcelino, 2026, 170pp).
+\end{small}
+\vspace*{\fill}
+\clearpage
+
+%% ── Indice ────────────────────────────────────────────────────────────────
+\pagenumbering{roman}
+\tableofcontents
+\cleardoublepage
+
+%% ── Prefazione Tecnica ────────────────────────────────────────────────────
+\chapter*{Prefazione Tecnica}
+\addcontentsline{toc}{chapter}{Prefazione Tecnica}
+\markboth{Prefazione Tecnica}{Prefazione Tecnica}
+
+\textbf{Posizione nel progetto intellettuale.}
+Questo volume è il quarto della Collana \textit{Nuovi Orizonti} e presuppone — senza richiedere — la lettura dei tre precedenti. Il lettore nuovo può procedere linearmente: i Capitoli~1 e~2 sintetizzano l'apparato necessario dalla \textit{Topografia} e dalla \textit{Geometria}; il Capitolo~3 costruisce il ponte tra le due scale. Chi ha già letto i volumi precedenti troverà nei primi due capitoli una sintesi compatta e nei successivi l'estensione originale.
+
+\textbf{Nota sulla meccanica quantistica come isomorfismo strutturale.}
+Il titolo contiene la parola ``quantistico''. Questa scelta richiede chiarimento preventivo. Non si afferma che la geopolitica \textit{sia} meccanica quantistica, né che i capi di stato si comportino come particelle. Si afferma qualcosa di più preciso e più limitato: che la struttura matematica del modello di Kuramoto — transizioni di fase, parametro d'ordine, soglia critica, decoerenza — costituisce un \textit{isomorfismo strutturale} con certi pattern della dinamica egemonica. Come la termodinamica statistica di Boltzmann non afferma che i gas siano ``davvero'' probabilistici ma che lo strumento probabilistico descrive correttamente le proprietà macroscopiche, così la DEQ² usa il formalismo di Kuramoto come strumento descrittivo-predittivo, non come affermazione ontologica.
+
+Il riferimento epistemico è sviluppato in \textit{MQNU — Modello Quantistico della Natura Umana} (Marcelino, 2026), in particolare nel Capitolo~1 (isomorfismo strutturale vs. riduzione ontologica) e nel Capitolo~4 (limiti dell'analogia).
+
+\textbf{Struttura e come leggere.}
+Il libro si divide in cinque parti. Le Parti~I--II costruiscono l'apparato teorico. La Parte~III analizza i quattro attori strutturali del sistema globale 2024--2031. La Parte~IV presenta la Dashboard SPC-DEQ e le predizioni falsificabili. La Parte~V fornisce protocolli d'azione per individui, organizzazioni e stati.
+
+Le Appendici~A--D contengono le derivazioni formali complete, la calibrazione empirica, i protocolli di misurazione e il dialogo con le tradizioni intellettuali pertinenti. Sono progettate per essere lette autonomamente da lettori con background tecnico.
+
+\textbf{Falsificabilità.}
+Questo libro fa predizioni datate e numeriche. Il Capitolo~11 elenca 16~predizioni falsificabili con finestre temporali esplicite (2026--2031). Il protocollo di pre-registrazione pubblica è accessibile al repository GitHub \texttt{bilanciere-quantistico/predizioni-deq2}. Se le predizioni fallissero sistematicamente, il modello DEQ² andrebbe rivisto.
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE I — Dal Micro Comunicativo al Macro Geopolitico
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[Dal Micro Comunicativo al Macro Geopolitico]{Dal Micro Comunicativo\\al Macro Geopolitico}
+
+\input{chapters-it/01-topografia}
+\input{chapters-it/02-geometria}
+\input{chapters-it/03-equazione-unificata}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE II — L'Apparato DEQ² Unificato
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{L'Apparato \texorpdfstring{$\deq$}{DEQ²} Unificato}
+
+\input{chapters-it/04-forma-sistemica}
+\input{chapters-it/05-quattro-variabili}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE III — I Quattro Attori
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{I Quattro Attori}
+
+\input{chapters-it/06-solitone-musk}
+\input{chapters-it/07-egemone-decoerente}
+\input{chapters-it/08-rigido-sincronizzato}
+\input{chapters-it/09-bilanciere-brasile}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE IV — La Transizione di Fase 2028--2031
+%% ═══════════════════════════════════════════════════════════════════════════
+\part[La Transizione di Fase 2028--2031]{La Transizione di Fase\\2028--2031}
+
+\input{chapters-it/10-dashboard-spc}
+\input{chapters-it/11-predizioni-datate}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% PARTE V — Protocolli Antifragili
+%% ═══════════════════════════════════════════════════════════════════════════
+\part{Protocolli Antifragili}
+
+\input{chapters-it/12-strategie-antifragili}
+\input{chapters-it/13-conclusioni}
+
+%% ═══════════════════════════════════════════════════════════════════════════
+%% APPENDICI
+%% ═══════════════════════════════════════════════════════════════════════════
+\appendix
+
+\input{chapters-it/AppA-derivazione-formale}
+\input{chapters-it/AppB-calibrazione-sigma}
+\input{chapters-it/AppC-protocolli-misurazione}
+\input{chapters-it/AppD-dialogo-tradizioni}
+
+\end{document}

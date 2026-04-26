@@ -1,0 +1,491 @@
+\chapter{Protocolli di Misurazione dei Parametri
+DEQ$^2$}\label{protocolli-di-medição-dei-parâmetros-dequxb2}
+
+\begin{quote}
+\textbf{Scopo dell'apêndice.} Trasformare le sette variáveis
+dell'apparato \((s_{iii}, z, \delta, \sigma\) esogene;
+\(\Phi, A, \Omega, \varepsilon_{\text{dis}}\) in \(\mathbb{V}^{(4)}\))
+in \emph{quantità misurabili in modo riproducibile da terzi
+indipendenti}, su base trimestrale o annuale, a partir de fonti dati
+pubbliche. L'apêndice è la \emph{base tecnica} per il repository GitHub
+\texttt{bilanciere-quantistico/predizioni-deq2} del Cap.~11.4 e per la
+dashboard SPC-DEQ del Cap.~10.
+\end{quote}
+
+
+
+\section{Principi del Protocollo}\label{principi-del-protocollo}
+
+\Hypoth{} \textbf{Cinque principi operativi.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Replicabilità}: ogni medição deve essere ricalcolabile da
+  terzi a partir de fonti pubbliche;
+\item
+  \textbf{Trasparenza dei proxy}: dichiarazione esplicita di proxy
+  primeirorio, secondari e fallback;
+\item
+  \textbf{Gestione del missing data}: regole esplicite di imputazione e
+  di esclusione;
+\item
+  \textbf{Aggiornamento periodico}: ogni variável ha frequenza di
+  rilevazione fissata, con scadenze pubbliche;
+\item
+  \textbf{Intervallo di confidenza}: ogni stima è accompagnata da CI
+  95\% via bootstrap.
+\end{enumerate}
+
+\Proved{} \textbf{Conseguenza.} I protocolli sotto consentono il calcolo
+del punto
+\(\boldsymbol{p}(t) = (\Phi, A, \Omega, \varepsilon_{\text{dis}})\) per
+qualunque Stato membro ONU pelo qual esistano i dataset elencati. La
+dashboard SPC-DEQ non richiede dati proprietari.
+
+
+
+\section{\texorpdfstring{Protocollo per \(\Phi\) (Coerenza di
+Fase)}{Protocollo per \textbackslash Phi (Coerenza di Fase)}}\label{protocollo-per-phi-coerenza-di-fase}
+
+\Hypoth{} \textbf{Definizione operativa.} \(\Phi\) è il parâmetro
+d'ordine di Kuramoto del campo \(\{\theta_j\}\) degli accoppiamenti
+emittente-ricevente. Operativizzato come \emph{indice composito
+multi-proxy}.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Componente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy primeirorio
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Fonte
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Peso
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi^{\text{istituzionale}}\) & V-Dem Liberal Democracy Index &
+\url{https://v-dem.net} & annuale (aprile) & 0.40 \\
+\(\Phi^{\text{discorsivo}}\) & Pew Research \emph{common ground across
+issues} (sei aree) & \url{https://pewresearch.org} & annuale & 0.25 \\
+\(\Phi^{\text{fiduciario}}\) & Pew \emph{trust in federal government} &
+\url{https://pewresearch.org} & annuale & 0.20 \\
+\(\Phi^{\text{mediatico}}\) & Reuters Institute \emph{news trust index}
+& \url{https://reutersinstitute.politics.ox.ac.uk} & annuale & 0.15 \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Calcolo composito.} Ciascun sotto-indice è
+normalizzato in \([0, 1]\) e combinato per media pesata:
+
+\[
+\Phi(t) = \sum_k w_k \cdot \tilde{\phi}_k(t)
+\]
+
+con \(\tilde{\phi}_k\) valore normalizzato e \(w_k\) peso da tabela.
+Per Stati senza dataset Pew/Reuters, fallback a
+\(\Phi^{\text{istituzionale}}\) con riduzione del peso totale
+(rinormalizzazione).
+
+\Hypoth{} \textbf{Pseudocodice (Python).}
+
+\begin{verbatim}
+def phi(country, year):
+    vdem = fetch_vdem_lib_dem(country, year)
+    pew_cg = fetch_pew_common_ground(country, year)
+    pew_tr = fetch_pew_trust(country, year)
+    rt_news = fetch_reuters_news_trust(country, year)
+    weights = [0.40, 0.25, 0.20, 0.15]
+    values = [vdem, pew_cg, pew_tr, rt_news]
+    available = [v for v in values if v is not None]
+    aw = [w for v, w in zip(values, weights) if v is not None]
+    return sum(v*w for v, w in zip(available, aw)) / sum(aw)
+\end{verbatim}
+
+\Conj{} \textbf{Caveat.} Lo sbilanciamento Pew/Reuters verso paesi
+anglofoni è una limitazione nota. Per Stati non-OECD, sostituire con
+World Values Survey + Edelman Trust Barometer +
+Afrobarometer/Latinobarómetro/Asiabarometer regionali.
+
+
+
+\section{\texorpdfstring{Protocollo per \(A\)
+(Antifragilidade)}{Protocollo per A (Antifragilidade)}}\label{protocollo-per-a-antifragilituxe0}
+
+\Hypoth{} \textbf{Definizione operativa.}
+\(A = \partial^2\Pi/\partial\sigma^2\) misurata via \emph{stress-test
+retrospettivo} su tre crisi recenti: 2008-2009 (finanziaria), 2020
+(pandemica), 2022-2023 (energetica/inflazionistica). Per ciascuna crisi:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\Pi^{\text{baseline}}\): produttività totale media nei 3 anni
+  pre-crisi;
+\item
+  \(\Pi^{\text{stress}}\): produttività media nei 3 anni post-crisi;
+\item
+  \(\sigma^{\text{shock}}\): deviazione standard di GDP, equity index,
+  currency nei 12 mesi della crisi acuta.
+\end{itemize}
+
+\Hypoth{} \textbf{Stima.} Per ciascuna crisi \(i\):
+
+\[
+A_i = \frac{\Pi^{\text{stress}}_i - \Pi^{\text{baseline}}_i}{(\sigma^{\text{shock}}_i)^2}
+\]
+
+\(A^{\text{aggregato}} = \text{mediana}(\{A_1, A_2, A_3\})\) (più
+robusto della media a outlier).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Fonte primeiroria
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Per
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+World Bank WDI (Total Factor Productivity) & \(\Pi\) \\
+IMF International Financial Statistics & \(\sigma\) (volatilità
+currency, equity) \\
+OECD Productivity Database & TFP cross-country \\
+\end{longtable}}
+}
+
+\Conj{} \textbf{Caveat.} \(A\) è la variável più difficile in real-time
+porque richiede \emph{eventi di stress} per manifestarsi. Per stime in
+periodi senza crisi recenti, usare \emph{stress-test simulati} (Monte
+Carlo controfattuali su shock di \(\sigma\) standardizzato) --- vedi
+protocollo \S{}C.7.
+
+\Hypoth{} \textbf{Pseudocodice.}
+
+\begin{verbatim}
+def A(country, crises=[(2008, 2009), (2020, 2020), (2022, 2023)]):
+    A_values = []
+    for c in crises:
+        pre = mean_TFP(country, c[0]-3, c[0]-1)
+        post = mean_TFP(country, c[1]+1, c[1]+3)
+        shock = std_GDP(country, c[0], c[1])
+        A_values.append((post - pre) / shock**2)
+    return median(A_values)
+\end{verbatim}
+
+
+
+\section{\texorpdfstring{Protocollo per \(\Omega\)
+(Involuzione)}{Protocollo per \textbackslash Omega (Involuzione)}}\label{protocollo-per-omega-involução}
+
+\Hypoth{} \textbf{Definizione operativa.}
+\(\Omega = \Delta E_{\text{dissipata}}/\Delta E_{\text{utile}} - 1\).
+Operativizzato come \emph{complemento della Total Factor Productivity in
+declino persistente}, con correzione per settori specifici dominanti.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Componente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Fonte
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Omega^{\text{TFP}}\) & \(-\Delta(\ln \text{TFP})/\Delta t\) in
+finestra mobile 8 anni & OECD Productivity Database & annuale \\
+\(\Omega^{\text{settore-critico}}\) & per China: contrazione property +
+PPI; per USA: budget federale primeirorio; per Brasil: deficit primeirorio &
+NBS (CN), BEA (US), IBGE (BR) & trimestrale \\
+\(\Omega^{\text{governance}}\) & costo medio di rinegoziazione
+legislativa (proxy: numero di vetoes, cloture votes, judicial overrides)
+& sistemi legislativi nazionali & annuale \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Combinazione.}
+\(\Omega = \max(\Omega^{\text{TFP}}, \Omega^{\text{settore}}, \Omega^{\text{governance}})\)
+--- l'involução \emph{si sente} onde è più alta, non onde è media.
+
+\Hypoth{} \textbf{Esempio applicativo (China 2025).}
+\(\Omega^{\text{TFP}} \approx 0{,}3\) (declino lento),
+\(\Omega^{\text{settore}} \approx 1{,}2\) (property + deflazione PPI 10
+trim.), \(\Omega^{\text{governance}} \approx 0{,}1\) (nessun vincolo
+legislativo). \(\Omega^{\text{Cina}}_{2025} = 1{,}2\). Coerente con
+stima Cap.~8 e Cap.~5.2.
+
+
+
+\section{\texorpdfstring{Protocollo per \(\varepsilon_{\text{dis}}\)
+(Disimpegno
+Morale)}{Protocollo per \textbackslash varepsilon\_\{\textbackslash text\{dis\}\} (Disimpegno Morale)}}\label{protocollo-per-varepsilon_textdis-disimpegno-morale}
+
+\Hypoth{} \textbf{Definizione operativa.}
+\(\varepsilon_{\text{dis}} \in [0,1]\) è il coefficiente di disimpegno
+morale collettivo (Bandura/Milgram). Indice composito.
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Componente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Fonte
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Peso
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\varepsilon^{\text{partisan}}\) & Pew ``altro partito come minaccia
+per la nazione'' & \url{https://pewresearch.org} & annuale & 0.30 \\
+\(\varepsilon^{\text{turnout}}\) &
+\(1 - \text{turnout elettorale normalizzato}\) & IDEA International &
+per ciclo elettorale & 0.20 \\
+\(\varepsilon^{\text{civic}}\) & \(1 - \text{volontariato pro capite}\)
+& Charities Aid Foundation World Giving Index & annuale & 0.20 \\
+\(\varepsilon^{\text{media-trust}}\) & \(1 - \text{trust mediatico}\) &
+Edelman Trust Barometer & annuale & 0.15 \\
+\(\varepsilon^{\text{intergroup}}\) & indice di dissociazione fra gruppi
+(proxy: segregazione residenziale, omogamia educativa) & OECD Family
+Database & quinquennale & 0.15 \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Calcolo.} Identico a \(\Phi\) (media pesata,
+normalizzazione, gestione missing data).
+
+
+
+\section{\texorpdfstring{Protocolli per Variabili Esogene
+\((s_{iii}, z, \delta, \sigma)\)}{Protocolli per Variabili Esogene (s\_\{iii\}, z, \textbackslash delta, \textbackslash sigma)}}\label{protocolli-per-variáveis-esogene-s_iii-z-delta-sigma}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variabile
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy primeirorio
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Fonte
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(s_{iii}\) (legitimidade ético-discursiva) & Brand Finance Global Soft
+Power Index &
+\url{https://brandfinance.com/insights/global-soft-power-index} &
+annuale \\
+\(z\) (proiezione asse dialettico) & media ponderata Topografia \S{}5.1
+(asse \(z\) del campo \(Q_0\)) & dataset corpus discorso pubblico &
+annuale (proxy: indice complessità sintattica + diversità lessicale di
+dichiarazioni esecutive) \\
+\(\delta\) (horizonte temporal) & OECD long-term planning indicator +
+tasso di sconto sociale (Stern review) & OECD + Stern + AEI &
+quinquennale \\
+\(\sigma\) (volatilità ambientale) & std GDP + std CDS sovrani + std
+petrolio + std eventi climatici estremi & IMF + Bloomberg + EM-DAT &
+trimestrale \\
+\end{longtable}}
+}
+
+\Conj{} \textbf{Caveat per \(z\).} La medição del \emph{contenuto
+dialettico} del discorso pubblico richiede analisi NLP avanzata ---
+pipeline non standardizzata. Proposta: usare il rapporto fra
+\emph{propositions argumentate} e \emph{propositions assertive} in
+corpus di dichiarazioni governative ufficiali (modello GPT-class come
+strumento di codifica).
+
+
+
+\section{\texorpdfstring{Stress-Test Simulato (per \(A\) in periodi
+senza
+crisi)}{Stress-Test Simulato (per A in periodi senza crisi)}}\label{stress-test-simulato-per-a-in-periodi-senza-crisi}
+
+\Hypoth{} \textbf{Procedura Monte Carlo.} Quando la finestra delle tre
+crisi recenti non è disponibile (paese giovane, dataset incompleto),
+usare:
+
+\begin{verbatim}
+def A_simulated(country, year, n_simulations=5000):
+    baseline = current_TFP(country, year)
+    sigma_hist = historical_volatility(country, year)
+    A_estimates = []
+    for _ in range(n_simulations):
+        shock = random_shock(distribution='lognormal', mean=0, sd=sigma_hist)
+        # Modello dinamico: applicare shock, simulare risposta basata su:
+        # - struttura federale (federalismo aumenta A)
+        # - diversificazione produttiva (HHI inverso)
+        # - opzionalità giuridica (numero di forme societarie)
+        response = simulate_response(country, shock)
+        A_estimates.append((response - baseline) / shock**2)
+    return median(A_estimates), CI_95(A_estimates)
+\end{verbatim}
+
+\Proved{} \textbf{Validazione.} Calibrare il modello
+\(simulate\_response\) su paesi con dataset crisi completo (USA, UE,
+Giappone) e verificaçãore che
+\(A^{\text{simulato}} \approx A^{\text{empirico}}\) per quei paesi. Se
+OK, applicare ad altri Stati.
+
+
+
+\section{Tabela di Riepilogo
+Operativo}\label{tabela-di-riepilogo-operativo}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variabile
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza calcolo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tempo di latenza dati
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+CI tipica
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Osservabilità del trend
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi\) & annuale & 4-6 mesi (V-Dem) & \(\pm 0{,}03\) & media (segnali
+a 1-2 anni) \\
+\(A\) & post-stress + simulato annualmente & 3-5 anni (per stress reali)
+& \(\pm 0{,}1\) & bassa (richiede crisi) \\
+\(\Omega\) & trimestrale & 2-3 mesi & \(\pm 0{,}05\) & alta (segnali a
+1-2 trimestri) \\
+\(\varepsilon_{\text{dis}}\) & semestrale & 6-12 mesi & \(\pm 0{,}04\) &
+media \\
+\(s_{iii}\) & annuale & 3 mesi (Brand Finance) & \(\pm 1\) punto &
+media \\
+\(z\) & annuale & 6-12 mesi (NLP custom) & \(\pm 0{,}1\) & bassa \\
+\(\delta\) & quinquennale & 1-3 anni & \(\pm 0{,}05\) & bassissima
+(variável slow) \\
+\(\sigma\) & trimestrale & 1 mese & \(\pm 0{,}02\) & altissima \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Conseguenza per la dashboard.} Il painel agregado
+\(P_0 = d(\boldsymbol{p}, \mathcal{S})\) del Cap.~10 può essere
+aggiornato \emph{trimestralmente} sulla base di
+\(\Omega, \sigma, s_{iii}\) con interpolazione di
+\(\Phi, \varepsilon_{\text{dis}}\) fra gli aggiornamenti annuali. La
+risoluzione temporale effettiva del cruscotto è portanto \emph{quattro
+volte/anno}.
+
+
+
+\section{Limiti Espliciti del
+Protocollo}\label{limiti-espliciti-del-protocollo}
+
+\Conj{} \textbf{Cinque limiti riconosciuti.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Bias verso paesi OECD}: la maggior parte dei proxy ha
+  copertura completa solo per OECD + grandi emergenti. Per Stati piccoli
+  o paesi a basso reddito: copertura ridotta, fallback a sotto-indici.
+\item
+  \textbf{Aggregazione vs sotto-attori}: la dashboard misura \emph{Stati
+  nazionali}. Per sotto-attori (regioni, città, aziende) i protocolli
+  vanno re-calibrati (vedi Cap.~13.5 vettore 2 di R\&D).
+\item
+  \textbf{Lag dati}: la dashboard rappresenta \emph{passato recente},
+  non presente; per uso predittivo, applicare il sistema dinamico Cap.
+  5.4 con \(\boldsymbol{p}(t-\Delta t)\) come stato iniziale.
+\item
+  \textbf{Sensibilità ai pesi}: i pesi nei sotto-indici sono scelte
+  parâmetrosche; il paper EN testerà la robustezza via sensitivity
+  analysis.
+\item
+  \textbf{NLP per \(z\)}: la pipeline non è standardizzata; la
+  riproducibilità di \(z\) è inferiore alle altre variáveis.
+\end{enumerate}
+
+\Proved{} \textbf{Mitigazione.} Tutti e cinque i limiti sono
+\emph{trasparenti} --- il repository GitHub riporta esplicitamente quali
+paesi/anni hanno copertura completa vs parziale, con flag di
+affidabilità.
+
+
+
+\section{Sintesi dell'Apêndice}\label{sintesi-dellapêndice}
+
+\Proved{} \textbf{Risultato.} Le sette variáveis dell'apparato DEQ$^2$ sono
+operativizzabili por meio de indici compositi multi-proxy basati su dataset
+pubblici (V-Dem, Pew, Reuters, OECD, IMF, Brand Finance, Edelman).
+Frequenza di aggiornamento: trimestrale per \(\Omega\) e \(\sigma\),
+semestrale per \(\varepsilon_{\text{dis}}\), annuale per
+\(\Phi, s_{iii}, z, A\), quinquennale per \(\delta\). Latenza tipica
+dato-stima: 1-12 mesi a seconda della variável. Tutto il protocollo è
+riproducibile in pseudocodice Python e implementabile come web service.
+
+\Hypoth{} \textbf{Posizione strategica.} Senza un protocollo
+riproducibile, le predizioni del Cap.~11 sarebbero tecnicamente non
+falsificabili (le valutazioni dipenderebbero dalla scelta dei
+misuratori). Con il protocollo C.1-C.9, le predizioni \emph{diventano}
+falsificabili da terzi indipendenti, soddisfacendo il criterio (3) del
+Cap.~11.0.
+
+
+
+\emph{Apêndice tecnica. Implementazione di referência: repository
+\texttt{bilanciere-quantistico/predizioni-deq2} (in setup,
+post-pubblicazione libro).}

@@ -1,0 +1,688 @@
+\chapter{Le Quattro Variabili Strutturali in Quadro
+Coerente}\label{le-quattro-variáveis-strutturali-in-quadro-coerente}
+
+\begin{quote}
+\textbf{Argumento central:} \(\Phi\), \(A\), \(\Omega\),
+\(\varepsilon_{\text{dis}}\) non sono parâmetros indipendenti che entrano
+in \(T_s^{(2),\text{sys}}\) come ingredienti di una ricetta --- sono
+\textbf{componenti di uno spazio estrutural quadridimensionale
+\(\mathbb{V}^{(4)}\)} in cui ogni sistema sociale occupa un punto, e in
+cui esistono \emph{sei relazioni di acoplamento bivariate} che
+vincolano la dinamica congiunta. La superficie critica
+\(T_s^{(2),\text{sys}} = 1\) è un'ipersurface in \(\mathbb{V}^{(4)}\)
+che separa due regimi qualitativamente diversi; le predizioni della
+Parte III diventano ora asserzioni sulla \emph{traiettoria} dei quattro
+attori in \(\mathbb{V}^{(4)}\) com relação a tale ipersurface.
+\end{quote}
+
+
+
+\section{\texorpdfstring{Lo Spazio Strutturale
+\(\mathbb{V}^{(4)}\)}{Lo Spazio Strutturale \textbackslash mathbb\{V\}\^{}\{(4)\}}}\label{lo-spazio-estrutural-mathbbv4}
+
+\Hypoth{} \textbf{Definizione.} Sia
+\(\mathbb{V}^{(4)} := [0, 1] \times \mathbb{R} \times \mathbb{R}_{\geq 0} \times [0, 1]\)
+lo spazio estrutural DEQ$^2$, parâmetroszzato da:
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Coordinata
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variabile
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dominio
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Origine teorica
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi\) & parâmetro de ordem di Kuramoto & \([0, 1]\) & Cap.~4 ---
+sincronização di fase del campo \(\Pi\) \\
+\(A\) & antifragilidade & \(\mathbb{R}\) (sub-dominio operativo
+\([-1, +\infty)\)) & Cap.~3.3.1 --- \(\partial^2\Pi/\partial\sigma^2\)
+(Taleb formalizzato) \\
+\(\Omega\) & involução & \(\mathbb{R}_{\geq 0}\) & Cap.~3.3.2 ---
+\(\Delta E_{\text{diss}}/\Delta E_{\text{utili}} - 1\) (Xiang Biao
+formalizzato) \\
+\(\varepsilon_{\text{dis}}\) & disimpegno morale & \([0, 1]\) & Cap.~3.2
+--- Bandura/Milgram \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Conseguenza formale.} Ogni sistema sociale è
+descrivibile, ad un dato istante \(t\), come il punto
+
+\[
+\boldsymbol{p}(t) = (\Phi(t),\ A(t),\ \Omega(t),\ \varepsilon_{\text{dis}}(t)) \in \mathbb{V}^{(4)}
+\]
+
+La sua \emph{traiettoria} è la curva \(t \mapsto \boldsymbol{p}(t)\). La
+sua \emph{stabilità sistemica} è il valore scalare
+\(T_s^{(2),\text{sys}}(\boldsymbol{p}(t); s_{iii}, z, \delta, \sigma)\),
+onde i parâmetros ereditati dalla Geometria/Topografia
+\((s_{iii}, z, \delta, \sigma)\) sono trattati come \emph{campi esogeni}
+(lentamente variáveis com relação alla scala temporale di
+\(\boldsymbol{p}\)).
+
+\Hypoth{} \textbf{Riduzione dimensionale operativa.}
+\(\mathbb{V}^{(4)}\) ammette una proiezione canonica nei due piani
+notevoli:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb{V}^{(4)} \to \mathbb{V}^{(2)}_{\text{coerenza}} := (\Phi, A)\)
+  --- \textbf{piano della coerenza-valore};
+\item
+  \(\mathbb{V}^{(4)} \to \mathbb{V}^{(2)}_{\text{decoerenza}} := (\Omega, \varepsilon_{\text{dis}})\)
+  --- \textbf{piano della decoerência-spreco}.
+\end{itemize}
+
+Le ipersurfaci di \(T_s^{(2),\text{sys}}\) sono \emph{prodotti} di curve
+in questi due piani --- proprietà che useremo ripetutamente nel Cap.~10
+per le dashboard SPC-DEQ.
+
+
+
+\section{Le Sei Relazioni di Accoppiamento
+Bivariate}\label{le-sei-relazioni-di-acoplamento-bivariate}
+
+\Hypoth{} \textbf{Tesi.} Le quattro variáveis \emph{non sono
+indipendenti}. Esistono \(\binom{4}{2} = 6\) relazioni di acoplamento
+bivariate, ciascuna con un segno e una giustificazione estrutural. Esse
+vincolano lo spazio dei punti effettivamente realizzabili in
+\(\mathbb{V}^{(4)}\) --- chiameremo questo sottoinsieme
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Coppia
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Segno
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meccanismo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verifica nei Cap.~6-9
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{R1} & \(\Phi \leftrightarrow A\) & \(+\) & Coerenza permette
+redistribuzione del guadagno antifrágil & Brasil: \(\Phi\) moderato
+\(+\) \(A\) adattivo \(\Rightarrow A_{\text{sys}} > 0\) \\
+\textbf{R2} & \(\Phi \leftrightarrow \Omega\) & \(-\) & Coerenza
+inibisce duplicazione e competizione improduttiva & China:
+\(\Phi^{\text{imposto}}\) alto, \(\Omega^{\text{spontaneo}}\)
+esplosivo \\
+\textbf{R3} & \(\Phi \leftrightarrow \varepsilon_{\text{dis}}\) & \(-\)
+& Coerenza è correlata a \(Q_0\) alto \(\Rightarrow\) basso disimpegno &
+USA: \(\Phi \to 0 \Rightarrow\) 40\%+ vede l'altro come \emph{minaccia}
+(Cap.~7.1) \\
+\textbf{R4} & \(A \leftrightarrow \Omega\) & \(-\) (forte) &
+Antifragilidade trasforma volatilità in opzionalità \(\Rightarrow\) riduce
+dissipazione estrutural & USA: \(A_{\text{sys}} < 0\) (hiperextensão)
+\(\Rightarrow \Omega \uparrow\) (conflitto interno) \\
+\textbf{R5} & \(A \leftrightarrow \varepsilon_{\text{dis}}\) & \(-\)
+(debole) & Sistemi antifragili tollerano dissenso \(\Rightarrow\)
+riducono disimpegno morale & Brasil: \(A^{\text{adattivo}}\) alto \(+\)
+\(\varepsilon\) in calo post-2022 \\
+\textbf{R6} & \(\Omega \leftrightarrow \varepsilon_{\text{dis}}\) &
+\(+\) & Involuzione produce frustrazione \(\Rightarrow\) disimpegno
+morale crescente & China: \(\Omega^{\text{Neijuan}}\) \(\Rightarrow\)
+\emph{lying flat}, fenomeno generazionale \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Risultato estrutural.} Quattro relazioni hanno segno
+\emph{negativo} (R2, R3, R4, R5) e due hanno segno \emph{positivo} (R1,
+R6). Strutturalmente: \textbf{valore e coerenza sono coalleate; spreco e
+disimpegno sono coalleati}. Sistemi \emph{miscelati} (alta \(\Phi\) con
+alto \(\Omega\), oppure alto \(A\) con alto
+\(\varepsilon_{\text{dis}}\)) sono possibili ma metastabili ---
+appartengono al \emph{bordo} di
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\) e tendono a evolvere verso uno
+dei due assi.
+
+\Hypoth{} \textbf{Asimmetria fondamentale.} La forza di R4
+(\(A\)-\(\Omega\)) è strutturalmente la più alta porque entrambe le
+variáveis sono \emph{misurate sullo stesso flusso
+energetico-produttivo}: \(A\) ne misura la convessità com relação allo
+shock, \(\Omega\) ne misura la dissipazione interna. Si spiega assim
+porque il Cap.~7 ha potuto inferire \(A_{\text{sys}}^{\text{USA}} < 0\)
+dall'evidenza \(\Omega^{\text{USA}} \uparrow\) senza misurare \(A\)
+direttamente: R4 lo permette.
+
+
+
+\section{\texorpdfstring{Mappa dei Quattro Attori in
+\(\mathbb{V}^{(4)}\)}{Mappa dei Quattro Attori in \textbackslash mathbb\{V\}\^{}\{(4)\}}}\label{mappa-dei-quattro-attori-in-mathbbv4}
+
+\Proved{} \textbf{Posizioni stimate aprile 2026} (su scala normalizzata;
+\(\Phi, \varepsilon_{\text{dis}} \in [0,1]\), \(A\) in unità di
+\(\sigma_0^{-2}\) con range tipico \([-1, +1]\), \(\Omega\)
+adimensionale con range tipico \([0, 2]\)):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Attore
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Phi\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(A\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Omega\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\varepsilon_{\text{dis}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(T_s^{(2),\text{sys}}\) stimato
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Soliton (Musk)} & indef. (\(N=1\));
+\(\Phi^{\text{esogeno}} \approx 0{,}3\) & \(+0{,}7\) individuale &
+\(-0{,}1\) (anti-spreco operativo) & \(0{,}5\) (tolleranza alta a
+violazione norme) & non applicabile sistemicamente; influenza esogena
+\(\zeta(t)\) \\
+\textbf{Hegemon Decoerente (USA)} & \(0{,}25\)-\(0{,}35\) (V-Dem
+\(0{,}57\), Pew, Brand Finance) & \(-0{,}3\) (sistemico, da
+hiperextensão) & \(0{,}8\)-\(1{,}2\) (polarizzazione, tariffe
+auto-shock) & \(0{,}55\)-\(0{,}65\) (40\%+ vede l'altro come minaccia) &
+\textbf{\(\approx 0{,}45\)}, sotto soglia \\
+\textbf{Rígido Sincronizado (China)} &
+\(\Phi^{\text{oss}} \approx 0{,}90\),
+\(\Phi^{\text{spont}} \approx 0{,}40\)-\(0{,}50\) &
+\(A^{\text{tecnologico}} +0{,}5\), \(A^{\text{politico}} -0{,}4\) &
+\(1{,}0\)-\(1{,}4\) (Neijuan documentato + property + deflazione 10
+trim.) & \(0{,}40\)-\(0{,}50\) (lying flat, anti-996, alienazione
+generazionale) & \textbf{\(\approx 0{,}80\) apparente,
+\(\approx 0{,}50\) effettivo} \\
+\textbf{Bilanciere (Brasil)} & \(0{,}55\)-\(0{,}65\) (V-Dem U-turn,
+\(R_c\) effettivo) & \(+0{,}4\) (resiliência 2018-2023 confermata) &
+\(0{,}3\)-\(0{,}5\) (fiscale tirato, ma non involutivo) &
+\(0{,}40\)-\(0{,}55\) (polarizzazione persistente, ma sub-USA) &
+\textbf{\(\approx 1{,}10\)}, sopra soglia condicional \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Lettura estrutural.} Solo il Brasil ha il punto
+\(\boldsymbol{p}(t)\) \textbf{interno} alla regione
+\(T_s^{(2),\text{sys}} > 1\) in modo non degenere. USA, China e Soliton
+sono in tre forme distinte di patologia estrutural:
+
+\begin{itemize}
+\tightlist
+\item
+  USA: punto \emph{interno} alla regione \(T_s^{(2),\text{sys}} < 1\)
+  (decoerência distribuita stabile);
+\item
+  China: punto \emph{sul bordo} della regione critica, mantenuto dalla
+  forzatura \(K^{\text{imposto}}\) (instabile a perturbazioni di \(K\));
+\item
+  Soliton: punto \emph{fuori dominio} sistemico (\(N=1\), \(\Phi\)
+  degenere).
+\end{itemize}
+
+\Proved{} \textbf{Verifica indiretta della consistenza.} Le posizioni
+\(\boldsymbol{p}_{\text{USA}}\), \(\boldsymbol{p}_{\text{Cina}}\),
+\(\boldsymbol{p}_{\text{Brasile}}\) sono consistenti con tutte e sei le
+relazioni R1-R6 simultaneamente --- il che non era garantito a priori e
+costituisce una validazione interna dell'apparato.
+
+
+
+\section{\texorpdfstring{La Superficie Critica
+\(T_s^{(2),\text{sys}} = 1\)}{La Superficie Critica T\_s\^{}\{(2),\textbackslash text\{sys\}\} = 1}}\label{la-superficie-critica-t_s2textsys-1}
+
+\Hypoth{} \textbf{Costruzione.} L'equação
+
+\[
+T_s^{(2),\text{sys}}(\Phi, A, \Omega, \varepsilon_{\text{dis}}; s_{iii}, z, \delta, \sigma) = 1
+\]
+
+definisce, per ciascuna scelta di \((s_{iii}, z, \delta, \sigma)\)
+esogeni, un'\textbf{ipersurface tridimensionale}
+\(\mathcal{S} \subset \mathbb{V}^{(4)}\) --- la \emph{frontiera di
+transição de fase}. Esplicitando dalla forma del Cap.~4:
+
+\[
+s_{iii} \cdot z \cdot \delta \cdot (1 + \Phi A) = \sigma \cdot \varepsilon_{\text{dis}} \cdot \left(\Phi + \frac{\Omega}{\Phi} \cdot \Phi\right) = \sigma \cdot \varepsilon_{\text{dis}} \cdot (\Phi + \Omega)
+\]
+
+\Hypoth{} \textbf{Forma quadratica esatta.} Imponendo
+\(T_s^{(2),\text{sys}} = 1\) e moltiplicando per \(\Phi\) entrambi i
+lati si ottiene un'equação quadratica in \(\Phi^*\):
+
+\[
+s_{iii} z \delta \langle A\rangle \cdot (\Phi^*)^2 + (s_{iii} z \delta - \sigma \varepsilon_{\text{dis}}) \cdot \Phi^* - \sigma \varepsilon_{\text{dis}} \langle\Omega\rangle = 0
+\]
+
+\Hypoth{} \textbf{Approssimazione lineare di servizio} (per
+\(\Phi^* \approx 1\), regime di alta coerenza):
+
+\[
+\Phi^*_{\text{lin}}(A, \Omega, \varepsilon_{\text{dis}}) \approx \frac{\sigma \varepsilon_{\text{dis}} \Omega - s_{iii} z \delta}{s_{iii} z \delta A - \sigma \varepsilon_{\text{dis}}}
+\]
+
+(coerente con Cap.~4.5.1; la \textbf{forma esatta} via formula
+quadratica è derivata in \textbf{Apêndice A \S{}A.7} ed è preferibile per
+sistemi in regime di forte decoerência, onde \(\Phi\) è lontano da 1).
+
+\Proved{} \textbf{Proprietà della superficie \(\mathcal{S}\).}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Sezione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Forma
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretazione
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sezione \(\Omega = 0\) & \(\Phi^* = -1/A\) se \(A < 0\); non definita se
+\(A > 0\) & senza involução, solo sistemi \emph{fragili} possono
+attraversare la soglia \\
+Sezione \(A = 0\) &
+\(\Phi^* = (\sigma\varepsilon\Omega - s_{iii}z\delta) / (-\sigma\varepsilon)\)
+& senza antifragilidade, \(\Phi^*\) cresce linearmente con \(\Omega\) \\
+Sezione \(\varepsilon_{\text{dis}} = 0\) &
+\(\Phi^* = -s_{iii}z\delta / (s_{iii}z\delta A)\) se \(A > 0\), indef.
+altrimenti & senza disimpegno morale, sistema tipicamente in regime
+sicuro \\
+Sezione \(\Phi = 1\) &
+\(1 + A = (\sigma\varepsilon/s_{iii}z\delta)(1 + \Omega)\) & recupero
+della soglia DEQ$^1$ con \(A, \Omega\) \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Topologia di \(\mathcal{S}\).} \(\mathcal{S}\) divide
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\) in due regioni:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathcal{R}_+ := \{\boldsymbol{p} : T_s^{(2),\text{sys}}(\boldsymbol{p}) > 1\}\)
+  --- regione di \textbf{stabilità sistemica};
+\item
+  \(\mathcal{R}_- := \{\boldsymbol{p} : T_s^{(2),\text{sys}}(\boldsymbol{p}) < 1\}\)
+  --- regione di \textbf{transição de fase imminente} (Cap.~3.5.3,
+  \(\Delta t > \Delta t^*\)).
+\end{itemize}
+
+\Hypoth{} \textbf{Distanza alla soglia.} Definiamo la \emph{distanza
+alla criticità} di un punto \(\boldsymbol{p}\) come
+\(d(\boldsymbol{p}, \mathcal{S})\) con metrica sulla scala normalizzata.
+Il segno è positivo se \(\boldsymbol{p} \in \mathcal{R}_+\), negativo
+altrimenti. Questa è la quantità scalare che la dashboard SPC-DEQ del
+Cap.~10 dovrà monitorare.
+
+
+
+\section{Dinamica delle Quattro
+Variabili}\label{dinamica-delle-quattro-variáveis}
+
+\Hypoth{} \textbf{Postulato dinamico.} Le quattro variáveis evolvono
+secondo un sistema di equações differenziali accoppiate, con una
+struttura formale ereditata dal Kuramoto generalizzato:
+
+\[
+\begin{aligned}
+\dot{\Phi}(t) &= K(t) \cdot f_\Phi(\Phi) - \gamma_\Phi \cdot \zeta(t) - \beta_\Phi \cdot \varepsilon_{\text{dis}}(t) \\
+\dot{A}(t) &= -\alpha_A \cdot (A - A_\infty(\Phi, \Omega)) + \eta_A(t) \\
+\dot{\Omega}(t) &= \alpha_\Omega \cdot \mathcal{F}(\langle\Pi\rangle - \Pi^*) - \mu_\Omega \cdot \Phi \cdot A + \eta_\Omega(t) \\
+\dot{\varepsilon}_{\text{dis}}(t) &= \alpha_\varepsilon \cdot \Omega - \mu_\varepsilon \cdot \Phi \cdot Q_0(t) + \eta_\varepsilon(t)
+\end{aligned}
+\]
+
+onde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(K(t)\) è la forza di acoplamento di Kuramoto del Cap.~4 (esogena,
+  dipende da infrastruttura comunicativa e istituzionale);
+\item
+  \(\zeta(t)\) è la sorgente esogena di disordine (Cap.~6.6: il Soliton
+  come \(\zeta\) tipico per il sistema USA);
+\item
+  \(A_\infty(\Phi, \Omega)\) è il valore asintotico di \(A\) a
+  \((\Phi, \Omega)\) fissati --- relazione R1-R4 incorporata;
+\item
+  \(\mathcal{F}(\cdot)\) è una funzione monotona crescente che modella
+  l'auto-rinforzo dell'involução quando il payoff aggregato scende
+  sotto il livello di soglia \(\Pi^*\);
+\item
+  \(Q_0(t)\) è la qualidade ética del campo discorsivo (eredità Topografia
+  \S{}5.2);
+\item
+  \(\eta_X(t)\) sono rumori stocastici a media nulla.
+\end{itemize}
+
+\Proved{} \textbf{Conseguenza interpretativa.} Le sei relazioni R1-R6 di
+\$\S\$5.1 emergono come \emph{equilibri quasi-statici} del sistema
+dinamico: i segni dei coefficienti \(\beta, \mu, \alpha\) realizzano
+R1-R6 nelle equações evolutive. Per exemplo,
+\(-\beta_\Phi \varepsilon_{\text{dis}}\) realizza R3;
+\(-\mu_\Omega \Phi A\) realizza R2 e R4 simultaneamente.
+
+\Conj{} \textbf{Caveat.} Il sistema dinamico nella forma di sopra è un
+\emph{postulato operativo}: la sua calibrazione empirica richiede
+dataset multi-paese su 20+ anni (rinviata a paper EN). Il valore
+estrutural è che fornisce uno \emph{schema di pensiero} per organizzare
+gli indicatori monitorabili del Cap.~10.
+
+\Hypoth{} \textbf{Applicazione ai quattro attori (verificação
+qualitativa).}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Attore
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Termine dominante
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Conseguenza dinamica
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{USA} & \(-\gamma_\Phi \zeta(t)\) con
+\(\zeta = \zeta_{\text{Sol}}(t)\) & \(\dot\Phi < 0\) persistente
+\(\Rightarrow \Phi \to 0\) (Cap.~7.4) \\
+\textbf{China} & \(K(t)\) massimo da imposizione \(+\)
+\(\alpha_\Omega \mathcal{F}\) esplosivo & \(\Phi^{\text{osservato}}\)
+stabile, ma \(\dot\Omega > 0\) persistente (Cap.~8.2) \\
+\textbf{Brasil} & \(-\mu_\varepsilon \Phi Q_0\) con \(Q_0\) alto
+post-2022 & \(\dot\varepsilon < 0\) post-Bolsonaro \(\Rightarrow\)
+U-turn V-Dem (Cap.~9.4) \\
+\textbf{Soliton} & non applicabile sistemicamente; agisce come
+\(\zeta\) esogeno & influenza altri sistemi via acoplamento esogeno
+(Cap.~6.6, 7.4) \\
+\end{longtable}}
+}
+
+
+
+\section{Gradi di Libertà
+Operativi}\label{gradi-di-libertuxe0-operativi}
+
+\Hypoth{} \textbf{Domanda strategica.} Quali variáveis sono
+\emph{modificabili} da scelte politiche, e su quale scala temporale?
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variabile
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Modificabilità
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scala temporale tipica
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Leve operative
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi\) & media & 3-7 anni & infrastruttura comunicativa, integrazione
+istituzionale, riforma elettorale \\
+\(A\) & bassa-media & 5-15 anni & educazione, ridondanza istituzionale,
+opzionalità sistemica (Taleb) \\
+\(\Omega\) & media-alta & 1-5 anni & regolazione mercati, anti-trust,
+\emph{anti-involution} effettiva (vs.~dichiarativa) \\
+\(\varepsilon_{\text{dis}}\) & alta sul breve, bassa sul lungo & 6
+mesi-3 anni & qualità del discorso pubblico (\(Q_0\)), enforcement
+giudiziario, esempi pubblici \\
+\end{longtable}}
+}
+
+\Proved{} \textbf{Conseguenza strategica della Parte V.} Le strategie
+antifragili del Cap.~12 (individuali, organizzative, statali) saranno
+strutturate come \emph{interventi su sottospazi specifici di
+\(\mathbb{V}^{(4)}\)} a scala temporale appropriata. Non esistono
+\emph{silver bullets} --- esistono solo combinazioni coerenti.
+
+\Conj{} \textbf{Limite irriducibile.} Le variáveis esogene
+\((s_{iii}, z, \delta, \sigma)\) sono parzialmente fuori controllo
+(specialmente \(\sigma\) --- volatilità ambiental que include shock
+climatici, geopolitici, tecnologici). La DEQ$^2$ non promette
+stabilizzazione \emph{deterministica} --- promette \emph{posizionamento
+in \(\mathcal{R}_+\) con margine di sicurezza} com relação a
+\(\mathcal{S}\).
+
+
+
+\section{Indicatori Osservabili e Protocollo di
+Misurazione}\label{indicatori-osservabili-e-protocollo-di-medição}
+
+\Proved{} \textbf{Mappa indicatori-variáveis} (preparazione Cap.~10):
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variabile
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy primeirorio
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proxy secondari
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequenza
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\Phi\) & V-Dem Liberal Democracy Index & Pew trust nel governo; Pew
+common ground; Polarization Index; partisan ANES & annuale \\
+\(A\) & resiliência 2008-2009 + COVID-2020 + 2022-2023 (3 stress tests) &
+Total Factor Productivity convexity; opzioni reali aziendali; ridondanza
+istituzionale (federalismo) & retrospettiva (ogni stress event) \\
+\(\Omega\) & Total Factor Productivity in declino persistente &
+property/sector-specific stress tests (China); judicial productivity;
+deflazione PPI & trimestrale \\
+\(\varepsilon_{\text{dis}}\) & Pew ``altro partito come minaccia'';
+\emph{disengagement} sondaggi & turnout elettorale; volontariato;
+protest participation; trust mediatico & annuale \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Calibrazione cross-sezionale.} Il dataset minimo per
+stimare i coefficienti del sistema dinamico è \(50+\) paesi
+\(\times 20+\) anni (1995-2025) --- esattamente il dataset target del
+paper EN (Apêndice B). I quattro attori del libro sono casi-studio
+illustrativi, non base statistica.
+
+\Conj{} \textbf{Limite metodologico.} \(A\) è la variável più difficile
+da misurare in tempo reale --- richiede \emph{eventi di stress} per
+mostrarsi. Il Cap.~10 propone l'uso di \emph{simulated stress tests}
+(Monte Carlo controfattuali) come sostituto operativo.
+
+
+
+\section{Síntese do Capítulo}\label{sintesi-del-capítulo}
+
+\Proved{} \textbf{In una frase:}
+\(\mathbb{V}^{(4)} = (\Phi, A, \Omega, \varepsilon_{\text{dis}})\) è lo
+spazio estrutural in cui ogni sistema sociale è un punto, vincolato da
+sei relazioni di acoplamento bivariate (R1-R6) e dotato di una
+superficie critica \(\mathcal{S}\) che separa i regimi di stabilità e di
+transição de fase imminente; le strategie politiche del libro saranno
+\emph{traiettorie programmate} nel sottospazio
+\(\mathbb{V}^{(4)}_{\text{ammissibile}}\) con vincolo
+\(d(\boldsymbol{p}, \mathcal{S}) > 0\).
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Componente
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Funzione
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Capítulo successivo che la usa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Spazio \(\mathbb{V}^{(4)}\) + relazioni R1-R6 & Quadro unificato & Cap.
+10 dashboard SPC-DEQ \\
+Mappa quattro attori & Validazione interna apparato & Cap.~11 predizioni
+datate \\
+Superficie \(\mathcal{S}\) + distanza \(d(\boldsymbol{p}, \mathcal{S})\)
+& Indicatore scalare di stabilità & Cap.~10 dashboard + Cap.~11
+falsificação \\
+Sistema dinamico \(\dot\Phi, \dot A, \dot\Omega, \dot\varepsilon\) &
+Schema evolutivo & Cap.~10 scenari quantizzati \\
+Gradi di libertà operativi & Mappa strategica & Cap.~12 protocolli
+antifragili \\
+Mappa indicatori-variáveis & Operativizzazione & Cap.~10 dashboard \(+\)
+Apêndice C \\
+\end{longtable}}
+}
+
+\Hypoth{} \textbf{Tesi conclusiva.} Il Cap.~4 ha derivato
+\(T_s^{(2),\text{sys}}\) come \emph{funzione scalare} delle quattro
+variáveis strutturali. Il Cap.~5 mostra che quelle variáveis sono
+\emph{intrinsecamente accoppiate} (R1-R6) e abitano uno spazio
+\(\mathbb{V}^{(4)}\) con geometria propria (la superficie
+\(\mathcal{S}\)). La Parte II del libro è ora chiusa: l'apparato
+unificato è completo, la Parte III ne ha verificaçãodo l'applicabilità sui
+quattro attori paradigmatici, e la Parte IV può procedere alla
+\emph{operativizzazione} por meio de dashboard, scenari quantizzati e
+predições arriscadas.
+
+
+
+\section{Notas Epistêmicas de Encerramento
+Capítulo}\label{note-epistemiche-di-chiusura-capítulo}
+
+{\def\LTcaptype{none} % do not increment counter
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Afirmação
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Definizione di \(\mathbb{V}^{(4)}\) come spazio estrutural &
+\Hypoth{} costruzione formale \\
+2 & Sei relazioni R1-R6 con segni e meccanismi & \Hypoth{} quadro
+analitico, segni verificaçãoti nei Cap.~6-9 \\
+3 & Asimmetria notevole: 4 segni negativi, 2 positivi & \Proved{}
+struttura termodinamica del sistema sociale \\
+4 & R4 (\(A\)-\(\Omega\)) come relazione più forte & \Hypoth{} inferenza
+estrutural, usata operativamente nel Cap.~7 \\
+5 & Mappa quattro attori in \(\mathbb{V}^{(4)}\) con stime numeriche &
+\Conj{} stime parâmetrosche con intervalli di confidenza ampi \\
+6 & Superficie critica \(\mathcal{S}\) con forma esplicita
+\(\Phi^*(A, \Omega, \varepsilon)\) & \Proved{} derivata analiticamente
+da Cap.~4 \\
+7 & Topologia di \(\mathbb{V}^{(4)}\) in \(\mathcal{R}_+\) e
+\(\mathcal{R}_-\) & \Proved{} conseguenza diretta di
+\(T_s^{(2),\text{sys}} = 1\) \\
+8 & Sistema dinamico per
+\(\dot\Phi, \dot A, \dot\Omega, \dot\varepsilon\) & \Hypoth{} postulato
+operativo, calibrazione rinviata a paper EN \\
+9 & Mappa gradi di libertà operativi \(\to\) scale temporali \(\to\)
+leve & \Hypoth{} sintesi strategica, base per Cap.~12 \\
+10 & Mappa indicatori-variáveis per dashboard & \Proved{} derivata da
+fonti citate nei Cap.~7-9 \\
+11 & Validazione interna: posizioni
+\(\boldsymbol{p}_{\text{USA, Cina, Brasile}}\) consistenti con tutte
+R1-R6 & \Proved{} verificação non banale dell'apparato \\
+\end{longtable}}
+}
+
+
+
+\section{Chiusura della Parte II e Abertura da Parte
+IV}\label{chiusura-della-parte-ii-e-apertura-della-parte-iv}
+
+La Parte II del libro è ora completa: Cap.~3 ha derivato \(T_s^{(2)}\)
+local, Cap.~4 ha derivato \(T_s^{(2),\text{sys}}\) con asimmetria
+\(\Phi\)-moltiplica-\(A\) vs \(\Phi\)-divide-\(\Omega\), Cap.~5 ha
+consolidato le quattro variáveis come spazio estrutural
+\(\mathbb{V}^{(4)}\) con sei relazioni di acoplamento. La Parte III ha
+mappato i quattro attori paradigmatici nello spazio \(\mathbb{V}^{(4)}\)
+(Cap.~6-9). La \textbf{Parte IV} può ora trasformare l'apparato in
+\textbf{strumento operativo}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cap.~10} --- Scenari quantizzati e Dashboard SPC-DEQ: le
+  proiezioni \(\mathbb{V}^{(4)} \to \mathbb{V}^{(2)}_{\text{coerenza}}\)
+  e \(\mathbb{V}^{(4)} \to \mathbb{V}^{(2)}_{\text{decoerenza}}\)
+  diventano cruscotti di monitoraggio in tempo reale, con soglie
+  operative e segnali di allarme precoce.
+\item
+  \textbf{Cap.~11} --- Predizioni rischiose datate: aggregazione delle
+  \(4 \times 3 = 12\) predizioni dei Cap.~7-9 in un \emph{bouquet di
+  falsificação pubblica} della DEQ$^2$, con date, soglie numeriche, fonti
+  dati.
+\end{itemize}
+
+
