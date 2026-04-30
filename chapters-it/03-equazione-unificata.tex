@@ -160,6 +160,92 @@ campo Topografia, modulato da \(A\) e \(\Omega\). La forma sistemica
 
 
 
+\section{\texorpdfstring{Il Fondamento Evolutivo di \(\Phi\): Cooperazione
+Catturata}{Il Fondamento Evolutivo di Phi: Cooperazione Catturata}}\label{il-fondamento-evolutivo-di-phi}
+
+\Hypoth{} \textbf{Il problema causale.} Il \S{}3.1bis ha introdotto
+\(\Phi\) come parametro d'ordine di Kuramoto --- una quantità matematica
+che misura l'allineamento di fase. Resta aperta la domanda causale:
+\emph{perché} le fasi si allineano o si decoeriscono? Qual è il
+meccanismo che produce \(\Phi > 0\) come stato stabile, e la decoerenza
+come stato prodotto?
+
+La risposta viene dalla biologia evolutiva: la cooperazione è lo stato
+naturale quando i meccanismi che la sostengono prevalgono su quelli che
+la erodono. \(\Phi \to 0\) non è l'equilibrio di base --- è uno stato
+\emph{ingegnerizzato} dall'estrazione sistematica.
+
+\Proved{} \textbf{La condizione di Hamilton (1964).} La cooperazione è
+evolutivamente stabile in una popolazione se e solo se:
+
+\[
+rB > C \tag{H}
+\]
+
+dove \(r\) è il coefficiente di relatedness, \(B\) è il beneficio per il
+ricevente, \(C\) il costo per il donatore. Questa condizione --- derivata
+per la biologia e qui applicata come isomorfismo strutturale (\Hypoth{}) ---
+ha il suo analogo geopolitico: la cooperazione sistemica è stabile quando
+il beneficio collettivo supera il costo individuale di cooperare, pesato
+per la coerenza strutturale del sistema.
+
+\Hypoth{} \textbf{Corrispondenza strutturale con \(\Phi\).}
+Il parametro d'ordine \(\Phi > 0\) è la firma sistemica del regime
+\(rB > C\): le fasi si allineano quando i meccanismi cooperativi
+(reciprocità, norma istituzionale, fiducia) superano i meccanismi di
+defection. Non è un'identità --- è una corrispondenza di regime:
+
+\[
+rB > C \;\xleftrightarrow{\;\text{\Hypoth{}}\;}\; \Phi > 0
+\]
+
+\Hypoth{} \textbf{Il CPGG come meccanismo di cattura.} Il
+\textit{Captured Public Goods Game} (CPGG --- §D.4) formalizza il
+meccanismo per cui la cooperazione viene erosa da una sotto-rete
+estrattiva di frazione \(\phi \ll 1\) con feedback positivo endogeno
+(loop di cattura, Proposizione~1 \Proved{}):
+
+\[
+|\mathcal{E}| \uparrow \;\Rightarrow\; \sigma_{\text{san}} \downarrow \;\Rightarrow\; \pi_E \uparrow \;\Rightarrow\; |\mathcal{E}| \uparrow
+\]
+
+Il grado efficace dei cooperatori su reti scale-free (la topologia delle
+reti reali) crolla con \(\phi\):
+
+\[
+k_{\text{eff}}(\phi) = \bar{k} \cdot \frac{1 - \phi^{(\gamma-2)/(\gamma-1)}}{1-\phi} \quad (\text{\Proved{} F3})
+\]
+
+La soglia critica \(\phi^*\) è il punto in cui la condizione
+\(b/c > k_{\text{eff}}(\phi)\) cessa di valere e \(\Phi\) collassa. Il
+sistema segnala la transizione \emph{prima} del collasso cooperativo:
+il monitoraggio di \(\phi\) è un indicatore precoce di
+\(T_s^{(2),\text{sys}} \to 0\).
+
+\Proved{} \textbf{Il fondamento di selezione multilivello.} La
+giustificazione causale del cambio di livello micro/macro è offerta
+dalla \textit{teoria della selezione multilivello} (Wilson \& Sober
+1994; Okasha 2006). L'equazione di Price (1970) --- un'identità
+algebrica esatta --- decompone la variazione del comportamento cooperativo
+in termine inter-gruppo (coerenza) e intra-gruppo (estrazione):
+
+\[
+\Delta\bar{z} = \underbrace{\mathrm{Cov}(W_k,\bar{z}_k)}_{\text{inter-gruppo}} + \underbrace{\mathbb{E}_k\!\left[\mathrm{Cov}(W_{ik},z_{ik})\right]}_{\text{intra-gruppo}} \tag{Price 1970}
+\]
+
+\Hypoth{} La corrispondenza strutturale è: il termine inter-gruppo
+è proporzionale a \(\Phi > 0\); il termine intra-gruppo è proporzionale
+a \(-\Omega\).
+
+Questa struttura giustifica la forma di \(T_s^{(2),\text{sys}}\): il
+numeratore amplifica la selezione inter-gruppo (coerenza, associata a
+\(\Phi\langle A\rangle\)), il denominatore amplifica la selezione
+intra-gruppo (estrazione, associata a \(\langle\Omega\rangle/\Phi\)).
+
+\textit{Per la derivazione completa del framework evolutivo, vedi §D.4.}
+
+
+
 \section{\texorpdfstring{La Soglia di Sgretolamento \(T_s\)
 (DEQ$^1$)}{La Soglia di Sgretolamento T\_s (DEQ$^1$)}}\label{la-soglia-di-sgretolamento-t_s-dequxb9}
 
@@ -275,6 +361,30 @@ declino persistente hanno \(\Omega\) crescente.
 misurata come inverso del reddito relativo delle élite è un caso
 particolare di \(\Omega\) applicato al sottosistema elitario. Turchin
 cattura \(\Omega_{\text{élite}}\); la DEQ$^2$ generalizza.
+
+\Proved{} \textbf{Microfondazione evolutiva: derivazione da CPGG.}
+Quando la struttura di cattura è descrivibile tramite il CPGG
+(§D.4), \(\Omega\) è \emph{derivabile} dai parametri del gioco ---
+non solo definito. All'equilibrio del CPGG, con frazione estrattiva
+\(\phi\), quota asimmetrica \(\eta > 1/N\) e moltiplicatore \(r\) del
+bene pubblico:
+
+\[
+\Omega(\phi,\eta,r) = \frac{\phi\cdot\eta\cdot r}{(1-\phi\eta)r - 1}
+\]
+
+Per \(\phi \ll 1\) (estrattori rari ma organizzati):
+
+\[
+\boxed{\Omega \approx \frac{\phi\cdot\eta\cdot r}{r-1}} \tag{P4}
+\]
+
+Il comportamento limite è rivelatore: per \(r \to 1^+\) (nessun
+surplus cooperativo), \(\Omega \to \infty\) --- ogni estrazione è
+totalmente distruttiva; per \(r \to \infty\), \(\Omega \to \phi\eta\)
+(quota asimmetrica pura). \(\Omega\) non è una proprietà dell'attore
+singolo ma una funzione del trio (\(\phi\), \(\eta\), \(r\)):
+concentrazione estrattiva, asimmetria e produttività collettiva.
 
 
 
